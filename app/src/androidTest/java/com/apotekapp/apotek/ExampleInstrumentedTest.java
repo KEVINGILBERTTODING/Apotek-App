@@ -1,4 +1,4 @@
-package com.example.ObatAPP;
+package com.apotek.ObatAPP;
 
 import android.content.Context;
 

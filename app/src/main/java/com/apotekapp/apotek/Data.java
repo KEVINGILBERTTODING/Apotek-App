@@ -1,4 +1,4 @@
-package com.example.ObatAPP;
+package com.apotek.ObatAPP;
 
 public class Data {
     private String id, kdobat, nmobat, satuan, jumlah, expired;

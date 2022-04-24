@@ -1,15 +1,15 @@
-package com.example.ObatAPP;
+package com.apotek.ObatAPP;
 
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.example.ObatAPP.utill.ServerAPI;
+import com.apotek.ObatAPP.utill.ServerAPI;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -47,21 +47,10 @@ public class CreateDataObat extends MainActivity {
 
     }
 
-    // Method saat button save di klik
+    // Method pada saat button save di klik
 
     public void insertObat(View view) {
       insertdataObat();
-    }
-
-    // Method untuk reload data obat
-
-    private void refreshData() {
-        progressDialog.setMessage("Proses Simpan");
-        progressDialog.setCancelable(false);
-        progressDialog.show();
-        Intent intent   =   new Intent(CreateDataObat.this, MainActivity.class);
-        startActivity(intent);
-
     }
 
     // Method untuk menginput data obat
@@ -72,7 +61,9 @@ public class CreateDataObat extends MainActivity {
                     @Override
                     public void onResponse(String response) {
 
-                        refreshData();
+                        Toast.makeText(CreateDataObat.this, "Berhasil Menambahkan Obat Baru", Toast.LENGTH_LONG).show();
+                        Intent intent   =   new Intent(CreateDataObat.this, MainActivity.class);
+                        startActivity(intent);
                     }
 
                 }, new Response.ErrorListener() {
@@ -93,11 +84,11 @@ public class CreateDataObat extends MainActivity {
 
                 // Mengambil value dari edittext
 
-                tkode_obat = edtKodeObat.getText().toString();
-                tnama_obat = edtNamaObat.getText().toString();
-                tsatuan_obat = edtSatuanObat.getText().toString();
-                tjumlah_obat = edtJumlahObat.getText().toString();
-                texpired_date = edtExpiredObat.getText().toString();
+                tkode_obat      =   edtKodeObat.getText().toString();
+                tnama_obat      =   edtNamaObat.getText().toString();
+                tsatuan_obat    =   edtSatuanObat.getText().toString();
+                tjumlah_obat    =   edtJumlahObat.getText().toString();
+                texpired_date   =   edtExpiredObat.getText().toString();
 
 
                 // Menyimpan value ke dalam hashmap

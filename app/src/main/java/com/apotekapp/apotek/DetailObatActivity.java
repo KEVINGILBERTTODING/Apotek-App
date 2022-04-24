@@ -1,4 +1,4 @@
-package com.example.ObatAPP;
+package com.apotek.ObatAPP;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ public class DetailObatActivity extends AppCompatActivity {
 
 
     String namaObat, satuanObat, jumlah, expired;
+
     TextView tv_detNamaObat, tv_detSatuanObat, tv_detJumlah, tv_detExpired;
 
     @Override
@@ -29,11 +30,11 @@ public class DetailObatActivity extends AppCompatActivity {
         // Memanggil intent dan mengambil text yang telah dikirim dari MainActivity
         // menggunakan intent
 
-        Intent intent   =   getIntent();
-        this.namaObat   =   intent.getStringExtra("nama_obat");
-        this.satuanObat =   intent.getStringExtra("satuan_obat");
-        this.jumlah     =   intent.getStringExtra("jumlah");
-        this.expired    =   intent.getStringExtra("expired");
+        Intent intent       =   getIntent();
+        this.namaObat       =   intent.getStringExtra("nama_obat");
+        this.satuanObat     =   intent.getStringExtra("satuan_obat");
+        this.jumlah         =   intent.getStringExtra("jumlah");
+        this.expired        =   intent.getStringExtra("expired");
 
 
         // Mengatur agar tiap textview memiliki text data yang dikirim dari MainActivity

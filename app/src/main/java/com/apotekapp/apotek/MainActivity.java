@@ -1,4 +1,4 @@
-package com.example.ObatAPP;
+package com.apotek.ObatAPP;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.ObatAPP.utill.ServerAPI;
+import com.apotek.ObatAPP.utill.ServerAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     AlertDialog.Builder dialog;
     SwipeRefreshLayout swipe;
     List<Data> itemList = new ArrayList<Data>();
-    BrgAdapter adapter;
+    ObatAdapter adapter;
 
     LayoutInflater inflater;
     View dialogView;
@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertData();
+                insertDataObat();
             }
         });
 
-        adapter = new BrgAdapter(MainActivity.this, itemList);
+        adapter = new ObatAdapter(MainActivity.this, itemList);
         list.setAdapter(adapter);
 
 
@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                         // TODO Auto-generated method stub
                         switch (which) {
                             case 0:
-                                ShowData(position);
+                                ShowDataObat(position);
                                 break;
                             case 1:
-                                insertData();
+                                editDataObat(position);
                                 break;
                             case 2:
                                 hapus(idx);
@@ -120,12 +120,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     }
 
-    private void insertData() {
+    private void insertDataObat() {
         Intent intent = new Intent(MainActivity.this, CreateDataObat.class);
         startActivity(intent);
     }
 
-    private void ShowData(int position) {
+    private void ShowDataObat(int position) {
 
         final Data obat =   itemList.get(position);
         Intent  DetailObat  =   new Intent(MainActivity.this, DetailObatActivity.class);
@@ -135,6 +135,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         DetailObat.putExtra("expired", obat.getExpired());
         startActivity(DetailObat);
 
+
+    }
+
+    private void editDataObat (int position) {
+        final Data obat =   itemList.get(position);
+        Intent DataObat =   new Intent(MainActivity.this, UpdateDataObat.class);
+        DataObat.putExtra("idobat", obat.getId());
+        DataObat.putExtra("kodeobat", obat.getKdobat());
+        DataObat.putExtra("namaobat", obat.getNmobat());
+        DataObat.putExtra("satuanobat", obat.getSatuan());
+        DataObat.putExtra("jumlahobat", obat.getJumlah());
+        DataObat.putExtra("expireddate", obat.getExpired());
+        startActivity(DataObat);
 
     }
 
