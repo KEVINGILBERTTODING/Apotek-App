@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ObatAPP">
+    package="com.apotekapp.apotek">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,15 +14,18 @@
         android:theme="@style/Theme.SelectVolley"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".CreateDataObat"
+            android:name="com.apotekapp.apotek.UpdateDataObat"
             android:exported="true" />
         <activity
-            android:name=".DetailObatActivity"
+            android:name="com.apotekapp.apotek.CreateDataObat"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.apotekapp.apotek.DetailObatActivity"
             android:exported="true" />
-        <activity android:name=".SplashScreen">
+        <activity
+            android:name="com.apotekapp.apotek.MainActivity"
+            android:exported="true" />
+        <activity android:name="com.apotekapp.apotek.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.apotek.ObatAPP;
+package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.apotek.ObatAPP.utill.ServerAPI;
+import com.apotekapp.apotek.utill.ServerAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;

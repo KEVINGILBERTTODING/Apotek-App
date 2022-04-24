@@ -1,4 +1,4 @@
-package com.apotek.ObatAPP;
+package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,12 +43,6 @@ public class DetailObatActivity extends AppCompatActivity {
         tv_detSatuanObat.setText(satuanObat);
         tv_detJumlah.setText(jumlah);
         tv_detExpired.setText(expired);
-
-
-
-
-
-
 
 
     }

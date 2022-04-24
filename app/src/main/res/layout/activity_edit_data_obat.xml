@@ -1,9 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditDataObat">
+    tools:context=".UpdateDataObat">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kode Obat:"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_KodeObat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kode Obat"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Obat:"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_NamaObat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Obat"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satuan:"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_SatuanObat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Satuan"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stok:"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_JumlahObat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stok Obat"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expired Date:"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_ExpiredDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expired Date"
+            android:inputType="date"
+            />
+
+        <Button
+            android:id="@+id/btnInsert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_marginTop="20dp"
+            android:background="@color/main"
+            android:textColor="@color/white"
+            android:onClick="UpdateObat"
+            android:fontFamily="@font/popsem"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

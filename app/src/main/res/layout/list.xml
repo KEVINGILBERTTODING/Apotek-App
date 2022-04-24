@@ -103,6 +103,17 @@
                 android:fontFamily="@font/popsem"
                 android:layout_alignParentRight="true"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_obat"
+                android:text="01"
+                android:visibility="gone"
+                android:textSize="18sp"
+                android:textColor="@color/main"
+                android:fontFamily="@font/popsem"
+                android:layout_below="@+id/expired"
+                />
 
         </RelativeLayout>
 

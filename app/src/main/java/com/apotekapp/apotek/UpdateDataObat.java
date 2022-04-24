@@ -1,4 +1,4 @@
-package com.apotek.ObatAPP;
+package com.apotekapp.apotek;
 
 import android.os.Bundle;
 import android.app.ProgressDialog;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.apotek.ObatAPP.utill.ServerAPI;
+import com.apotekapp.apotek.utill.ServerAPI;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;

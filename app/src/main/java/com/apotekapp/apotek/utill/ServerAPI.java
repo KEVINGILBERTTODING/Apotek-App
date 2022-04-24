@@ -1,4 +1,4 @@
-package com.apotek.ObatAPP.utill;
+package com.apotekapp.apotek.utill;
 
 public class ServerAPI {
 

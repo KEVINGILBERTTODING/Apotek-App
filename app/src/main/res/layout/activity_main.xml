@@ -19,7 +19,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/popmed"
-            android:text="Hi, Diana Thamara!"
+            android:text="Hi, Nafisa Khally!"
             android:textColor="@color/white"
             android:textSize="15sp" />
 

@@ -1,4 +1,4 @@
-package com.apotek.ObatAPP;
+package com.apotekapp.apotek;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.apotek.ObatAPP;
+package com.apotekapp.apotek;
 
 import android.content.Intent;
 import android.os.Bundle;

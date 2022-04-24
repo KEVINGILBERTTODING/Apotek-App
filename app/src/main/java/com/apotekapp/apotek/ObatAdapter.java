@@ -1,4 +1,4 @@
-package com.example.ObatAPP;
+package com.apotekapp.apotek;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,19 +8,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
-public class BrgAdapter extends BaseAdapter {
+public class ObatAdapter extends BaseAdapter {
     Activity activity;
     List<Data> items;
     private LayoutInflater inflater;
 
-    Locale localeID = new Locale("in", "ID");
-    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
-    public BrgAdapter(Activity activity, List<Data> items) {
+    public ObatAdapter(Activity activity, List<Data> items) {
         this.activity = activity;
         this.items = items;
     }
@@ -48,6 +44,10 @@ public class BrgAdapter extends BaseAdapter {
         if (convertView == null) convertView = inflater.inflate(R.layout.list, null);
 
 
+
+        // Deklarasi TextView
+
+        TextView idobat = (TextView) convertView.findViewById(R.id.id_obat);
         TextView kdobat = (TextView) convertView.findViewById(R.id.kd_obat);
         TextView nmobat = (TextView) convertView.findViewById(R.id.nm_obat);
         TextView satuan = (TextView) convertView.findViewById(R.id.satuan);
@@ -56,9 +56,9 @@ public class BrgAdapter extends BaseAdapter {
 
         Data data = items.get(position);
 
-        // Convert ke format rupiah
+        // Mengatur text dari value get and setter
 
-
+        idobat.setText(data.getId());
         kdobat.setText(data.getKdobat());
         nmobat.setText(data.getNmobat());
         satuan.setText(data.getSatuan());

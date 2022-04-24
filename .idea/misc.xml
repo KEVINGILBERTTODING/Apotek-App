@@ -5,12 +5,14 @@
       <map>
         <entry key="..\:/InventoryApp-Volley/app/src/main/res/drawable/content1.xml" value="0.17222222222222222" />
         <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_create_data.xml" value="0.33177083333333335" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_create_data_obat.xml" value="0.33177083333333335" />
         <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_detail_obat.xml" value="0.33177083333333335" />
-        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_main.xml" value="0.164453125" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_edit_data_obat.xml" value="0.33177083333333335" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_update_obat.xml" value="0.33177083333333335" />
         <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/form_barang.xml" value="0.248828125" />
-        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/list.xml" value="0.248828125" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/list.xml" value="0.33" />
         <entry key="..\:/androidProject-master/app/src/main/res/layout/activity_main.xml" value="0.1606962663975782" />
         <entry key="..\:/androidProject-master/app/src/main/res/layout/form_mahasiswa.xml" value="0.1606962663975782" />
         <entry key="..\:/androidProject-master/app/src/main/res/layout/list.xml" value="0.33" />
