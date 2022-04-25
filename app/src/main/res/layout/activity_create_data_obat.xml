@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kode Obat:"
+            android:text="Kode Obat"
             android:fontFamily="@font/popsem"
             android:textSize="15sp"
             />
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Satuan:"
+            android:text="Satuan"
             android:fontFamily="@font/popsem"
             android:textSize="15sp"
             />
@@ -61,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stok:"
+            android:text="Stok"
             android:fontFamily="@font/popsem"
             android:textSize="15sp"
             />
@@ -77,7 +77,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expired Date:"
+            android:text="Expired Date"
             android:fontFamily="@font/popsem"
             android:textSize="15sp"
             />
@@ -88,6 +88,28 @@
             android:layout_height="wrap_content"
             android:hint="Expired Date"
             android:inputType="date"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/edt_DescObat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expired Date"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:layout_gravity="top|start"
+            android:minLines="6"
+            android:maxLength="255"
+            android:lines="8"
+            android:gravity="start"
+            android:maxLines="10"
             />
 
         <Button

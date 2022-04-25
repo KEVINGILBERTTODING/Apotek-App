@@ -1,17 +1,18 @@
 package com.apotekapp.apotek;
 
-public class Data {
-    private String id, kdobat, nmobat, satuan, jumlah, expired;
+public class DataObat {
+    private String id, kdobat, nmobat, satuan, jumlah, desc, expired;
 
-    public Data() {
+    public DataObat() {
     }
 
-    public Data(String id, String kdobat, String nmobat, String satuan, String jumlah, String expired) {
+    public DataObat(String id, String kdobat, String nmobat, String satuan, String jumlah, String desc, String expired) {
         this.id = id;
         this.kdobat = kdobat;
         this.nmobat= nmobat;
         this.satuan = satuan;
         this.jumlah = jumlah;
+        this.desc = desc;
         this.expired = expired;
 
     }
@@ -54,6 +55,14 @@ public class Data {
 
     public void setJumlah(String jumlah) {
         this.jumlah = jumlah;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public String getExpired() {

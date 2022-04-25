@@ -25,10 +25,10 @@ public class CreateDataObat extends MainActivity {
 
 
     ProgressDialog progressDialog;
-    String id, tkode_obat, tnama_obat, tsatuan_obat, tjumlah_obat, texpired_date;
-    EditText edtKodeObat, edtNamaObat, edtSatuanObat, edtJumlahObat, edtExpiredObat;
+    String id, tkode_obat, tnama_obat, tsatuan_obat, tjumlah_obat, tdesc_obat, texpired_date;
+    EditText edtKodeObat, edtNamaObat, edtSatuanObat, edtJumlahObat, edtDescObat, edtExpiredObat;
 
-    List<Data> itemList = new ArrayList<Data>();
+    List<DataObat> itemList = new ArrayList<DataObat>();
 
 
 
@@ -39,11 +39,12 @@ public class CreateDataObat extends MainActivity {
 
         // Definisikan EditText
 
-        edtKodeObat = (EditText) findViewById(R.id.edt_KodeObat);
-        edtNamaObat = (EditText) findViewById(R.id.edt_NamaObat);
-        edtSatuanObat = (EditText) findViewById(R.id.edt_SatuanObat);
-        edtJumlahObat = (EditText) findViewById(R.id.edt_JumlahObat);
-        edtExpiredObat = (EditText) findViewById(R.id.edt_ExpiredDate);
+        edtKodeObat     = (EditText) findViewById(R.id.edt_KodeObat);
+        edtNamaObat     = (EditText) findViewById(R.id.edt_NamaObat);
+        edtSatuanObat   = (EditText) findViewById(R.id.edt_SatuanObat);
+        edtJumlahObat   = (EditText) findViewById(R.id.edt_JumlahObat);
+        edtDescObat     = (EditText) findViewById(R.id.edt_DescObat);
+        edtExpiredObat  = (EditText) findViewById(R.id.edt_ExpiredDate);
 
     }
 
@@ -88,6 +89,7 @@ public class CreateDataObat extends MainActivity {
                 tnama_obat      =   edtNamaObat.getText().toString();
                 tsatuan_obat    =   edtSatuanObat.getText().toString();
                 tjumlah_obat    =   edtJumlahObat.getText().toString();
+                tdesc_obat      =   edtDescObat.getText().toString();
                 texpired_date   =   edtExpiredObat.getText().toString();
 
 
@@ -97,6 +99,7 @@ public class CreateDataObat extends MainActivity {
                 params.put("nama_obat", tnama_obat);
                 params.put("satuan_obat", tsatuan_obat);
                 params.put("jumlah", tjumlah_obat);
+                params.put("deskripsi", tdesc_obat);
                 params.put("expired", texpired_date);
                 return params;
 

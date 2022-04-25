@@ -12,11 +12,11 @@ import java.util.List;
 
 public class ObatAdapter extends BaseAdapter {
     Activity activity;
-    List<Data> items;
+    List<DataObat> items;
     private LayoutInflater inflater;
 
 
-    public ObatAdapter(Activity activity, List<Data> items) {
+    public ObatAdapter(Activity activity, List<DataObat> items) {
         this.activity = activity;
         this.items = items;
     }
@@ -54,16 +54,16 @@ public class ObatAdapter extends BaseAdapter {
         TextView jumlah = (TextView) convertView.findViewById(R.id.jumlah);
         TextView expired = (TextView) convertView.findViewById(R.id.expired);
 
-        Data data = items.get(position);
+        DataObat dataObat = items.get(position);
 
         // Mengatur text dari value get and setter
 
-        idobat.setText(data.getId());
-        kdobat.setText(data.getKdobat());
-        nmobat.setText(data.getNmobat());
-        satuan.setText(data.getSatuan());
-        jumlah.setText(data.getJumlah());
-        expired.setText(data.getExpired());
+        idobat.setText(dataObat.getId());
+        kdobat.setText(dataObat.getKdobat());
+        nmobat.setText(dataObat.getNmobat());
+        satuan.setText(dataObat.getSatuan());
+        jumlah.setText(dataObat.getJumlah());
+        expired.setText(dataObat.getExpired());
 
         return convertView;
     }

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     ListView list;
     AlertDialog.Builder dialog;
     SwipeRefreshLayout swipe;
-    List<Data> itemList = new ArrayList<Data>();
+    List<DataObat> itemList = new ArrayList<DataObat>();
     ObatAdapter adapter;
 
     LayoutInflater inflater;
@@ -127,11 +127,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     private void ShowDataObat(int position) {
 
-        final Data obat =   itemList.get(position);
+        final DataObat obat =   itemList.get(position);
         Intent  DetailObat  =   new Intent(MainActivity.this, DetailObatActivity.class);
         DetailObat.putExtra("nama_obat", obat.getNmobat());
         DetailObat.putExtra("satuan_obat", obat.getSatuan());
         DetailObat.putExtra("jumlah", obat.getJumlah());
+        DetailObat.putExtra("desc", obat.getDesc());
         DetailObat.putExtra("expired", obat.getExpired());
         startActivity(DetailObat);
 
@@ -139,13 +140,14 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
     private void editDataObat (int position) {
-        final Data obat =   itemList.get(position);
+        final DataObat obat =   itemList.get(position);
         Intent DataObat =   new Intent(MainActivity.this, UpdateDataObat.class);
         DataObat.putExtra("idobat", obat.getId());
         DataObat.putExtra("kodeobat", obat.getKdobat());
         DataObat.putExtra("namaobat", obat.getNmobat());
         DataObat.putExtra("satuanobat", obat.getSatuan());
         DataObat.putExtra("jumlahobat", obat.getJumlah());
+        DataObat.putExtra("descobat", obat.getDesc());
         DataObat.putExtra("expireddate", obat.getExpired());
         startActivity(DataObat);
 
@@ -171,13 +173,14 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        Data item = new Data();
+                        DataObat item = new DataObat();
 
                         item.setId(obj.getString("id"));
                         item.setKdobat(obj.getString("kode_obat"));
                         item.setNmobat(obj.getString("nama_obat"));
                         item.setSatuan(obj.getString("satuan_obat"));
                         item.setJumlah(obj.getString("jumlah"));
+                        item.setDesc(obj.getString("deskripsi"));
                         item.setExpired(obj.getString("expired"));
 
                         // menambah item ke array

@@ -39,6 +39,16 @@
         android:textSize="15sp"
         android:fontFamily="@font/popsem"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/det_Desc"
+        android:text="Obat ini kaya akan manfaat"
+        android:textSize="15sp"
+        android:fontFamily="@font/popsem"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

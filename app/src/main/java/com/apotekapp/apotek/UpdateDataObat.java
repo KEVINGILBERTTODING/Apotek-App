@@ -23,12 +23,12 @@ public class UpdateDataObat extends  MainActivity {
 
     ProgressDialog progressDialog;
 
-    EditText updtKodeObat, updtNamaObat, updtSatuanObat, updtJumlahObat, updtExpiredDate;
+    EditText updtKodeObat, updtNamaObat, updtSatuanObat, updtJumlahObat, updtDeksripsiObat, updtExpiredDate;
 
-     String idObat, kodeObat, namaObat, satuanObat, jumlahObat, expiredDate;
+     String idObat, kodeObat, namaObat, satuanObat, jumlahObat, deskripsiObat, expiredDate;
 
      //String untuk hashmap
-     String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xexpiredate;
+     String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xdeskripsiobat, xexpiredate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class UpdateDataObat extends  MainActivity {
         updtNamaObat        =   findViewById(R.id.updt_NamaObat);
         updtSatuanObat      =   findViewById(R.id.updt_SatuanObat);
         updtJumlahObat      =   findViewById(R.id.updt_JumlahObat);
+        updtDeksripsiObat   =   findViewById(R.id.updt_Desc);
         updtExpiredDate     =   findViewById(R.id.updt_ExpiredDate);
 
         // Memanggil intent dan mengambil text yang telah dikirim dari MainActivity
@@ -53,6 +54,7 @@ public class UpdateDataObat extends  MainActivity {
         this.namaObat       =   intent.getStringExtra("namaobat");
         this.satuanObat     =   intent.getStringExtra("satuanobat");
         this.jumlahObat     =   intent.getStringExtra("jumlahobat");
+        this.deskripsiObat  =   intent.getStringExtra("descobat");
         this.expiredDate    =   intent.getStringExtra("expireddate");
 
         // Mengatur agar tiap textview memiliki text data yang dikirim dari MainActivity
@@ -61,6 +63,7 @@ public class UpdateDataObat extends  MainActivity {
         updtNamaObat.setText(namaObat);
         updtSatuanObat.setText(satuanObat);
         updtJumlahObat.setText(jumlahObat);
+        updtDeksripsiObat.setText(deskripsiObat);
         updtExpiredDate.setText(expiredDate);
 
     }
@@ -73,7 +76,6 @@ public class UpdateDataObat extends  MainActivity {
 
 
     // Method untuk reload data obat
-
 
 
     private void updateDataObat() {
@@ -110,6 +112,7 @@ public class UpdateDataObat extends  MainActivity {
                 xnamaobat       =   updtNamaObat.getText().toString();
                 xsatuanobat     =   updtSatuanObat.getText().toString();
                 xjumlahobat     =   updtJumlahObat.getText().toString();
+                xdeskripsiobat  =   updtDeksripsiObat.getText().toString();
                 xexpiredate     =   updtExpiredDate.getText().toString();
 
 
@@ -121,6 +124,7 @@ public class UpdateDataObat extends  MainActivity {
                 params.put("nama_obat", xnamaobat);
                 params.put("satuan_obat", xsatuanobat);
                 params.put("jumlah_obat", xjumlahobat);
+                params.put("desc_obat", xdeskripsiobat);
                 params.put("expired_date", xexpiredate);
                 return params;
 
