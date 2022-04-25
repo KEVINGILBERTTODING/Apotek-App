@@ -1,11 +1,15 @@
 package com.apotekapp.apotek;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.DatePicker;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -16,16 +20,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class UpdateDataObat extends  MainActivity {
 
 
     ProgressDialog progressDialog;
+    Calendar myCalendar;
+    DatePickerDialog.OnDateSetListener expDate;
 
     EditText updtKodeObat, updtNamaObat, updtSatuanObat, updtJumlahObat, updtDeksripsiObat, updtExpiredDate;
 
-     String idObat, kodeObat, namaObat, satuanObat, jumlahObat, deskripsiObat, expiredDate;
+    String idObat, kodeObat, namaObat, satuanObat, jumlahObat, deskripsiObat, expiredDate;
 
      //String untuk hashmap
      String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xdeskripsiobat, xexpiredate;
@@ -66,6 +73,41 @@ public class UpdateDataObat extends  MainActivity {
         updtDeksripsiObat.setText(deskripsiObat);
         updtExpiredDate.setText(expiredDate);
 
+        // Membuat objek myCalendar
+
+        myCalendar = Calendar.getInstance();
+
+        // Fungsi saat calendar/ datepicker di klik
+
+        expDate = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateTanggal();
+            }
+        };
+
+        // Menampilkan datepicker / calendar saat edittext expired date di klik
+
+        updtExpiredDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(UpdateDataObat.this, expDate, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+    }
+
+    private void updateTanggal() {
+        String myFormat = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        updtExpiredDate.setText(sdf.format(myCalendar.getTime()));
     }
 
     // Method pada saat button update di klik
@@ -75,8 +117,7 @@ public class UpdateDataObat extends  MainActivity {
     }
 
 
-    // Method untuk reload data obat
-
+    // Method untuk update data obat
 
     private void updateDataObat() {
 

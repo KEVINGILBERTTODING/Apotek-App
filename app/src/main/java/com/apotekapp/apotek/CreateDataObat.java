@@ -1,12 +1,15 @@
 package com.apotekapp.apotek;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.widget.DatePicker;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.apotekapp.apotek.utill.ServerAPI;
@@ -18,6 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -25,6 +29,9 @@ public class CreateDataObat extends MainActivity {
 
 
     ProgressDialog progressDialog;
+    Calendar myCalendar;
+    DatePickerDialog.OnDateSetListener expDate;
+
     String id, tkode_obat, tnama_obat, tsatuan_obat, tjumlah_obat, tdesc_obat, texpired_date;
     EditText edtKodeObat, edtNamaObat, edtSatuanObat, edtJumlahObat, edtDescObat, edtExpiredObat;
 
@@ -46,6 +53,43 @@ public class CreateDataObat extends MainActivity {
         edtDescObat     = (EditText) findViewById(R.id.edt_DescObat);
         edtExpiredObat  = (EditText) findViewById(R.id.edt_ExpiredDate);
 
+        // Membuat objek myCalendar
+
+        myCalendar = Calendar.getInstance();
+
+        // Fungsi saat calendar/ datepicker di klik
+
+        expDate = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateTanggal();
+            }
+        };
+
+        // Menampilkan datepicker / calendar saat edittext expired date di klik
+
+        edtExpiredObat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(CreateDataObat.this, expDate, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+    }
+
+    // Method untuk menampilkan tanggal ke edittext expired date saat datepicker di klik
+
+    private void updateTanggal() {
+        String myFormat = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        edtExpiredObat.setText(sdf.format(myCalendar.getTime()));
     }
 
     // Method pada saat button save di klik
