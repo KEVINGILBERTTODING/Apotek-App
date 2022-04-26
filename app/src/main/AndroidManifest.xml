@@ -11,21 +11,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".AppController"
         android:theme="@style/Theme.SelectVolley"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.apotekapp.apotek.UpdateDataObat"
+            android:name=".ApotekerActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".UpdateDataObat"
             android:exported="true" />
         <activity
-            android:name="com.apotekapp.apotek.CreateDataObat"
+            android:name=".CreateDataObat"
             android:exported="true" />
         <activity
-            android:name="com.apotekapp.apotek.DetailObatActivity"
+            android:name=".DetailObatActivity"
             android:exported="true" />
         <activity
-            android:name="com.apotekapp.apotek.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" />
-        <activity android:name="com.apotekapp.apotek.SplashScreen">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,5 +38,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>

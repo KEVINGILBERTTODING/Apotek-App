@@ -11,5 +11,6 @@ public class ServerAPI {
 
 
     // Server API untuk data Apoteker
+    public static final String URL_Read_Apoteker = "http://192.168.11.19/apotek/apoteker/read.php";
 
 }

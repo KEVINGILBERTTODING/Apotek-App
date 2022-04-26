@@ -36,11 +36,6 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
-//    public static final String URLTAMPIL = "http://192.168.11.19/crud/select.php";
-//    public static final String URLDELETE = "http://192.168.11.19/crud/delete.php";
-//    public static final String URLINSERT = "http://192.168.11.19/crud/insert.php";
-//    public static final String URLUBAH = "http://192.168.11.19/crud/edit.php";
-
     ListView list;
     AlertDialog.Builder dialog;
     SwipeRefreshLayout swipe;
@@ -211,55 +206,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
 
-
-
-//    private void ubah(String id){
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLUBAH,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        try {
-//                            JSONObject jObj = new JSONObject(response);
-//
-//                            String idx = jObj.getString("id");
-//                            String kdobatx = jObj.getString("kode_obat");
-//                            String nmobatx = jObj.getString("nama_obat");
-//                            String satuanx = jObj.getString("satuan_obat");
-//                            String jumlahx = jObj.getString("jumlah");
-//                            String expiredx = jObj.getString("expired");
-//
-//                            DialogForm(idx, kdobatx, nmobatx, satuanx, jumlahx, expiredx, "UPDATE");
-//
-//                            adapter.notifyDataSetChanged();
-//
-//                        }catch (JSONException e) {
-//                            // JSON error
-//                            e.printStackTrace();
-//                        }
-//
-//
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(MainActivity.this, "gagal koneksi ke server, cek setingan koneksi anda", Toast.LENGTH_LONG).show();
-//            }
-//        }){
-//
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                // Posting parameters ke post url
-//                Map<String, String> params = new HashMap<String, String>();
-//
-//
-//                params.put("id", id );
-//                return params;
-//            }
-//
-//        };
-//        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-//        queue.add(stringRequest);
-//    }
     private void hapus(String id){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ServerAPI.URL_DELETE_Obat,
                 new Response.Listener<String>() {
