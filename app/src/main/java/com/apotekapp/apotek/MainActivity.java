@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                        }
                    }
         );
+
+        // Fungsi saat listview diklik
+
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -111,49 +114,18 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             }
         });
 
-
-
     }
 
-    private void insertDataObat() {
-        Intent intent = new Intent(MainActivity.this, CreateDataObat.class);
-        startActivity(intent);
-    }
 
-    private void ShowDataObat(int position) {
-
-        final DataObat obat =   itemList.get(position);
-        Intent  DetailObat  =   new Intent(MainActivity.this, DetailObatActivity.class);
-        DetailObat.putExtra("nama_obat", obat.getNmobat());
-        DetailObat.putExtra("satuan_obat", obat.getSatuan());
-        DetailObat.putExtra("jumlah", obat.getJumlah());
-        DetailObat.putExtra("desc", obat.getDesc());
-        DetailObat.putExtra("expired", obat.getExpired());
-        startActivity(DetailObat);
-
-
-    }
-
-    private void editDataObat (int position) {
-        final DataObat obat =   itemList.get(position);
-        Intent DataObat =   new Intent(MainActivity.this, UpdateDataObat.class);
-        DataObat.putExtra("idobat", obat.getId());
-        DataObat.putExtra("kodeobat", obat.getKdobat());
-        DataObat.putExtra("namaobat", obat.getNmobat());
-        DataObat.putExtra("satuanobat", obat.getSatuan());
-        DataObat.putExtra("jumlahobat", obat.getJumlah());
-        DataObat.putExtra("descobat", obat.getDesc());
-        DataObat.putExtra("expireddate", obat.getExpired());
-        startActivity(DataObat);
-
-    }
+    // Memanggil method callVolley
 
     @Override
     public void onRefresh() {
-      //  itemList.clear();
-      //  adapter.notifyDataSetChanged();
         callVolley();
     }
+
+    // Method untuk memanggil data json menggunakan volley
+
     private void callVolley() {
         itemList.clear();
         adapter.notifyDataSetChanged();
@@ -200,11 +172,51 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         });
 
         // menambah request ke request queue
+
         RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         mRequestQueue.add(jArr);
 
     }
 
+    // Method untuk pindah ke activity createdataobat
+
+    private void insertDataObat() {
+        Intent intent = new Intent(MainActivity.this, CreateDataObat.class);
+        startActivity(intent);
+    }
+
+    // Method untuk pindah ke activity detailobat
+
+    private void ShowDataObat(int position) {
+
+        final DataObat obat =   itemList.get(position);
+        Intent  DetailObat  =   new Intent(MainActivity.this, DetailObatActivity.class);
+        DetailObat.putExtra("nama_obat", obat.getNmobat());
+        DetailObat.putExtra("satuan_obat", obat.getSatuan());
+        DetailObat.putExtra("jumlah", obat.getJumlah());
+        DetailObat.putExtra("desc", obat.getDesc());
+        DetailObat.putExtra("expired", obat.getExpired());
+        startActivity(DetailObat);
+    }
+
+    // Method untuk pindah ke activity updatedataobat dan membawa data menggunakan intent
+
+    private void editDataObat (int position) {
+        final DataObat obat =   itemList.get(position);
+        Intent DataObat =   new Intent(MainActivity.this, UpdateDataObat.class);
+        DataObat.putExtra("idobat", obat.getId());
+        DataObat.putExtra("kodeobat", obat.getKdobat());
+        DataObat.putExtra("namaobat", obat.getNmobat());
+        DataObat.putExtra("satuanobat", obat.getSatuan());
+        DataObat.putExtra("jumlahobat", obat.getJumlah());
+        DataObat.putExtra("descobat", obat.getDesc());
+        DataObat.putExtra("expireddate", obat.getExpired());
+        startActivity(DataObat);
+
+    }
+
+
+    // Method untuk menghapus data apotek
 
     private void hapus(String id){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ServerAPI.URL_DELETE_Obat,
@@ -236,206 +248,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(stringRequest);
     }
-    private void lihat(String id){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, ServerAPI.URL_Update_Obat,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jObj = new JSONObject(response);
-
-                            String idx = jObj.getString("id");
-                            String kdobatx = jObj.getString("kode_obat");
-                            String nmobatx = jObj.getString("nama_obat");
-                            String satuanx = jObj.getString("satuan_obat");
-                            String jumlahx = jObj.getString("jumlah");
-                            String expiredx = jObj.getString("expired");
-
-                            DialogFormLihat(idx, kdobatx, nmobatx, satuanx, jumlahx, expiredx);
-
-                            adapter.notifyDataSetChanged();
-
-                        }catch (JSONException e) {
-                            // JSON error
-                            e.printStackTrace();
-                        }
-
-                        tid.setEnabled(false);
-                        tkdobat.setEnabled(false);
-                        tnmobat.setEnabled(false);
-                        tsatuan.setEnabled(false);
-                        tjumlah.setEnabled(false);
-                        texpired.setEnabled(false);
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "gagal koneksi ke server, cek setingan koneksi anda", Toast.LENGTH_LONG).show();
-            }
-        }){
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                // Posting parameters ke post url
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("id", id );
-                return params;
-            }
-
-        };
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        queue.add(stringRequest);
-    }
-
-    void simpan(){
 
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, ServerAPI.URL_Create_Obat,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        callVolley();
-                        Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "gagal koneksi ke server, cek setingan koneksi anda", Toast.LENGTH_LONG).show();
-            }
-        })
-        {
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                // Posting parameters ke post url
-                Map<String, String> params = new HashMap<String, String>();
-
-                if (id.isEmpty()) {
-                    params.put("kode_obat", kdobat);
-                    params.put("nama_obat", nmobat);
-                    params.put("satuan_obat", satuan);
-                    params.put("jumlah", jumlah);
-                    params.put("expired", expired);
-                    return params;
-                }else{
-                    params.put("id", id);
-                    params.put("kode_obat", kdobat);
-                    params.put("nama_obat", nmobat);
-                    params.put("satuan_obat", satuan);
-                    params.put("jumlah", jumlah);
-                    params.put("expired", expired);
-                    return params;
-                }
-            }
-
-        };
-        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        queue.add(stringRequest);
-
-
-    }
-    private void DialogForm(String idx, String kdbrgx, String nmbrgx, String hrgbelix, String hrgjualx , String stokx, String button) {
-        dialog = new AlertDialog.Builder(MainActivity.this);
-        inflater = getLayoutInflater();
-        dialogView = inflater.inflate(R.layout.form_barang, null);
-        dialog.setView(dialogView);
-        dialog.setCancelable(true);
-        dialog.setIcon(R.drawable.delivery);
-        dialog.setTitle("Data Obat");
-
-        tid = (EditText) dialogView.findViewById(R.id.inId);
-        tkdobat = (EditText) dialogView.findViewById(R.id.inKdObat);
-        tnmobat = (EditText) dialogView.findViewById(R.id.inNmObat);
-        tsatuan = (EditText) dialogView.findViewById(R.id.inSatuan);
-        tjumlah = (EditText) dialogView.findViewById(R.id.inJumlah);
-        texpired = (EditText) dialogView.findViewById(R.id.inExpired);
-
-        if (!idx.isEmpty()) {
-            tid.setText(idx);
-            tkdobat.setText(kdbrgx);
-            tnmobat.setText(nmbrgx);
-            tsatuan.setText(hrgbelix);
-            tjumlah.setText(hrgjualx);
-            texpired.setText(stokx);
-        } else {
-            kosong();
-        }
-
-        dialog.setPositiveButton(button, new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                id = tid.getText().toString();
-                kdobat = tkdobat.getText().toString();
-                nmobat = tnmobat.getText().toString();
-                satuan = tsatuan.getText().toString();
-                jumlah = tjumlah.getText().toString();
-                expired= texpired.getText().toString();
-                simpan();
-
-                dialog.dismiss();
-            }
-        });
-
-        dialog.setNegativeButton("BATAL", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                kosong();
-            }
-        });
-
-        dialog.show();
-
-    }
-
-    private void DialogFormLihat(String idx, String kdbrgx, String nmbrgx, String hrgbelix, String hrgjualx , String stokx) {
-        dialog = new AlertDialog.Builder(MainActivity.this);
-        inflater = getLayoutInflater();
-        dialogView = inflater.inflate(R.layout.form_barang, null);
-        dialog.setView(dialogView);
-        dialog.setCancelable(true);
-        dialog.setIcon(R.drawable.delivery);
-        dialog.setTitle("Data Barang");
-
-        tid = (EditText) dialogView.findViewById(R.id.inId);
-        tkdobat = (EditText) dialogView.findViewById(R.id.inKdObat);
-        tnmobat = (EditText) dialogView.findViewById(R.id.inNmObat);
-        tsatuan = (EditText) dialogView.findViewById(R.id.inSatuan);
-        tjumlah = (EditText) dialogView.findViewById(R.id.inJumlah);
-        texpired = (EditText) dialogView.findViewById(R.id.inExpired);
-
-        if (!idx.isEmpty()) {
-            tid.setText(idx);
-            tkdobat.setText(kdbrgx);
-            tnmobat.setText(nmbrgx);
-            tsatuan.setText(hrgbelix);
-            tjumlah.setText(hrgjualx);
-            texpired.setText(stokx);
-        } else {
-            kosong();
-        }
-
-        dialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                kosong();
-            }
-        });
-
-        dialog.show();
-
-    }
-    private void kosong() {
-        tid.setText(null);
-        tkdobat.setText(null);
-        tnmobat.setText(null);
-        tsatuan.setText(null);
-        tjumlah.setText(null);
-        texpired.setText(null);
-    }
 }
