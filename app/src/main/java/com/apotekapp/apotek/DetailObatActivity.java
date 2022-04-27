@@ -28,7 +28,7 @@ public class DetailObatActivity extends AppCompatActivity {
 
 
 
-        // Memanggil intent dan mengambil text yang telah dikirim dari MainActivity
+        // Memanggil intent dan mengambil text yang telah dikirim dari ObatActvity
         // menggunakan intent
 
         Intent intent       =   getIntent();
@@ -39,7 +39,7 @@ public class DetailObatActivity extends AppCompatActivity {
         this.expired        =   intent.getStringExtra("expired");
 
 
-        // Mengatur agar tiap textview memiliki text data yang dikirim dari MainActivity
+        // Settext menggunakan data yang telah di dapatkan dari intent
 
         tv_detNamaObat.setText(namaObat);
         tv_detSatuanObat.setText(satuanObat);

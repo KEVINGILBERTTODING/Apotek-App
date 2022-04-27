@@ -1,4 +1,4 @@
-package com.apotekapp.apotek;
+package com.apotekapp.apotek.Model;
 
 public class DataObat {
     private String id, kdobat, nmobat, satuan, jumlah, desc, expired;

@@ -11,9 +11,19 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        // Function untuk menyembunyikan status bar
+
+        View windowDecorView = getWindow().getDecorView();
+        windowDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
+        // Function untuk hide navigation bar
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         Thread thread= new Thread(){
             public void run(){
                 try {
@@ -21,7 +31,7 @@ public class SplashScreen extends AppCompatActivity {
                 } catch (InterruptedException e){
                     e.printStackTrace();
                 } finally {
-                    Intent goToMainActivity = new Intent(SplashScreen.this, MainActivity.class);
+                    Intent goToMainActivity = new Intent(SplashScreen.this, ApotekerActivity.class);
                     startActivity(goToMainActivity);
                     finish();
                 }

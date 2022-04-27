@@ -1,4 +1,4 @@
-package com.apotekapp.apotek;
+package com.apotekapp.apotek.Model;
 
 public class DataApoteker {
 

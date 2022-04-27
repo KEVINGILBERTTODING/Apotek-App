@@ -1,4 +1,4 @@
-package com.apotekapp.apotek;
+package com.apotekapp.apotek.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.apotekapp.apotek.Model.DataObat;
+import com.apotekapp.apotek.R;
 
 import java.util.List;
 
@@ -41,7 +44,7 @@ public class ObatAdapter extends BaseAdapter {
         if (inflater == null)
             inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        if (convertView == null) convertView = inflater.inflate(R.layout.list, null);
+        if (convertView == null) convertView = inflater.inflate(R.layout.list_obat, null);
 
 
 

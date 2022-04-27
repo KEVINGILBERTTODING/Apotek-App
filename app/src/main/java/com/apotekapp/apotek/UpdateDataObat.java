@@ -13,7 +13,7 @@ import java.util.Calendar;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.apotekapp.apotek.utill.ServerAPI;
+import com.apotekapp.apotek.Utill.ServerAPI;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class UpdateDataObat extends  MainActivity {
+public class UpdateDataObat extends ObatActivity {
 
 
     ProgressDialog progressDialog;
@@ -34,7 +34,7 @@ public class UpdateDataObat extends  MainActivity {
 
     String idObat, kodeObat, namaObat, satuanObat, jumlahObat, deskripsiObat, expiredDate;
 
-     //String untuk hashmap
+    //String untuk hashmap
      String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xdeskripsiobat, xexpiredate;
 
     @Override
@@ -127,7 +127,7 @@ public class UpdateDataObat extends  MainActivity {
                     public void onResponse(String response) {
 
                         Toast.makeText(UpdateDataObat.this, "Berhasil memperbarui Data Obat", Toast.LENGTH_LONG).show();
-                        Intent intent   =   new Intent(UpdateDataObat.this, MainActivity.class);
+                        Intent intent   =   new Intent(UpdateDataObat.this, ObatActivity.class);
                         startActivity(intent);
                     }
 

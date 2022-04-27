@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateDataApoteker">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID Apoteker"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_idApoteker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Id Apoteker"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_namaApoteker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kota"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_kotaApoteker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kota"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telephone"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_nohpApoteker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telephone"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shift"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_shiftApoteker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Shift"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:fontFamily="@font/popsem"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/updt_alamatApoteker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alamat"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:background="@color/main"
+            android:textColor="@color/white"
+            android:onClick="UpdateApoteker"
+            android:fontFamily="@font/popsem"
+            />
+
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

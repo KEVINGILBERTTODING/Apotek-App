@@ -11,10 +11,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".AppController"
         android:theme="@style/Theme.SelectVolley"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".UpdateDataApoteker"
+            android:exported="true" />
+        <activity
+            android:name=".DetailApotekerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CreateDataApoteker"
+            android:exported="true" />
+        <activity
+            android:name=".ApotekerActivity"
+            android:exported="true" />
         <activity
             android:name=".UpdateDataObat"
             android:exported="true" />
@@ -25,7 +35,7 @@
             android:name=".DetailObatActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ObatActivity"
             android:exported="true" />
         <activity android:name=".SplashScreen">
             <intent-filter>
@@ -35,6 +45,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>
