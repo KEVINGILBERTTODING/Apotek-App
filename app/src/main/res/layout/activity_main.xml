@@ -1,75 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/container"
-    tools:context=".ObatActivity">
+    tools:context=".MainActivity">
 
-    <RelativeLayout
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp"-->
+<!--        >-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="400dp"-->
+<!--            android:background="@color/main"-->
+<!--            />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Hi Diana"-->
+<!--            />-->
+
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Lihat"-->
+<!--            android:layout_gravity="center"-->
+<!--            />-->
+
+
+<!--    </FrameLayout>-->
+<!--    -->
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/content1">
-
-        <TextView
-            android:id="@+id/tvTitle1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/popmed"
-            android:text="Hi, Nafisa Khally!"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tvTitle2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apakah Ada Obat Baru?"
-            android:textColor="@color/white"
-            android:fontFamily="@font/popsem"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_below="@+id/tvTitle1"/>
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/avatar"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/tvTitle2"
-            android:layout_marginTop="50dp"
-            />
-    </RelativeLayout>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
-        android:layout_width="wrap_content"
-
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp">
-
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@null"
-            android:dividerHeight="2dp" />
+        >
 
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAdd"
-        android:layout_width="wrap_content"
+
+    <xyz.sahildave.arclayout.ArcLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/arc_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/main"
-        android:layout_margin="20dp" />
+        app:arc_cropCurve="cropConvex"
+        app:arc_height="48dp"
+        app:arc_position="bottom">
 
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/main"
+
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:queryBackground="@drawable/content3"
+                        android:queryHint="Search"
+                        android:iconifiedByDefault="false"
+                        android:gravity="center"
+                        android:background="@drawable/content3"
+>
+
+                    </SearchView>
+
+
+                </LinearLayout>
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+
+    </xyz.sahildave.arclayout.ArcLayout>
+    </FrameLayout>
 
 </RelativeLayout>

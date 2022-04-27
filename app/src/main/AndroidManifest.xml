@@ -14,6 +14,9 @@
         android:theme="@style/Theme.SelectVolley"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".UpdateDataApoteker"
             android:exported="true" />
         <activity

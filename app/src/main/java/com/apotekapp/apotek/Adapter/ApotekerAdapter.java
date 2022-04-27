@@ -6,23 +6,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
 import android.widget.TextView;
 
+import com.apotekapp.apotek.ApotekerActivity;
 import com.apotekapp.apotek.Model.DataApoteker;
 import com.apotekapp.apotek.Model.DataObat;
 import com.apotekapp.apotek.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ApotekerAdapter extends BaseAdapter {
+
     Activity activity;
-    List<DataApoteker> items;
+    private   List<DataApoteker> items;
     private LayoutInflater inflater;
+    private  ArrayList<DataApoteker> arrayList;
 
     public ApotekerAdapter(Activity activity, List<DataApoteker> items) {
-        this.activity   =   activity;
+        this.activity= activity;
         this.items      = items;
+        this.arrayList  =   new ArrayList<>();
+        this.arrayList.addAll(items);
     }
+
 
 
     @Override
@@ -74,6 +83,30 @@ public class ApotekerAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        items.clear();
+
+        if (charText.length() == 0) {
+            items.addAll(arrayList);
+        } else {
+            for (DataApoteker an : arrayList) {
+                if (an.getNm_apoteker().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    items.add(an);
+                }
+
+            }
+        }
+        notifyDataSetChanged();
+
+    }
+
+    public void updateSearchedList() {
+
+        arrayList.addAll(items);
+    }
+
 
 
 }

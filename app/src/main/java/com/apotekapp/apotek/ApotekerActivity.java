@@ -2,11 +2,15 @@ package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -34,9 +38,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ApotekerActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class ApotekerActivity extends AppCompatActivity implements  SwipeRefreshLayout.OnRefreshListener {
 
     ListView list;
+    SearchView searchView;
     AlertDialog.Builder dialog;
     SwipeRefreshLayout swipe;
     List<DataApoteker> itemList = new ArrayList<DataApoteker>();
@@ -48,6 +53,8 @@ public class ApotekerActivity extends AppCompatActivity implements SwipeRefreshL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apoteker);
+
+
 
         swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
         list = (ListView) findViewById(R.id.list_apoteker);
@@ -65,6 +72,8 @@ public class ApotekerActivity extends AppCompatActivity implements SwipeRefreshL
 
         adapter = new ApotekerAdapter(ApotekerActivity.this, itemList);
         list.setAdapter(adapter);
+
+
 
 
         swipe.setOnRefreshListener(this);
@@ -158,6 +167,8 @@ public class ApotekerActivity extends AppCompatActivity implements SwipeRefreshL
 
                 // notifikasi adanya perubahan data pada adapter
                 adapter.notifyDataSetChanged();
+
+                adapter.updateSearchedList();
 
                 swipe.setRefreshing(false);
             }
@@ -255,5 +266,31 @@ public class ApotekerActivity extends AppCompatActivity implements SwipeRefreshL
         queue.add(stringRequest);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+
+        MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if (TextUtils.isEmpty(s)) {
+                    adapter.filter("");
+                    list.clearTextFilter();
+                } else {
+                    adapter.filter(s);
+                }
+                adapter.filter(s);
+                return true;
+            }
+        });
+        return true;
+    }
 }

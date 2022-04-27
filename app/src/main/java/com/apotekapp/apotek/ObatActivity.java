@@ -47,7 +47,7 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_obat);
 
         swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
         list = (ListView) findViewById(R.id.list);
