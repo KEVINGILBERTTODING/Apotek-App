@@ -8,20 +8,26 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.apotekapp.apotek.Model.DataApoteker;
 import com.apotekapp.apotek.Model.DataObat;
 import com.apotekapp.apotek.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ObatAdapter extends BaseAdapter {
-    Activity activity;
-    List<DataObat> items;
-    private LayoutInflater inflater;
+    Activity    activity;
+    private     List<DataObat> items;
+    private     LayoutInflater inflater;
+    private     ArrayList<DataObat> arrayList;
 
 
     public ObatAdapter(Activity activity, List<DataObat> items) {
         this.activity = activity;
         this.items = items;
+        this.arrayList  =  new ArrayList<>();
+        this.arrayList.addAll(items);
     }
 
     @Override
@@ -41,6 +47,7 @@ public class ObatAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if (inflater == null)
             inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -50,12 +57,12 @@ public class ObatAdapter extends BaseAdapter {
 
         // Deklarasi TextView
 
-        TextView idobat = (TextView) convertView.findViewById(R.id.id_obat);
-        TextView kdobat = (TextView) convertView.findViewById(R.id.kd_obat);
-        TextView nmobat = (TextView) convertView.findViewById(R.id.nm_obat);
-        TextView satuan = (TextView) convertView.findViewById(R.id.satuan);
-        TextView jumlah = (TextView) convertView.findViewById(R.id.jumlah);
-        TextView expired = (TextView) convertView.findViewById(R.id.expired);
+        TextView idobat     = (TextView) convertView.findViewById(R.id.id_obat);
+        TextView kdobat     = (TextView) convertView.findViewById(R.id.kd_obat);
+        TextView nmobat     = (TextView) convertView.findViewById(R.id.nm_obat);
+        TextView satuan     = (TextView) convertView.findViewById(R.id.satuan);
+        TextView jumlah     = (TextView) convertView.findViewById(R.id.jumlah);
+        TextView expired    = (TextView) convertView.findViewById(R.id.expired);
 
         DataObat dataObat = items.get(position);
 
@@ -69,6 +76,31 @@ public class ObatAdapter extends BaseAdapter {
         expired.setText(dataObat.getExpired());
 
         return convertView;
+    }
+
+    // Method untuk filter nama apoteker di searchview
+
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        items.clear();
+
+        if (charText.length() == 0) {
+            items.addAll(arrayList);
+        } else {
+            for (DataObat an : arrayList) {
+                if (an.getNmobat().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    items.add(an);
+                }
+
+            }
+        }
+        notifyDataSetChanged();
+
+    }
+
+    public void updateSearchedList() {
+
+        arrayList.addAll(items);
     }
 
 

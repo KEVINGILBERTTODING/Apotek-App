@@ -2,11 +2,13 @@ package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -42,6 +44,9 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
     List<DataObat> itemList = new ArrayList<DataObat>();
     ObatAdapter adapter;
     FloatingActionButton fab;
+    SearchView searchView;
+    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +54,14 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_obat);
 
-        swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
-        list = (ListView) findViewById(R.id.list);
-        fab = (FloatingActionButton) findViewById(R.id.fabAdd);
+        // Inisialisasi searchview, swipe, listview, and floating action button
+
+        searchView  =   (SearchView) findViewById(R.id.search_barObat);
+        swipe       = (SwipeRefreshLayout) findViewById(R.id.swipe);
+        list        = (ListView) findViewById(R.id.list);
+        fab         = (FloatingActionButton) findViewById(R.id.fabAdd);
+
+
 
         // Fungsi ketika button + diklik
 
@@ -62,10 +72,14 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
             }
         });
 
+
+
         adapter = new ObatAdapter(ObatActivity.this, itemList);
         list.setAdapter(adapter);
 
         swipe.setOnRefreshListener(this);
+
+
 
         // Fungsi ketika data refresh
 
@@ -83,6 +97,7 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         // Fungsi saat listview diklik
 
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 final String idx = itemList.get(position).getId();
@@ -112,6 +127,32 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
             }
         });
 
+
+
+        // Fungsi saat memasukkan kata pencarian pada searchview
+
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if (TextUtils.isEmpty(s)) {
+                    adapter.filter("");
+                    list.clearTextFilter();
+                } else {
+                    adapter.filter(s);
+                }
+                adapter.filter(s);
+                return true;
+
+            }
+        });
+
     }
 
 
@@ -122,7 +163,10 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         callVolley();
     }
 
+
+
     // Method untuk memanggil data json menggunakan volley
+
 
     private void callVolley() {
         itemList.clear();
@@ -156,7 +200,12 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
                 }
 
                 // notifikasi adanya perubahan data pada adapter
+
                 adapter.notifyDataSetChanged();
+
+                // Memanggil method updateSearchList paa ApotekerAdapter
+
+                adapter.updateSearchedList();
 
                 swipe.setRefreshing(false);
             }
@@ -176,12 +225,15 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     }
 
+
     // Method untuk pindah ke activity createdataobat
 
     private void insertDataObat() {
         Intent intent = new Intent(ObatActivity.this, CreateDataObat.class);
         startActivity(intent);
     }
+
+
 
     // Method untuk pindah ke activity detailobat
 
@@ -246,6 +298,40 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(stringRequest);
     }
+
+
+
+    // *** Uncomment this method if u prefer using serchview in toolbar ***
+
+    // Method untuk Menambahkan searchView pada toolbar, serta filter nama apoteker
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        getMenuInflater().inflate(R.menu.search_menu, menu);
+//
+//        MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+//        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                if (TextUtils.isEmpty(s)) {
+//                    adapter.filter("");
+//                    list.clearTextFilter();
+//                } else {
+//                    adapter.filter(s);
+//                }
+//                adapter.filter(s);
+//                return true;
+//            }
+//        });
+//        return true;
+//    }
 
 
 }

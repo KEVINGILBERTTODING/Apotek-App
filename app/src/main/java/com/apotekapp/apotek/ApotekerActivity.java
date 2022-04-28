@@ -191,7 +191,7 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
                 // notifikasi adanya perubahan data pada adapter
                 adapter.notifyDataSetChanged();
 
-                // Mmemanggil method updateSearchList paa ApotekerAdapter
+                // Memanggil method updateSearchList paa ApotekerAdapter
 
                 adapter.updateSearchedList();
 
@@ -293,7 +293,7 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
 
 
 
-    // *** Uncommnet this method if u prefer using serchview in toolbar ***
+    // *** Uncomment this method if u prefer using serchview in toolbar ***
 
     // Method untuk Menambahkan searchView pada toolbar, serta filter nama apoteker
 

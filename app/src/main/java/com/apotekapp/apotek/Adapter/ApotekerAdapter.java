@@ -20,15 +20,15 @@ import java.util.Locale;
 
 public class ApotekerAdapter extends BaseAdapter {
 
-    Activity activity;
-    private   List<DataApoteker> items;
-    private LayoutInflater inflater;
-    private  ArrayList<DataApoteker> arrayList;
+    Activity    activity;
+    private     List<DataApoteker> items;
+    private     LayoutInflater inflater;
+    private     ArrayList<DataApoteker> arrayList;
 
     public ApotekerAdapter(Activity activity, List<DataApoteker> items) {
-        this.activity= activity;
+        this.activity   = activity;
         this.items      = items;
-        this.arrayList  =   new ArrayList<>();
+        this.arrayList  = new ArrayList<>();
         this.arrayList.addAll(items);
     }
 
@@ -60,13 +60,13 @@ public class ApotekerAdapter extends BaseAdapter {
 
         // Deklarasi TextView
 
-        TextView id = (TextView) convertView.findViewById(R.id.txt_id);
-        TextView id_apoteker = (TextView) convertView.findViewById(R.id.txt_id_apoteker);
-        TextView nama_apoteker = (TextView) convertView.findViewById(R.id.txt_nama_apoteker);
-        TextView kota_apoteker = (TextView) convertView.findViewById(R.id.txt_kota_apoteker);
-        TextView nohp_apoteker = (TextView) convertView.findViewById(R.id.txt_noHp_apoteker);
-        TextView shift_apoteker = (TextView) convertView.findViewById(R.id.txt_shift_apoteker);
-        TextView alamat_apoteker = (TextView) convertView.findViewById(R.id.txt_alamat_apoteker);
+        TextView id                 = (TextView) convertView.findViewById(R.id.txt_id);
+        TextView id_apoteker        = (TextView) convertView.findViewById(R.id.txt_id_apoteker);
+        TextView nama_apoteker      = (TextView) convertView.findViewById(R.id.txt_nama_apoteker);
+        TextView kota_apoteker      = (TextView) convertView.findViewById(R.id.txt_kota_apoteker);
+        TextView nohp_apoteker      = (TextView) convertView.findViewById(R.id.txt_noHp_apoteker);
+        TextView shift_apoteker     = (TextView) convertView.findViewById(R.id.txt_shift_apoteker);
+        TextView alamat_apoteker    = (TextView) convertView.findViewById(R.id.txt_alamat_apoteker);
 
         DataApoteker dataApoteker = items.get(position);
 
