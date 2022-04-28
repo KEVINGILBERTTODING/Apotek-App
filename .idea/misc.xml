@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/cardContainer.xml" value="0.5" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/cardcontainer.xml" value="0.27870370370370373" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/content2.xml" value="0.35208333333333336" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/content3.xml" value="0.35208333333333336" />
-        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_apoteker.xml" value="0.33177083333333335" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/test.xml" value="0.9" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/wave.xml" value="0.2861111111111111" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_apoteker.xml" value="0.33" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_create_data_apoteker.xml" value="0.33177083333333335" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_create_data_obat.xml" value="0.3265625" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_detail_apoteker.xml" value="0.31354166666666666" />
@@ -13,6 +17,7 @@
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_edit_data_obat.xml" value="0.3265625" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_main2.xml" value="0.33177083333333335" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_obat.xml" value="0.25" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.33177083333333335" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_update_data_apoteker.xml" value="0.33177083333333335" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/form_barang.xml" value="0.33177083333333335" />

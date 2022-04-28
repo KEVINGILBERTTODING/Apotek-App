@@ -7,86 +7,99 @@
     android:background="@color/container"
     tools:context=".ApotekerActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/frmHeader"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/wave"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                >
+
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/popmed"
+                    android:text="Halo, Diana Thamara!"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apakah Ada Apoteker Baru?"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/popsem"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/tvTitle1"/>
+
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTitle2"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/content3"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@drawable/content3"
+                    app:queryHint="Cari nama apoteker..." />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/content1">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frmHeader">
 
-        <TextView
-            android:id="@+id/tvTitle1"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/list_apoteker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:dividerHeight="2dp" />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_apoteker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/popmed"
-            android:text="Hi, Nafisa Khally!"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tvTitle2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apakah Ada Apoteker Baru?"
-            android:textColor="@color/white"
-            android:fontFamily="@font/popsem"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_below="@+id/tvTitle1"/>
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/avatar"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/tvTitle2"
-            android:layout_marginTop="50dp"
-            />
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTitle2"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/content3"
-            app:iconifiedByDefault="false"
-            app:queryBackground="@drawable/content3"
-            app:queryHint="Search" />
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/main" />
+
     </RelativeLayout>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="250dp">
-
-        <ListView
-            android:id="@+id/list_apoteker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@null"
-            android:dividerHeight="2dp" />
-
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_apoteker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/main" />
 
 
 </RelativeLayout>

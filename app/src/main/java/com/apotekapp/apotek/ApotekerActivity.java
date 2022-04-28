@@ -54,12 +54,12 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apoteker);
 
+        // Inisialisasi searchview, swipe, listview, and floating action button
 
-
-        swipe = (SwipeRefreshLayout) findViewById(R.id.swipe);
-        list = (ListView) findViewById(R.id.list_apoteker);
-
-        fab = (FloatingActionButton) findViewById(R.id.add_apoteker);
+        searchView  =   (SearchView) findViewById(R.id.search_bar);
+        swipe       =   (SwipeRefreshLayout) findViewById(R.id.swipe);
+        list        =   (ListView) findViewById(R.id.list_apoteker);
+        fab         =   (FloatingActionButton) findViewById(R.id.add_apoteker);
 
         // Fungsi ketika button + diklik
 
@@ -70,11 +70,10 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
             }
         });
 
+        // Membuat object
+
         adapter = new ApotekerAdapter(ApotekerActivity.this, itemList);
         list.setAdapter(adapter);
-
-
-
 
         swipe.setOnRefreshListener(this);
 
@@ -119,6 +118,30 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
                     }
                 }).show();
                 return false;
+            }
+        });
+
+
+
+        // Fungsi saat memasukkan kata pencarian pada searchview
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if (TextUtils.isEmpty(s)) {
+                    adapter.filter("");
+                    list.clearTextFilter();
+                } else {
+                    adapter.filter(s);
+                }
+                adapter.filter(s);
+                return true;
+
             }
         });
 
@@ -167,6 +190,8 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
 
                 // notifikasi adanya perubahan data pada adapter
                 adapter.notifyDataSetChanged();
+
+                // Mmemanggil method updateSearchList paa ApotekerAdapter
 
                 adapter.updateSearchedList();
 
@@ -266,31 +291,37 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
         queue.add(stringRequest);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.search_menu, menu);
 
-        MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
+    // *** Uncommnet this method if u prefer using serchview in toolbar ***
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-                if (TextUtils.isEmpty(s)) {
-                    adapter.filter("");
-                    list.clearTextFilter();
-                } else {
-                    adapter.filter(s);
-                }
-                adapter.filter(s);
-                return true;
-            }
-        });
-        return true;
-    }
+    // Method untuk Menambahkan searchView pada toolbar, serta filter nama apoteker
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        getMenuInflater().inflate(R.menu.search_menu, menu);
+//
+//        MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+//        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                if (TextUtils.isEmpty(s)) {
+//                    adapter.filter("");
+//                    list.clearTextFilter();
+//                } else {
+//                    adapter.filter(s);
+//                }
+//                adapter.filter(s);
+//                return true;
+//            }
+//        });
+//        return true;
+//    }
 }

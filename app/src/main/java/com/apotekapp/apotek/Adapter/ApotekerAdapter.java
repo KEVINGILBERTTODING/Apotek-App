@@ -84,6 +84,8 @@ public class ApotekerAdapter extends BaseAdapter {
         return convertView;
     }
 
+    // Method untuk filter nama apoteker di searchview
+
     public void filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
         items.clear();

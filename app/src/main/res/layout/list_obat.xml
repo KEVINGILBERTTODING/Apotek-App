@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
     >
 
 
@@ -20,7 +19,6 @@
         app:cardUseCompatPadding="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-
         >
 
         <RelativeLayout
@@ -28,6 +26,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
+            android:background="@drawable/cardcontainer"
             >
 
 
