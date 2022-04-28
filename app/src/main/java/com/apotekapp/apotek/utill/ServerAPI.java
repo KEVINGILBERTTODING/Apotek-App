@@ -10,10 +10,14 @@ public class ServerAPI {
     public static final String URL_Update_Obat = "http://192.168.11.19/apotek/obat/update.php";
 
 
-    // Server API untuk data com.apotekapp.apotek.Apoteker
+    // Server API untuk data apoteker
     public static final String URL_Read_Apoteker = "http://192.168.11.19/apotek/apoteker/read.php";
     public static final String URL_Create_Apoteker = "http://192.168.11.19/apotek/apoteker/create.php";
     public static final String URL_DELETE_Apoteker = "http://192.168.11.19/apotek/apoteker/delete.php";
     public static final String URL_Update_Apoteker = "http://192.168.11.19/apotek/apoteker/update.php";
+
+    // Server API untuk data users
+    public static final String URL_Login = "http://192.168.11.19/apotek/users/login.php";
+    public static final String URL_Register = "http://192.168.11.19/apotek/users/register.php";
 
 }

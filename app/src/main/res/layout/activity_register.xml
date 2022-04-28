@@ -1,9 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginLeft="-100dp"
+        android:layout_marginRight="-100dp" >
+    </RelativeLayout>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/header_register"-->
+<!--        android:layout_width="450dp"-->
+<!--        android:layout_height="450dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="30dp" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:textSize="35sp"
+            android:fontFamily="@font/popsem"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtfild_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:startIconDrawable="@drawable/usericon"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            android:textColor="@color/black"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="@font/popmed"
+                android:textColor="@color/black"
+                android:hint="Username">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtfild_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            android:textColor="@color/black"
+            app:startIconDrawable="@drawable/lock"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/popmed"
+                android:inputType="textPassword">
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtfild_password_conf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="10dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            android:textColor="@color/black"
+            app:startIconDrawable="@drawable/lock"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_pass_conf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/popmed"
+                android:inputType="textPassword">
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By signing up, you’re agree to our"
+                android:textColor="@color/black"
+                android:fontFamily="@font/popmed"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terms and Conditions"
+                android:textStyle="bold"
+                android:fontFamily="@font/popsem"
+                android:textColor="@color/main"
+                android:textSize="15dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="and Privacy Policy"
+            android:textStyle="bold"
+            android:fontFamily="@font/popsem"
+            android:textColor="@color/main"
+            android:textSize="15dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_register"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:cornerRadius="20dp"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/popsem"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah Punya Akun?"
+                android:textColor="@color/black"
+                android:fontFamily="@font/popmed"
+                android:textSize="15dp"/>
+            <TextView
+                android:id="@+id/tv_ToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Masuk"
+                android:textStyle="bold"
+                android:fontFamily="@font/popsem"
+                android:textColor="@color/main"
+                android:textSize="15dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

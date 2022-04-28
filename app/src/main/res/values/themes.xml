@@ -29,4 +29,36 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+    <!--    Style untuk halaman Login Screen-->
+    <style name="Theme.LoginScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimaryVariant">@color/main</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/main</item>
+        <item name="colorSecondaryVariant">@color/main</item>
+        <item name="colorOnSecondary">@color/main</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--    Style untuk halaman Register Screen-->
+    <style name="Theme.Register" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimaryVariant">@color/main</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/main</item>
+        <item name="colorSecondaryVariant">@color/main</item>
+        <item name="colorOnSecondary">@color/main</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
 </resources>

@@ -69,29 +69,31 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="40dp"
+                android:layout_margin="20dp"
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     >
 
 
-                    <SearchView
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_UserName"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/white"
-                        android:queryBackground="@drawable/content3"
-                        android:queryHint="Search"
-                        android:iconifiedByDefault="false"
-                        android:gravity="center"
-                        android:background="@drawable/content3"
->
+                        android:fontFamily="@font/popmed"
+                        android:text="Halo, Kevin Toding!"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
 
-                    </SearchView>
-
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/handbye"
+                        android:layout_marginLeft="10dp"
+                        />
 
                 </LinearLayout>
 
