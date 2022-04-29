@@ -108,12 +108,43 @@
             android:textSize="15sp"
             />
 
-        <EditText
-            android:id="@+id/edt_shiftApoteker"
+        <RadioGroup
+            android:id="@+id/rg_shift"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Shift"
-            />
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Pagi"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:button="@android:color/transparent"
+                android:background="@drawable/radio_selector"
+                android:textColor="@drawable/text_color"
+                android:elevation="5dp"
+                android:fontFamily="@font/popsem"
+                android:padding="5dp"
+                android:layout_margin="16dp"
+                />
+            <RadioButton
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Malam"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:button="@android:color/transparent"
+                android:background="@drawable/radio_selector"
+                android:textColor="@drawable/text_color"
+                android:elevation="5dp"
+                android:fontFamily="@font/popsem"
+                android:padding="5dp"
+                android:layout_margin="16dp"
+                />
+
+        </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"

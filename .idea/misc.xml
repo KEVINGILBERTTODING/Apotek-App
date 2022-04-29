@@ -10,8 +10,12 @@
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/ic_add.xml" value="0.12881944444444443" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2916307161345988" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/person.xml" value="0.12881944444444443" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/radio_normal.xml" value="0.29074074074074074" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/radio_select.xml" value="0.29074074074074074" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/radio_selector.xml" value="0.29074074074074074" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/search.xml" value="0.22361111111111112" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/test.xml" value="0.9" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/text_color.xml" value="0.29074074074074074" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/wave.xml" value="0.2861111111111111" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_apoteker.xml" value="0.33" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_big.xml" value="0.13518518518518519" />

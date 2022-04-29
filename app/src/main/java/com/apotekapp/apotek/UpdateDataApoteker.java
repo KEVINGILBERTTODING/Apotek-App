@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +30,7 @@ public class UpdateDataApoteker extends AppCompatActivity {
 
     String id, id_apoteker, nm_apoteker, kota_apoteker, nohp_apoteker, shift_apoteker, alamat_apoteker;
 
-    EditText updt_id, updt_nama, updt_kota, updt_nohp, updt_shift, updt_alamat;
+    EditText updt_id, updt_nama, updt_kota, updt_nohp, updt_alamat;
 
     //String untuk hashmap
 
@@ -36,19 +38,24 @@ public class UpdateDataApoteker extends AppCompatActivity {
 
     private ImageButton btnBack;
 
+    private RadioGroup rgShift;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_data_apoteker);
 
-        // Definisikan EditText
+        // Inisialisasi EditText
 
         updt_id = findViewById(R.id.updt_idApoteker);
         updt_nama = findViewById(R.id.updt_namaApoteker);
         updt_kota = findViewById(R.id.updt_kotaApoteker);
         updt_nohp = findViewById(R.id.updt_nohpApoteker);
-        updt_shift = findViewById(R.id.updt_shiftApoteker);
         updt_alamat = findViewById(R.id.updt_alamatApoteker);
+
+        // Inisialisasi Radio Group Shift
+
+        rgShift = (RadioGroup) findViewById(R.id.rg_shift);
 
 
 
@@ -71,7 +78,6 @@ public class UpdateDataApoteker extends AppCompatActivity {
         updt_nama.setText(nm_apoteker);
         updt_kota.setText(kota_apoteker);
         updt_nohp.setText(nohp_apoteker);
-        updt_shift.setText(shift_apoteker);
         updt_alamat.setText(alamat_apoteker);
 
         // Inisialisasi button back
@@ -119,6 +125,10 @@ public class UpdateDataApoteker extends AppCompatActivity {
 
                 Map<String, String> params = new HashMap<String, String>();
 
+                int checkedButtonId = rgShift.getCheckedRadioButtonId();
+
+                RadioButton checkedButton = findViewById(checkedButtonId);
+
 
 
                 // Mengambil value dari EditText
@@ -127,7 +137,7 @@ public class UpdateDataApoteker extends AppCompatActivity {
                 xnama           = updt_nama.getText().toString();
                 xkota           = updt_kota.getText().toString();
                 xnohp           = updt_nohp.getText().toString();
-                xshift          = updt_shift.getText().toString();
+                xshift          = checkedButton.getText().toString();
                 xalamat         = updt_alamat.getText().toString();
 
 

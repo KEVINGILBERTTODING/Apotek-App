@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,9 +26,10 @@ import java.util.Map;
 public class CreateDataApoteker extends ApotekerActivity {
 
     String idApoteker, nmApoteker, kotaApoteker, nohpApoteker, shiftApoteker, alamatApoteker;
-    EditText edtIdApoteker, edtNmApoteker, edtKotaApoteker, edtNohpApoteker, edtShiftApoteker, edtAlamatApoteker;
+    EditText edtIdApoteker, edtNmApoteker, edtKotaApoteker, edtNohpApoteker, edtAlamatApoteker;
 
     private ImageButton btnBack;
+    private RadioGroup rgShift;
 
 
     List<DataApoteker> itemList =   new ArrayList<DataApoteker>();
@@ -42,7 +45,6 @@ public class CreateDataApoteker extends ApotekerActivity {
         edtNmApoteker       =   findViewById(R.id.edt_namaApoteker);
         edtKotaApoteker     =   findViewById(R.id.edt_kotaApoteker);
         edtNohpApoteker     =   findViewById(R.id.edt_nohpApoteker);
-        edtShiftApoteker    =   findViewById(R.id.edt_shiftApoteker);
         edtAlamatApoteker   =   findViewById(R.id.edt_alamatApoteker);
 
 
@@ -59,6 +61,19 @@ public class CreateDataApoteker extends ApotekerActivity {
                 startActivity(kembali);
             }
         });
+
+        // Inisialisasi Radio Group Shift
+
+        rgShift = (RadioGroup) findViewById(R.id.rg_shift);
+
+        rgShift.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                String text = ((RadioButton) findViewById(rgShift.getCheckedRadioButtonId())).getText().toString();
+            }
+        });
+
+
 
     }
 
@@ -91,13 +106,17 @@ public class CreateDataApoteker extends ApotekerActivity {
 
                 Map<String, String> params = new HashMap<String, String>();
 
+                int checkedButtonId = rgShift.getCheckedRadioButtonId();
+
+                RadioButton checkedButton = findViewById(checkedButtonId);
+
                 // Mengambil value dari EditText
 
                 idApoteker          =   edtIdApoteker.getText().toString();
                 nmApoteker          =   edtNmApoteker.getText().toString();
                 kotaApoteker        =   edtKotaApoteker.getText().toString();
                 nohpApoteker        =   edtNohpApoteker.getText().toString();
-                shiftApoteker       =   edtShiftApoteker.getText().toString();
+                shiftApoteker       =   checkedButton.getText().toString();
                 alamatApoteker      =   edtAlamatApoteker.getText().toString();
 
                 // Menyimpan value ke dalam HashMap
