@@ -48,9 +48,15 @@ public class CreateDataApoteker extends ApotekerActivity {
         edtAlamatApoteker   =   findViewById(R.id.edt_alamatApoteker);
 
 
+        // Inisialisasi Radio Group Shift
+
+        rgShift = (RadioGroup) findViewById(R.id.rg_shift);
+
+
         // Inisialisasi button back
 
         btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
 
         // fungsi ketika button back di klik
 
@@ -62,16 +68,6 @@ public class CreateDataApoteker extends ApotekerActivity {
             }
         });
 
-        // Inisialisasi Radio Group Shift
-
-        rgShift = (RadioGroup) findViewById(R.id.rg_shift);
-
-        rgShift.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                String text = ((RadioButton) findViewById(rgShift.getCheckedRadioButtonId())).getText().toString();
-            }
-        });
 
 
 

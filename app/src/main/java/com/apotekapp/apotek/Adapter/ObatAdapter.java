@@ -62,6 +62,7 @@ public class ObatAdapter extends BaseAdapter {
         TextView nmobat     = (TextView) convertView.findViewById(R.id.nm_obat);
         TextView satuan     = (TextView) convertView.findViewById(R.id.satuan);
         TextView jumlah     = (TextView) convertView.findViewById(R.id.jumlah);
+        TextView jenis      = (TextView) convertView.findViewById(R.id.jenis);
         TextView expired    = (TextView) convertView.findViewById(R.id.expired);
 
         DataObat dataObat = items.get(position);
@@ -73,6 +74,7 @@ public class ObatAdapter extends BaseAdapter {
         nmobat.setText(dataObat.getNmobat());
         satuan.setText(dataObat.getSatuan());
         jumlah.setText(dataObat.getJumlah());
+        jenis.setText(dataObat.getJenis());
         expired.setText(dataObat.getExpired());
 
         return convertView;

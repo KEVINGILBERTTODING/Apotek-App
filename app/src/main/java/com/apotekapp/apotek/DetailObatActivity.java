@@ -13,9 +13,9 @@ public class DetailObatActivity extends AppCompatActivity {
     private ImageButton btnBack;
 
 
-    String namaObat, satuanObat, jumlah, deskripsi, expired;
+    String namaObat, satuanObat, jumlah, jenis, deskripsi, expired;
 
-    TextView tv_detNamaObat, tv_detSatuanObat, tv_detJumlah, tv_detDeskripsi, tv_detExpired;
+    TextView tv_detNamaObat, tv_detSatuanObat, tv_detJumlah, tv_detJenis, tv_detDeskripsi, tv_detExpired;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class DetailObatActivity extends AppCompatActivity {
         tv_detNamaObat      =   (TextView) findViewById(R.id.det_NmObat);
         tv_detSatuanObat    =   (TextView) findViewById(R.id.det_Satuan);
         tv_detJumlah        =   (TextView) findViewById(R.id.det_Jumlah);
+        tv_detJenis         =   (TextView) findViewById(R.id.det_Jenis);
         tv_detDeskripsi     =   (TextView) findViewById(R.id.det_Desc);
         tv_detExpired       =   (TextView) findViewById(R.id.det_Expired);
 
@@ -53,6 +54,7 @@ public class DetailObatActivity extends AppCompatActivity {
         this.namaObat       =   intent.getStringExtra("nama_obat");
         this.satuanObat     =   intent.getStringExtra("satuan_obat");
         this.jumlah         =   intent.getStringExtra("jumlah");
+        this.jenis          =   intent.getStringExtra("jenis");
         this.deskripsi      =   intent.getStringExtra("desc");
         this.expired        =   intent.getStringExtra("expired");
 
@@ -62,6 +64,7 @@ public class DetailObatActivity extends AppCompatActivity {
         tv_detNamaObat.setText(namaObat);
         tv_detSatuanObat.setText(satuanObat);
         tv_detJumlah.setText(jumlah);
+        tv_detJenis.setText(jenis);
         tv_detDeskripsi.setText(deskripsi);
         tv_detExpired.setText(expired);
 

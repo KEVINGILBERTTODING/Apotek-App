@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.DatePicker;
 import java.text.SimpleDateFormat;
@@ -36,8 +38,9 @@ public class CreateDataObat extends ObatActivity {
     DatePickerDialog.OnDateSetListener expDate;
     ImageView imgCalendar;
     private ImageButton btnBack;
+    private RadioGroup rgJenisObat;
 
-    String id, tkode_obat, tnama_obat, tsatuan_obat, tjumlah_obat, tdesc_obat, texpired_date;
+    String id, tkode_obat, tnama_obat, tsatuan_obat, tjumlah_obat, tjenis_obat,  tdesc_obat, texpired_date;
     EditText edtKodeObat, edtNamaObat, edtSatuanObat, edtJumlahObat, edtDescObat, edtExpiredObat;
 
     List<DataObat> itemList = new ArrayList<DataObat>();
@@ -86,6 +89,11 @@ public class CreateDataObat extends ObatActivity {
                 startActivity(kembali);
             }
         });
+
+        // Inisialisasi Radio Group Shift
+
+        rgJenisObat = (RadioGroup) findViewById(R.id.rg_JenisObat);
+
 
 
 
@@ -153,12 +161,21 @@ public class CreateDataObat extends ObatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
 
+                // Fungsi untuk jenis obat
+
+                int checkedButtonId = rgJenisObat.getCheckedRadioButtonId();
+
+                RadioButton checkedButton = findViewById(checkedButtonId);
+
+
                 // Mengambil value dari edittext
 
                 tkode_obat      =   edtKodeObat.getText().toString();
                 tnama_obat      =   edtNamaObat.getText().toString();
                 tsatuan_obat    =   edtSatuanObat.getText().toString();
                 tjumlah_obat    =   edtJumlahObat.getText().toString();
+                tjumlah_obat    =   edtJumlahObat.getText().toString();
+                tjenis_obat     =   checkedButton.getText().toString();
                 tdesc_obat      =   edtDescObat.getText().toString();
                 texpired_date   =   edtExpiredObat.getText().toString();
 
@@ -169,6 +186,7 @@ public class CreateDataObat extends ObatActivity {
                 params.put("nama_obat", tnama_obat);
                 params.put("satuan_obat", tsatuan_obat);
                 params.put("jumlah", tjumlah_obat);
+                params.put("jenis", tjenis_obat);
                 params.put("deskripsi", tdesc_obat);
                 params.put("expired", texpired_date);
                 return params;

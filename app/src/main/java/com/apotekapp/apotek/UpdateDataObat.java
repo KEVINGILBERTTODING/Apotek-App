@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.DatePicker;
 import java.text.SimpleDateFormat;
@@ -34,12 +36,14 @@ public class UpdateDataObat extends ObatActivity {
     ImageView imgCalendar;
     private ImageButton btnBack;
 
+    private RadioGroup rgJenisObat;
+
     EditText updtKodeObat, updtNamaObat, updtSatuanObat, updtJumlahObat, updtDeksripsiObat, updtExpiredDate;
 
-    String idObat, kodeObat, namaObat, satuanObat, jumlahObat, deskripsiObat, expiredDate;
+    String idObat, kodeObat, namaObat, satuanObat, jumlahObat, jenisObat, deskripsiObat, expiredDate;
 
     //String untuk hashmap
-     String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xdeskripsiobat, xexpiredate;
+     String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xjenisobat,  xdeskripsiobat, xexpiredate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +105,12 @@ public class UpdateDataObat extends ObatActivity {
         // Inisialisasi imgCalendar
 
         imgCalendar =   (ImageView) findViewById(R.id.imgCalendar);
+
+
+        // Inisialisasi Radio Group Shift
+
+        rgJenisObat = (RadioGroup) findViewById(R.id.rg_JenisObat);
+
 
 
 
@@ -173,6 +183,12 @@ public class UpdateDataObat extends ObatActivity {
                 // Posting parameters ke post url
                 Map<String, String> params = new HashMap<String, String>();
 
+                int checkedButtonId = rgJenisObat.getCheckedRadioButtonId();
+
+                RadioButton checkedButton = findViewById(checkedButtonId);
+
+
+
 
                 // Mengambil value dari edittext
 
@@ -180,6 +196,7 @@ public class UpdateDataObat extends ObatActivity {
                 xnamaobat       =   updtNamaObat.getText().toString();
                 xsatuanobat     =   updtSatuanObat.getText().toString();
                 xjumlahobat     =   updtJumlahObat.getText().toString();
+                xjenisobat      =   checkedButton.getText().toString();
                 xdeskripsiobat  =   updtDeksripsiObat.getText().toString();
                 xexpiredate     =   updtExpiredDate.getText().toString();
 
@@ -192,6 +209,7 @@ public class UpdateDataObat extends ObatActivity {
                 params.put("nama_obat", xnamaobat);
                 params.put("satuan_obat", xsatuanobat);
                 params.put("jumlah_obat", xjumlahobat);
+                params.put("jenis_obat", xjenisobat);
                 params.put("desc_obat", xdeskripsiobat);
                 params.put("expired_date", xexpiredate);
                 return params;

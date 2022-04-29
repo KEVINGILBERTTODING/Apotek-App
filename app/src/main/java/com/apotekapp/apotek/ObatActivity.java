@@ -65,9 +65,9 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         // Inisialisasi searchview, swipe, listview, and floating action button
 
         searchView  =   (SearchView) findViewById(R.id.search_barObat);
-        swipe       = (SwipeRefreshLayout) findViewById(R.id.swipe);
-        list        = (ListView) findViewById(R.id.list);
-        fab         = (FloatingActionButton) findViewById(R.id.fabAdd);
+        swipe       =   (SwipeRefreshLayout) findViewById(R.id.swipe);
+        list        =   (ListView) findViewById(R.id.list);
+        fab         =   (FloatingActionButton) findViewById(R.id.fabAdd);
 
         // Mengatur warna tint fab
 
@@ -214,6 +214,7 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
                         item.setNmobat(obj.getString("nama_obat"));
                         item.setSatuan(obj.getString("satuan_obat"));
                         item.setJumlah(obj.getString("jumlah"));
+                        item.setJenis(obj.getString("jenis"));
                         item.setDesc(obj.getString("deskripsi"));
                         item.setExpired(obj.getString("expired"));
 
@@ -269,6 +270,7 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         DetailObat.putExtra("nama_obat", obat.getNmobat());
         DetailObat.putExtra("satuan_obat", obat.getSatuan());
         DetailObat.putExtra("jumlah", obat.getJumlah());
+        DetailObat.putExtra("jenis", obat.getJenis());
         DetailObat.putExtra("desc", obat.getDesc());
         DetailObat.putExtra("expired", obat.getExpired());
         startActivity(DetailObat);
@@ -284,6 +286,7 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         DataObat.putExtra("namaobat", obat.getNmobat());
         DataObat.putExtra("satuanobat", obat.getSatuan());
         DataObat.putExtra("jumlahobat", obat.getJumlah());
+        DataObat.putExtra("jenis", obat.getJenis());
         DataObat.putExtra("descobat", obat.getDesc());
         DataObat.putExtra("expireddate", obat.getExpired());
         startActivity(DataObat);

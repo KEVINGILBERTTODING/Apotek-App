@@ -33,6 +33,12 @@
 
     </FrameLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frmBanneObat"
+        >
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,139 +47,234 @@
         android:layout_below="@+id/frmBanneObat"
         android:layout_margin="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kode Obat"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_KodeObat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kode Obat"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama Obat:"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_NamaObat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nama Obat"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Satuan"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_SatuanObat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Satuan"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stok"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_JumlahObat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Stok Obat"
-            android:inputType="number"
-            />
 
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Expired Date"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kode Obat"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
 
             <EditText
-                android:id="@+id/edt_ExpiredDate"
-                android:layout_width="200dp"
+                android:id="@+id/edt_KodeObat"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:editable="false"
-                android:focusable="false"
-                android:hint="Expired Date"
-                android:inputType="date"
-                android:paddingRight="20dp" />
-
-            <ImageView
-                android:id="@+id/imgCalendar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_calendar"
-                android:focusable="true"
-                android:layout_marginLeft="10dp"
+                android:hint="Kode Obat"
                 />
-        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Obat:"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_NamaObat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Obat"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Satuan"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_SatuanObat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Satuan"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stok"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_JumlahObat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Stok Obat"
+                android:inputType="number"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis Obat"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+
+                >
+                <RadioGroup
+                    android:id="@+id/rg_JenisObat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <RadioButton
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tablet"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/radio_selector"
+                        android:textColor="@drawable/text_color"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:padding="5dp"
+                        android:layout_margin="16dp"
+                        />
+                    <RadioButton
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Sirup"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/radio_selector"
+                        android:textColor="@drawable/text_color"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:padding="5dp"
+                        android:layout_margin="16dp"
+                        />
+                    <RadioButton
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Obat Oles"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/radio_selector"
+                        android:textColor="@drawable/text_color"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:padding="5dp"
+                        android:layout_margin="16dp"
+                        />
+                    <RadioButton
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Lainnya"
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/radio_selector"
+                        android:textColor="@drawable/text_color"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:padding="5dp"
+                        android:layout_margin="16dp"
+                        />
 
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Deskripsi"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
+                </RadioGroup>
 
-        <EditText
-            android:id="@+id/edt_DescObat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Deskripsi"
-            android:inputType="textMultiLine"
-            android:scrollbars="vertical"
-            android:layout_gravity="top|start"
-            android:minLines="6"
-            android:maxLength="255"
-            android:lines="8"
-            android:gravity="start"
-            android:maxLines="10"
-            />
 
-        <Button
-            android:id="@+id/btnInsert"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:layout_marginTop="20dp"
-            android:background="@color/main"
-            android:textColor="@color/white"
-            android:onClick="insertObat"
-            android:fontFamily="@font/popsem"
-            />
+            </HorizontalScrollView>
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expired Date"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+                    android:id="@+id/edt_ExpiredDate"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Expired Date"
+                    android:inputType="date"
+                    android:paddingRight="20dp" />
+
+                <ImageView
+                    android:id="@+id/imgCalendar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_calendar"
+                    android:focusable="true"
+                    android:layout_marginLeft="10dp"
+                    />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:fontFamily="@font/popsem"
+                android:textSize="15sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_DescObat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Deskripsi"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:layout_gravity="top|start"
+                android:minLines="6"
+                android:maxLength="255"
+                android:lines="8"
+                android:gravity="start"
+                android:maxLines="10"
+                />
+
+            <Button
+                android:id="@+id/btnInsert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:layout_marginTop="20dp"
+                android:background="@color/main"
+                android:textColor="@color/white"
+                android:onClick="insertObat"
+                android:fontFamily="@font/popsem"
+                />
+
+
+
+
 
     </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

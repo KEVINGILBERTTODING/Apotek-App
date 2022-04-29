@@ -1,19 +1,20 @@
 package com.apotekapp.apotek.Model;
 
 public class DataObat {
-    private String id, kdobat, nmobat, satuan, jumlah, desc, expired;
+    private String id, kdobat, nmobat, satuan, jumlah, jenis, desc, expired;
 
     public DataObat() {
     }
 
-    public DataObat(String id, String kdobat, String nmobat, String satuan, String jumlah, String desc, String expired) {
-        this.id = id;
-        this.kdobat = kdobat;
-        this.nmobat= nmobat;
-        this.satuan = satuan;
-        this.jumlah = jumlah;
-        this.desc = desc;
-        this.expired = expired;
+    public DataObat(String id, String kdobat, String nmobat, String satuan, String jumlah, String jenis, String desc, String expired) {
+        this.id         = id;
+        this.kdobat     = kdobat;
+        this.nmobat     = nmobat;
+        this.satuan     = satuan;
+        this.jumlah     = jumlah;
+        this.jenis      = jenis;
+        this.desc       = desc;
+        this.expired    = expired;
 
     }
 
@@ -55,6 +56,14 @@ public class DataObat {
 
     public void setJumlah(String jumlah) {
         this.jumlah = jumlah;
+    }
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
     }
 
     public String getDesc() {
