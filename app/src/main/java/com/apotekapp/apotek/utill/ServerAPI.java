@@ -9,6 +9,11 @@ public class ServerAPI {
     public static final String URL_DELETE_Obat = "http://192.168.11.19/apotek/obat/delete.php";
     public static final String URL_Update_Obat = "http://192.168.11.19/apotek/obat/update.php";
 
+    public static final String URL_Read_Obat_Sirup = "http://192.168.11.19/apotek/obat/read_sirup.php";
+    public static final String URL_Read_Obat_Tablet = "http://192.168.11.19/apotek/obat/read_tablet.php";
+    public static final String URL_Read_Obat_Oles = "http://192.168.11.19/apotek/obat/read_obat_oles.php";
+    public static final String URL_Read_Obat_Lain = "http://192.168.11.19/apotek/obat/read_obat_lain.php";
+
 
     // Server API untuk data apoteker
     public static final String URL_Read_Apoteker = "http://192.168.11.19/apotek/apoteker/read.php";

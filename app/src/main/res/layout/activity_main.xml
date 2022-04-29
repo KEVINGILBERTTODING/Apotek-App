@@ -11,6 +11,7 @@
 
 
     <FrameLayout
+        android:id="@+id/frmHeader"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         >
@@ -75,6 +76,57 @@
     </xyz.sahildave.arclayout.ArcLayout>
 
     </FrameLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frmHeader"
+        android:layout_marginTop="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/frmHeader"
+            >
+
+            <Button
+                android:id="@+id/btnSirup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sirup"
+                android:layout_margin="16dp"
+                />
+            <Button
+                android:id="@+id/btnTablet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tablet"
+                android:layout_margin="16dp"
+                />
+            <Button
+                android:id="@+id/btnOles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Obat Oles"
+                android:layout_margin="16dp"
+                />
+            <Button
+                android:id="@+id/btnLainnya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lainnya"
+                android:layout_margin="16dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
 
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     String username, nm_kons;
     SharedPreferences sharedPreferences;
     private MeowBottomNavigation bnv_Main;
+    private Button btnSirup, btnTablet, btnOles, btnLainnya;
 
     TextView tv_Username;
 
@@ -49,6 +51,57 @@ public class MainActivity extends AppCompatActivity {
         bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.search));
         bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.bookmark));
         bnv_Main.add(new MeowBottomNavigation.Model(4,R.drawable.person));
+
+        // Inisialisasi button
+
+        btnSirup        =   (Button) findViewById(R.id.btnSirup);
+        btnTablet       =   (Button) findViewById(R.id.btnTablet);
+        btnOles        =   (Button) findViewById(R.id.btnOles);
+        btnLainnya      =   (Button) findViewById(R.id.btnLainnya);
+
+
+        // Fungsi saat button di klik
+
+        btnSirup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatSirup.class);
+                startActivity(intent);
+
+            }
+        });
+        btnTablet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatTablet.class);
+                startActivity(intent);
+
+            }
+        });
+        btnOles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatOles.class);
+                startActivity(intent);
+
+            }
+        });
+        btnLainnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatLain.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
 
         bnv_Main.show(1,true);
 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/container"
+    tools:context=".ObatLain">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:id="@+id/frmHeaderObat"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/wave"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/ic_btnback" />
+
+                    <TextView
+                        android:id="@+id/tvTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnBack"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/popmed"
+                        android:text="Halo, Diana Thamara!"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle1"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/popsem"
+                        android:text="Apakah ada obat baru?"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_barObat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle2"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/content3"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@drawable/content3"
+                        app:queryHint="Cari nama obat..." />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/frmHeaderObat"
+            >
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <ListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:dividerHeight="2dp"
+                    />
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/app_bar_menu"
+        android:backgroundTint="@color/white"
+        app:hideOnScroll="true"
+        app:fabCradleMargin="30dp"
+        app:fabCradleRoundedCornerRadius="120dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleVerticalOffset="20dp"
+        app:navigationIcon="@drawable/person"
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        android:tint="@color/white"
+        app:layout_anchor="@id/bottomAppBar"
+        app:backgroundTint="@color/main"
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

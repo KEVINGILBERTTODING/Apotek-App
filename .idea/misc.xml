@@ -28,6 +28,10 @@
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_main2.xml" value="0.33177083333333335" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_obat.xml" value="0.22" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_obat_lain.xml" value="0.2793859649122807" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_obat_oles.xml" value="0.2793859649122807" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_obat_sirup.xml" value="0.2793859649122807" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_obat_tablet.xml" value="0.2793859649122807" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_register.xml" value="0.2949074074074074" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_update_data_apoteker.xml" value="0.33177083333333335" />

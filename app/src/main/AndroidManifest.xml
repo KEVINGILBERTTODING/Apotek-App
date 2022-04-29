@@ -6,56 +6,72 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".Utill.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".Utill.AppController"
         android:theme="@style/Theme.MainApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/Theme.Register"
+            android:name=".ObatLain"
+            android:theme="@style/Theme.ObatActivity"
             android:exported="true" />
+        <activity
+            android:name=".ObatOles"
+            android:theme="@style/Theme.ObatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ObatTablet"
+            android:theme="@style/Theme.ObatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ObatSirup"
+            android:theme="@style/Theme.ObatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Register" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.LoginScreen" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.MainApp"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.MainApp" />
         <activity
             android:name=".UpdateDataApoteker"
-            android:theme="@style/Theme.ObatActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.ObatActivity" />
         <activity
             android:name=".DetailApotekerActivity"
             android:exported="true" />
         <activity
             android:name=".CreateDataApoteker"
-            android:theme="@style/Theme.ObatActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.ObatActivity" />
         <activity
             android:name=".ApotekerActivity"
-            android:theme="@style/Theme.ObatActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.ObatActivity" />
         <activity
             android:name=".UpdateDataObat"
-            android:theme="@style/Theme.UpdateObatActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.UpdateObatActivity" />
         <activity
             android:name=".CreateDataObat"
-            android:theme="@style/Theme.ObatActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.ObatActivity" />
         <activity
             android:name=".DetailObatActivity"
             android:exported="true" />
         <activity
             android:name=".ObatActivity"
-            android:theme="@style/Theme.ObatActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.ObatActivity" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.SplashScreen">
