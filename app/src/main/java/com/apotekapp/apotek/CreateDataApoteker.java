@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -25,6 +26,8 @@ public class CreateDataApoteker extends ApotekerActivity {
     String idApoteker, nmApoteker, kotaApoteker, nohpApoteker, shiftApoteker, alamatApoteker;
     EditText edtIdApoteker, edtNmApoteker, edtKotaApoteker, edtNohpApoteker, edtShiftApoteker, edtAlamatApoteker;
 
+    private ImageButton btnBack;
+
 
     List<DataApoteker> itemList =   new ArrayList<DataApoteker>();
 
@@ -41,7 +44,25 @@ public class CreateDataApoteker extends ApotekerActivity {
         edtNohpApoteker     =   findViewById(R.id.edt_nohpApoteker);
         edtShiftApoteker    =   findViewById(R.id.edt_shiftApoteker);
         edtAlamatApoteker   =   findViewById(R.id.edt_alamatApoteker);
+
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(CreateDataApoteker.this, ApotekerActivity.class);
+                startActivity(kembali);
+            }
+        });
+
     }
+
+
 
     public void CreateApoteker(View view) {
         insertDataApoteker();

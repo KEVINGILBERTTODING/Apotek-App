@@ -7,11 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".CreateDataObat">
 
+    <FrameLayout
+        android:id="@+id/frmBanneObat"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/main"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_btnback" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_below="@+id/frmBanneObat"
         android:layout_margin="20dp">
 
         <TextView
@@ -82,16 +109,33 @@
             android:textSize="15sp"
             />
 
-        <EditText
-            android:id="@+id/edt_ExpiredDate"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:editable="false"
-            android:focusable="false"
-            android:hint="Expired Date"
-            android:inputType="date"
-            android:paddingRight="20dp" />
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/edt_ExpiredDate"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:focusable="false"
+                android:hint="Expired Date"
+                android:inputType="date"
+                android:paddingRight="20dp" />
+
+            <ImageView
+                android:id="@+id/imgCalendar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_calendar"
+                android:focusable="true"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+
 
         <TextView
             android:layout_width="wrap_content"

@@ -7,9 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".DetailApotekerActivity">
 
+    <FrameLayout
+        android:id="@+id/frmBanneApoteker"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/main"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_btnback" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/frmBanneApoteker"
+        android:layout_margin="20dp"
         android:orientation="vertical">
 
         <TextView

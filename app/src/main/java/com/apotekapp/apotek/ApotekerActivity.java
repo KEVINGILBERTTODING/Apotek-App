@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -47,12 +48,23 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
     List<DataApoteker> itemList = new ArrayList<DataApoteker>();
     ApotekerAdapter adapter;
     FloatingActionButton fab;
+    private ImageButton btnBack;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Fungsi untuk menyembunyikan navbar
+
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+
         setContentView(R.layout.activity_apoteker);
+
+
 
         // Inisialisasi searchview, swipe, listview, and floating action button
 
@@ -60,6 +72,26 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
         swipe       =   (SwipeRefreshLayout) findViewById(R.id.swipe);
         list        =   (ListView) findViewById(R.id.list_apoteker);
         fab         =   (FloatingActionButton) findViewById(R.id.add_apoteker);
+
+
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(ApotekerActivity.this, MainActivity.class);
+                startActivity(kembali);
+            }
+        });
+
+        // Mengatur warna tint fab
+
+        fab.setColorFilter(getResources().getColor(R.color.white));
 
         // Fungsi ketika button + diklik
 
@@ -191,7 +223,7 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
                 // notifikasi adanya perubahan data pada adapter
                 adapter.notifyDataSetChanged();
 
-                // Memanggil method updateSearchList paa ApotekerAdapter
+                // Memanggil method updateSearchList pada ApotekerAdapter
 
                 adapter.updateSearchedList();
 

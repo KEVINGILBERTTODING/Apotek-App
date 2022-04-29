@@ -4,88 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main"
+    android:background="@drawable/wave"
     android:orientation="vertical"
     tools:context=".SplashScreen">
 
-    <ImageView
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="200dp"
-        android:src="@drawable/delivery"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ObatKu"
-        android:layout_marginTop="10dp"
-        android:textSize="24sp"
-        android:fontFamily="@font/popsem"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
+        android:layout_marginTop="350dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apotek App"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="24sp"
+                android:fontFamily="@font/popsem"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicine at your Door Step"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:fontFamily="@font/popmed"
+
+                />
 
 
-        />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No one is conceived an awesome cook,"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:textSize="11sp"
-        android:fontFamily="@font/popmed"
-
-        />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="one learns by doing."
-        android:textColor="@color/white"
-        android:textSize="11sp"
-        android:fontFamily="@font/popmed"
-        android:layout_gravity="center_horizontal"
-        />
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:orientation="vertical"
         android:layout_marginTop="300dp"
-        android:backgroundTint="@color/white"
-        android:indeterminateTint="@color/white"
-        />
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Diana Nafi"
-        android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:textSize="10sp"
-        android:fontFamily="@font/popmed"
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white"
+            android:indeterminateTint="@color/white"
+            />
 
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apotek App"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/popmed"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="Version 1.1"
-        android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/popmed"
-        android:textSize="9sp"
-        />
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Version 1.1"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/popmed"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+
+
 
 
 </LinearLayout>

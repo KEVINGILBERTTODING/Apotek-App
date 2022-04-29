@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,99 +8,129 @@
     android:background="@color/container"
     tools:context=".ApotekerActivity">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/frmHeader"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/wave"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         >
-
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="270dp"
+            android:id="@+id/frmHeader1"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/wave"
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                >
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tvTitle1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:fontFamily="@font/popmed"
-                    android:text="Halo, Diana Thamara!"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tvTitle2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Apakah Ada Apoteker Baru?"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/popsem"
-                    android:textSize="20sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/tvTitle1"/>
-
-
-                <androidx.appcompat.widget.SearchView
-                    android:id="@+id/search_bar"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvTitle2"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/content3"
-                    app:iconifiedByDefault="false"
-                    app:queryBackground="@drawable/content3"
-                    app:queryHint="Cari nama apoteker..." />
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/ic_btnback" />
+
+                    <TextView
+                        android:id="@+id/tvTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnBack"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/popmed"
+                        android:text="Halo, Diana Thamara!"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle1"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/popsem"
+                        android:text="Apakah ada apoteker baru?"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle2"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/content3"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@drawable/content3"
+                        app:queryHint="Cari nama obat..." />
+
+                </RelativeLayout>
             </RelativeLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/frmHeader1">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/list_apoteker"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:dividerHeight="2dp" />
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
         </RelativeLayout>
 
-    </FrameLayout>
+    </LinearLayout>
 
-    <RelativeLayout
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/frmHeader">
+        android:layout_gravity="bottom"
+        app:menu="@menu/app_bar_menu"
+        android:backgroundTint="@color/white"
+        app:hideOnScroll="true"
+        app:fabCradleMargin="30dp"
+        app:fabCradleRoundedCornerRadius="120dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleVerticalOffset="20dp"
+        app:navigationIcon="@drawable/person"
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        />
 
-            <ListView
-                android:id="@+id/list_apoteker"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:divider="@null"
-                android:dividerHeight="2dp" />
-
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_apoteker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_baseline_add_24"
-            app:backgroundTint="@color/main" />
-
-    </RelativeLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_apoteker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        android:tint="@color/white"
+        app:layout_anchor="@id/bottomAppBar"
+        app:backgroundTint="@color/main"
+        />
 
 
-</RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

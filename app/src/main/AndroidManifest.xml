@@ -24,30 +24,37 @@
             android:theme="@style/Theme.LoginScreen" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.MainApp"
             android:exported="true" />
         <activity
             android:name=".UpdateDataApoteker"
+            android:theme="@style/Theme.ObatActivity"
             android:exported="true" />
         <activity
             android:name=".DetailApotekerActivity"
             android:exported="true" />
         <activity
             android:name=".CreateDataApoteker"
+            android:theme="@style/Theme.ObatActivity"
             android:exported="true" />
         <activity
             android:name=".ApotekerActivity"
+            android:theme="@style/Theme.ObatActivity"
             android:exported="true" />
         <activity
             android:name=".UpdateDataObat"
+            android:theme="@style/Theme.UpdateObatActivity"
             android:exported="true" />
         <activity
             android:name=".CreateDataObat"
+            android:theme="@style/Theme.ObatActivity"
             android:exported="true" />
         <activity
             android:name=".DetailObatActivity"
             android:exported="true" />
         <activity
             android:name=".ObatActivity"
+            android:theme="@style/Theme.ObatActivity"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"

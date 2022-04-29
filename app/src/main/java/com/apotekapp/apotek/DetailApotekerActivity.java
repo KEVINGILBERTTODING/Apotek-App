@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class DetailApotekerActivity extends AppCompatActivity {
@@ -11,6 +13,7 @@ public class DetailApotekerActivity extends AppCompatActivity {
     String xId, xNm, xKota, xNohp, xShift,xAlamat;
 
     TextView tv_idApoteker, tv_nmApoteker, tv_kotaApoteker, tv_nohpApoteker, tv_shiftApoteker, tv_alamatApoteker;
+    private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +48,20 @@ public class DetailApotekerActivity extends AppCompatActivity {
         tv_nohpApoteker.setText(xNohp);
         tv_shiftApoteker.setText(xShift);
         tv_alamatApoteker.setText(xAlamat);
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(DetailApotekerActivity.this, ApotekerActivity.class);
+                startActivity(kembali);
+            }
+        });
+
     }
 }

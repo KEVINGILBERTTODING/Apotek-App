@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.DatePicker;
 import java.text.SimpleDateFormat;
@@ -32,6 +34,8 @@ public class CreateDataObat extends ObatActivity {
     ProgressDialog progressDialog;
     Calendar myCalendar;
     DatePickerDialog.OnDateSetListener expDate;
+    ImageView imgCalendar;
+    private ImageButton btnBack;
 
     String id, tkode_obat, tnama_obat, tsatuan_obat, tjumlah_obat, tdesc_obat, texpired_date;
     EditText edtKodeObat, edtNamaObat, edtSatuanObat, edtJumlahObat, edtDescObat, edtExpiredObat;
@@ -45,7 +49,7 @@ public class CreateDataObat extends ObatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_data_obat);
 
-        // Definisikan EditText
+        // Inisialisasi EditText
 
         edtKodeObat     = (EditText) findViewById(R.id.edt_KodeObat);
         edtNamaObat     = (EditText) findViewById(R.id.edt_NamaObat);
@@ -53,6 +57,37 @@ public class CreateDataObat extends ObatActivity {
         edtJumlahObat   = (EditText) findViewById(R.id.edt_JumlahObat);
         edtDescObat     = (EditText) findViewById(R.id.edt_DescObat);
         edtExpiredObat  = (EditText) findViewById(R.id.edt_ExpiredDate);
+
+        // Inisialisasi imgCalendar
+
+        imgCalendar =   (ImageView) findViewById(R.id.imgCalendar);
+
+        // Funcition saat imgCalendar di klik
+
+        imgCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(CreateDataObat.this, expDate, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(CreateDataObat.this, ObatActivity.class);
+                startActivity(kembali);
+            }
+        });
+
+
 
         // Membuat objek myCalendar
 
@@ -72,16 +107,6 @@ public class CreateDataObat extends ObatActivity {
             }
         };
 
-        // Menampilkan datepicker / calendar saat edittext expired date di klik
-
-        edtExpiredObat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new DatePickerDialog(CreateDataObat.this, expDate, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
 
     }
 

@@ -7,10 +7,12 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,13 +47,19 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
     ObatAdapter adapter;
     FloatingActionButton fab;
     SearchView searchView;
+    private ImageButton btnBack;
     
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         super.onCreate(savedInstanceState);
+
+        // Fungsi untuk menyembunyikan navbar
+
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.activity_obat);
 
         // Inisialisasi searchview, swipe, listview, and floating action button
@@ -61,6 +69,23 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         list        = (ListView) findViewById(R.id.list);
         fab         = (FloatingActionButton) findViewById(R.id.fabAdd);
 
+        // Mengatur warna tint fab
+
+        fab.setColorFilter(getResources().getColor(R.color.white));
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(ObatActivity.this, MainActivity.class);
+                startActivity(kembali);
+            }
+        });
 
 
         // Fungsi ketika button + diklik

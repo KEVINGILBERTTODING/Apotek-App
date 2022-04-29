@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class UpdateDataApoteker extends AppCompatActivity {
     //String untuk hashmap
 
     String  xid, xnama, xkota, xnohp, xshift, xalamat;
+
+    private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,21 @@ public class UpdateDataApoteker extends AppCompatActivity {
         updt_nohp.setText(nohp_apoteker);
         updt_shift.setText(shift_apoteker);
         updt_alamat.setText(alamat_apoteker);
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(UpdateDataApoteker.this, ApotekerActivity.class);
+                startActivity(kembali);
+            }
+        });
+
     }
 
     public void UpdateApoteker(View view) {

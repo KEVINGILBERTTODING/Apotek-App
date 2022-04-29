@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class DetailObatActivity extends AppCompatActivity {
+
+    private ImageButton btnBack;
 
 
     String namaObat, satuanObat, jumlah, deskripsi, expired;
@@ -25,6 +29,20 @@ public class DetailObatActivity extends AppCompatActivity {
         tv_detJumlah        =   (TextView) findViewById(R.id.det_Jumlah);
         tv_detDeskripsi     =   (TextView) findViewById(R.id.det_Desc);
         tv_detExpired       =   (TextView) findViewById(R.id.det_Expired);
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
+        // fungsi ketika button back di klik
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(DetailObatActivity.this, ObatActivity.class);
+                startActivity(kembali);
+            }
+        });
 
 
 

@@ -8,40 +8,12 @@
     android:background="@color/container"
     tools:context=".MainActivity">
 
-<!--    <FrameLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="300dp"-->
-<!--        >-->
 
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="400dp"-->
-<!--            android:background="@color/main"-->
-<!--            />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Hi Diana"-->
-<!--            />-->
-
-<!--        <Button-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Lihat"-->
-<!--            android:layout_gravity="center"-->
-<!--            />-->
-
-
-<!--    </FrameLayout>-->
-<!--    -->
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
         >
-
-
 
     <xyz.sahildave.arclayout.ArcLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -56,12 +28,10 @@
 
 
 
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@color/main"
+            android:background="@drawable/wave"
 
 
             >
@@ -97,20 +67,33 @@
 
                 </LinearLayout>
 
-
-
-
-
             </RelativeLayout>
-
-
-
-
-
 
         </RelativeLayout>
 
+
     </xyz.sahildave.arclayout.ArcLayout>
+
     </FrameLayout>
 
+
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bnvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:mbn_backgroundBottomColor="#ffffff"
+        app:mbn_circleColor="#ffffff"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="#90a4ae"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="#3c415e"
+        app:mbn_shadowColor="#1f212121" />
+
+
 </RelativeLayout>
+
