@@ -13,7 +13,7 @@
     <FrameLayout
         android:id="@+id/frmHeader"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="400dp"
         >
 
     <xyz.sahildave.arclayout.ArcLayout
@@ -26,6 +26,7 @@
         app:arc_cropCurve="cropConvex"
         app:arc_height="48dp"
         app:arc_position="bottom">
+
 
 
 
@@ -43,45 +44,85 @@
                 android:layout_margin="20dp"
                 >
 
+
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
                     >
-
-
                     <TextView
-                        android:id="@+id/tv_UserName"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="Selamat Datang,"
+                        android:textSize="18sp"
                         android:fontFamily="@font/popmed"
-                        android:text="Halo, Kevin Toding!"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/handbye"
-                        android:layout_marginLeft="10dp"
                         />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_UserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/popsem"
+                            android:text="Eve Antoinette!"
+                            android:textColor="@color/white"
+                            android:textSize="25sp" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/handbye"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/search_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/content3"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@drawable/content3"
+                        app:queryHint="Search..." />
+
+
                 </LinearLayout>
+
+
 
             </RelativeLayout>
 
         </RelativeLayout>
 
 
+
+
     </xyz.sahildave.arclayout.ArcLayout>
 
     </FrameLayout>
+
+
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/frmHeader"
         android:layout_marginTop="20dp"
+        android:id="@+id/scrollView"
+        android:scrollbars="none"
         >
 
         <LinearLayout
@@ -127,24 +168,61 @@
 
     </HorizontalScrollView>
 
-
-
-    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-        android:id="@+id/bnvMain"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:mbn_backgroundBottomColor="#ffffff"
-        app:mbn_circleColor="#ffffff"
-        app:mbn_countBackgroundColor="#ff6f00"
-        app:mbn_countTextColor="#ffffff"
-        app:mbn_defaultIconColor="#90a4ae"
-        app:mbn_rippleColor="#2f424242"
-        app:mbn_selectedIconColor="#3c415e"
-        app:mbn_shadowColor="#1f212121" />
+        android:layout_below="@+id/frmHeader"
+        android:layout_marginTop="-170dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_slider_mainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="30dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/bnvMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:mbn_backgroundBottomColor="#ffffff"
+            app:mbn_circleColor="#ffffff"
+            app:mbn_countBackgroundColor="#ff6f00"
+            app:mbn_countTextColor="#ffffff"
+            app:mbn_defaultIconColor="#90a4ae"
+            app:mbn_rippleColor="#2f424242"
+            app:mbn_selectedIconColor="#3c415e"
+            app:mbn_shadowColor="#1f212121" />
+
+    </RelativeLayout>
+
+
 
 
 </RelativeLayout>

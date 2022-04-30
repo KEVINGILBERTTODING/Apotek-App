@@ -5,12 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.apotekapp.apotek.Adapter.SliderAdapter;
+import com.apotekapp.apotek.Model.SliderItem;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -27,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSirup, btnTablet, btnOles, btnLainnya;
 
     TextView tv_Username;
+
+
+    SliderView sliderView;
+    private SliderAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         //  Set username pada navbar
 
-        tv_Username.setText("Hai, " + username);
+//        tv_Username.setText("Hai, " + username);
         bnv_Main = findViewById(R.id.bnvMain);
         bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.home));
         bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.search));
@@ -58,6 +73,28 @@ public class MainActivity extends AppCompatActivity {
         btnTablet       =   (Button) findViewById(R.id.btnTablet);
         btnOles        =   (Button) findViewById(R.id.btnOles);
         btnLainnya      =   (Button) findViewById(R.id.btnLainnya);
+
+        sliderView = findViewById(R.id.imageSlider);
+
+        adapter = new SliderAdapter(this);
+        sliderView.setSliderAdapter(adapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        sliderView.setIndicatorSelectedColor(Color.WHITE);
+        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setScrollTimeInSec(3);
+        sliderView.setAutoCycle(true);
+        sliderView.startAutoCycle();
+
+        sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
+            @Override
+            public void onIndicatorClicked(int position) {
+                Log.i("GGG", "onIndicatorClicked: " + sliderView.getCurrentPagePosition());
+            }
+        });
+
+        renewItems();
 
 
         // Fungsi saat button di klik
@@ -100,9 +137,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-
         bnv_Main.show(1,true);
 
         bnv_Main.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
@@ -131,8 +165,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
-
-
+    public void renewItems() {
+        List<SliderItem> sliderItemList = new ArrayList<>();
+        //dummy data
+        for (int i = 0; i < 5; i++) {
+            SliderItem sliderItem = new SliderItem();
+            sliderItem.setDescription("Apoteker " + i);
+            if (i % 2 == 0) {
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider1.jpg");
+            } else {
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider2.jpg");
+            }
+            sliderItemList.add(sliderItem);
+        }
+        adapter.renewItems(sliderItemList);
     }
 }
