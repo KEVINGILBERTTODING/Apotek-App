@@ -36,6 +36,8 @@ public class UpdateDataObat extends ObatActivity {
     ImageView imgCalendar;
     private ImageButton btnBack;
 
+    private RadioButton rbSirup, rbTablet, rbObatOles, rbLainnya;
+
     private RadioGroup rgJenisObat;
 
     EditText updtKodeObat, updtNamaObat, updtSatuanObat, updtJumlahObat, updtDeksripsiObat, updtExpiredDate;
@@ -58,6 +60,15 @@ public class UpdateDataObat extends ObatActivity {
         updtJumlahObat      =   findViewById(R.id.updt_JumlahObat);
         updtDeksripsiObat   =   findViewById(R.id.updt_Desc);
         updtExpiredDate     =   findViewById(R.id.updt_ExpiredDate);
+
+        // Inisialisasi Radio Button Jenis Obat
+
+        rbSirup             =   (RadioButton) findViewById(R.id.rbSirup);
+        rbTablet            =   (RadioButton) findViewById(R.id.rbTablet);
+        rbObatOles          =   (RadioButton) findViewById(R.id.rbObatOles);
+        rbLainnya           =   (RadioButton) findViewById(R.id.rbLainnya);
+
+
 
         // Memanggil intent dan mengambil text yang telah dikirim dari MainActivity
         // menggunakan intent
@@ -112,6 +123,10 @@ public class UpdateDataObat extends ObatActivity {
         rgJenisObat = (RadioGroup) findViewById(R.id.rg_JenisObat);
 
 
+
+        // Memanggil method untuk mengambil value radio button
+
+        selectedRadioJenisObat();
 
 
         // Funcition saat imgCalendar di klik
@@ -221,6 +236,25 @@ public class UpdateDataObat extends ObatActivity {
         queue.add(stringRequest);
 
 
+    }
+
+    // Method untuk set selected radio button shift
+
+    private void selectedRadioJenisObat () {
+
+        String selectedRadioTxt = getIntent().getExtras().getString("jenis");
+
+        if (selectedRadioTxt.equals(rbSirup.getText()))
+            rbSirup.setChecked(true);
+
+        if (selectedRadioTxt.equals(rbTablet.getText()))
+            rbTablet.setChecked(true);
+
+        if (selectedRadioTxt.equals(rbObatOles.getText()))
+            rbObatOles.setChecked(true);
+
+        if (selectedRadioTxt.equals(rbLainnya.getText()))
+            rbLainnya.setChecked(true);
     }
 
 

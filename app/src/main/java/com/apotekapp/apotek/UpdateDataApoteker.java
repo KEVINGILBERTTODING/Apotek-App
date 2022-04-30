@@ -28,9 +28,11 @@ public class UpdateDataApoteker extends AppCompatActivity {
 
     // String untuk mengambil data dari intent
 
-    String id, id_apoteker, nm_apoteker, kota_apoteker, nohp_apoteker, shift_apoteker, alamat_apoteker;
+    String id, id_apoteker, nm_apoteker, kota_apoteker, nohp_apoteker, alamat_apoteker;
 
     EditText updt_id, updt_nama, updt_kota, updt_nohp, updt_alamat;
+
+    private RadioButton rbShift, rbShift2;
 
     //String untuk hashmap
 
@@ -39,6 +41,8 @@ public class UpdateDataApoteker extends AppCompatActivity {
     private ImageButton btnBack;
 
     private RadioGroup rgShift;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,16 @@ public class UpdateDataApoteker extends AppCompatActivity {
         rgShift = (RadioGroup) findViewById(R.id.rg_shift);
 
 
+        // Inisialisasi Radio Button Shift
+
+        rbShift = (RadioButton) findViewById(R.id.rbShift);
+        rbShift2 = (RadioButton) findViewById(R.id.rbShift2);
+
+
+        // Inisialisasi button back
+
+        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+
 
         // Memanggil intent dan mengambil text yang telah dikirim dari ApotekerActivity
 
@@ -67,9 +81,7 @@ public class UpdateDataApoteker extends AppCompatActivity {
         this.nm_apoteker        =   intent.getStringExtra("nama");
         this.kota_apoteker      =   intent.getStringExtra("kota");
         this.nohp_apoteker      =   intent.getStringExtra("no_hp");
-        this.shift_apoteker     =   intent.getStringExtra("shift");
         this.alamat_apoteker    =   intent.getStringExtra("alamat");
-
 
 
         // Settext menggunakan data yang telah di dapatkan dari intent
@@ -80,9 +92,13 @@ public class UpdateDataApoteker extends AppCompatActivity {
         updt_nohp.setText(nohp_apoteker);
         updt_alamat.setText(alamat_apoteker);
 
-        // Inisialisasi button back
 
-        btnBack =   (ImageButton) findViewById(R.id.btnBack);
+        // Memanggil method untuk mengambil value radio button
+
+        selectedRadioShift();
+
+
+
 
         // fungsi ketika button back di klik
 
@@ -152,7 +168,6 @@ public class UpdateDataApoteker extends AppCompatActivity {
                 params.put("shift", xshift);
                 params.put("alamat", xalamat);
 
-
                 return params;
             }
         };
@@ -160,5 +175,19 @@ public class UpdateDataApoteker extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         queue.add(stringRequest);
 
+    }
+
+
+    // Method untuk set selected radio button shift
+
+    private void selectedRadioShift () {
+
+        String selectedRadioTxt = getIntent().getExtras().getString("shift");
+
+        if (selectedRadioTxt.equals(rbShift.getText()))
+            rbShift.setChecked(true);
+
+        if (selectedRadioTxt.equals(rbShift2.getText()))
+            rbShift2.setChecked(true);
     }
 }
