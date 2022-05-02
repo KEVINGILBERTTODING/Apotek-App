@@ -5,222 +5,540 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/container"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-
-
-    <FrameLayout
-        android:id="@+id/frmHeader"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <xyz.sahildave.arclayout.ArcLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/arc_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:arc_cropCurve="cropConvex"
-        app:arc_height="48dp"
-        app:arc_position="bottom">
-
-
-
-
-        <RelativeLayout
+        <FrameLayout
+            android:id="@+id/frmHeader"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/wave"
+            android:layout_height="wrap_content">
 
-
-            >
-
-            <RelativeLayout
+            <xyz.sahildave.arclayout.ArcLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/arc_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                >
+                app:arc_cropCurve="cropConvex"
+                app:arc_height="48dp"
+                app:arc_position="bottom">
 
-
-
-
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
                     >
-                    <TextView
+
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Selamat Datang,"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/popmed"
-                        android:textColor="@color/white"
-                        />
+                        android:layout_margin="30dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_welcome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/popmed"
+                                android:text="Selamat datang,"
+                                android:textColor="@color/gray"
+                                android:textSize="13sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:id="@+id/tv_UserName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/popsem"
+                                    android:text="Eve Antoinette!"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:src="@drawable/handbye" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/popbold"
+                                android:text="Temukan atau input obat baru"
+                                android:textColor="@color/dark"
+                                android:textSize="20sp" />
+
+                            <!--                <RelativeLayout-->
+                            <!--                    android:layout_width="match_parent"-->
+                            <!--                    android:layout_height="wrap_content"-->
+                            <!--                    android:clipToPadding="false"-->
+                            <!--                    android:paddingTop="20dp"-->
+                            <!--                    android:paddingBottom="20dp">-->
+
+                            <!--                    <androidx.appcompat.widget.SearchView-->
+                            <!--                        android:id="@+id/search_bar"-->
+                            <!--                        android:layout_width="match_parent"-->
+                            <!--                        android:layout_height="wrap_content"-->
+                            <!--                        android:background="@drawable/content3"-->
+                            <!--                        app:iconifiedByDefault="false"-->
+                            <!--                        app:queryBackground="@color/white"-->
+                            <!--                        app:queryHint="Cari obat..." />-->
+
+                            <!--                    </RelativeLayout>-->
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </xyz.sahildave.arclayout.ArcLayout>
+
+        </FrameLayout>
+
+
+        <!--    <HorizontalScrollView-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_below="@id/frmHeader"-->
+        <!--        android:layout_marginTop="20dp"-->
+        <!--        android:id="@+id/scrollView"-->
+        <!--        android:scrollbars="none"-->
+        <!--        >-->
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:layout_below="@id/frmHeader"-->
+        <!--            >-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/btnSirup"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Sirup"-->
+        <!--                android:layout_margin="16dp"-->
+        <!--                />-->
+        <!--            <Button-->
+        <!--                android:id="@+id/btnTablet"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Tablet"-->
+        <!--                android:layout_margin="16dp"-->
+        <!--                />-->
+        <!--            <Button-->
+        <!--                android:id="@+id/btnOles"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Obat Oles"-->
+        <!--                android:layout_margin="16dp"-->
+        <!--                />-->
+        <!--            <Button-->
+        <!--                android:id="@+id/btnLainnya"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Lainnya"-->
+        <!--                android:layout_margin="16dp"-->
+        <!--                />-->
+
+
+        <!--        </LinearLayout>-->
+
+
+        <!--    </HorizontalScrollView>-->
+
+        <RelativeLayout
+            android:id="@+id/layoutImageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frmHeader"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-110dp"
+            android:layout_marginRight="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_slider_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                app:cardCornerRadius="20dp">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorEnabled="true"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1" />
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/popsem"
+                        android:text="Kategori Obat"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:text="Lihat Semua"
+                        android:textColor="@color/main"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        >
+                        android:padding="10dp">
 
-                        <TextView
-                            android:id="@+id/tv_UserName"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/popsem"
-                            android:text="Eve Antoinette!"
-                            android:textColor="@color/white"
-                            android:textSize="25sp" />
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/handbye"
-                            android:layout_marginLeft="10dp"
-                            />
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_sirup" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Sirup"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_tablet" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Tablet"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_obat_oles" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Oles"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_lainnya" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Lainnya"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+
+
 
                     </LinearLayout>
 
-                    <androidx.appcompat.widget.SearchView
-                        android:id="@+id/search_bar"
+                </HorizontalScrollView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_utilitas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/popsem"
+                        android:text="Utilitas"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:text="Lihat Semua"
+                        android:textColor="@color/main"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@drawable/content3"
-                        app:iconifiedByDefault="false"
-                        app:queryBackground="@drawable/content3"
-                        app:queryHint="Search..." />
+                        android:orientation="horizontal"
+                        android:padding="10dp">
 
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
 
-                </LinearLayout>
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_location" />
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Peta"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
 
+                        </LinearLayout>
 
-            </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
 
-        </RelativeLayout>
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/menu2" />
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Sirup"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
 
-
-
-    </xyz.sahildave.arclayout.ArcLayout>
-
-    </FrameLayout>
-
-
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/frmHeader"
-        android:layout_marginTop="20dp"
-        android:id="@+id/scrollView"
-        android:scrollbars="none"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/frmHeader"
-            >
-
-            <Button
-                android:id="@+id/btnSirup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sirup"
-                android:layout_margin="16dp"
-                />
-            <Button
-                android:id="@+id/btnTablet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tablet"
-                android:layout_margin="16dp"
-                />
-            <Button
-                android:id="@+id/btnOles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Obat Oles"
-                android:layout_margin="16dp"
-                />
-            <Button
-                android:id="@+id/btnLainnya"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lainnya"
-                android:layout_margin="16dp"
-                />
+                        </LinearLayout>
 
 
 
-        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/popsem"
+                    android:text="Menu Utama"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wave_menu"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/menu" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/popmed"
+                            android:text="Data Obat"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
 
 
-    </HorizontalScrollView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/frmHeader"
-        android:layout_marginTop="-170dp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_slider_mainActivity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_margin="30dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="8dp">
-
-            <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/imageSlider"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                app:sliderAnimationDuration="600"
-                app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderIndicatorAnimationDuration="600"
-                app:sliderIndicatorEnabled="true"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="15dp"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="3dp"
-                app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorSelectedColor="#5A5A5A"
-                app:sliderIndicatorUnselectedColor="#FFF"
-                app:sliderScrollTimeInSec="1" />
-
-        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
-        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-            android:id="@+id/bnvMain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:mbn_backgroundBottomColor="#ffffff"
-            app:mbn_circleColor="#ffffff"
-            app:mbn_countBackgroundColor="#ff6f00"
-            app:mbn_countTextColor="#ffffff"
-            app:mbn_defaultIconColor="#90a4ae"
-            app:mbn_rippleColor="#2f424242"
-            app:mbn_selectedIconColor="#3c415e"
-            app:mbn_shadowColor="#1f212121" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="20dp">
 
-    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wave"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/menu" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/popmed"
+                            android:text="Data Apoteker"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="20dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="20dp">
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
 
 
 

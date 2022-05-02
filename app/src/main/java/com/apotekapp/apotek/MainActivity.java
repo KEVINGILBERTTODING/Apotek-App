@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG_KODE_KONS = "nm_kons";
     String username, nm_kons;
     SharedPreferences sharedPreferences;
-    private MeowBottomNavigation bnv_Main;
     private Button btnSirup, btnTablet, btnOles, btnLainnya;
 
     TextView tv_Username;
@@ -60,19 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         //  Set username pada navbar
 
-//        tv_Username.setText("Hai, " + username);
-        bnv_Main = findViewById(R.id.bnvMain);
-        bnv_Main.add(new MeowBottomNavigation.Model(1,R.drawable.home));
-        bnv_Main.add(new MeowBottomNavigation.Model(2,R.drawable.search));
-        bnv_Main.add(new MeowBottomNavigation.Model(3,R.drawable.bookmark));
-        bnv_Main.add(new MeowBottomNavigation.Model(4,R.drawable.person));
+        tv_Username.setText("Hai, " + username);
 
-        // Inisialisasi button
-
-        btnSirup        =   (Button) findViewById(R.id.btnSirup);
-        btnTablet       =   (Button) findViewById(R.id.btnTablet);
-        btnOles        =   (Button) findViewById(R.id.btnOles);
-        btnLainnya      =   (Button) findViewById(R.id.btnLainnya);
+//        btnSirup        =   (Button) findViewById(R.id.btnSirup);
+//        btnTablet       =   (Button) findViewById(R.id.btnTablet);
+//        btnOles        =   (Button) findViewById(R.id.btnOles);
+//        btnLainnya      =   (Button) findViewById(R.id.btnLainnya);
 
         sliderView = findViewById(R.id.imageSlider);
 
@@ -97,86 +89,60 @@ public class MainActivity extends AppCompatActivity {
         renewItems();
 
 
-        // Fungsi saat button di klik
+//        // Fungsi saat button di klik
+//
+//        btnSirup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(MainActivity.this, ObatSirup.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//        btnTablet.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(MainActivity.this, ObatTablet.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//        btnOles.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(MainActivity.this, ObatOles.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//        btnLainnya.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(MainActivity.this, ObatLain.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
-        btnSirup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, ObatSirup.class);
-                startActivity(intent);
-
-            }
-        });
-        btnTablet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(MainActivity.this, ObatTablet.class);
-                startActivity(intent);
-
-            }
-        });
-        btnOles.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(MainActivity.this, ObatOles.class);
-                startActivity(intent);
-
-            }
-        });
-        btnLainnya.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(MainActivity.this, ObatLain.class);
-                startActivity(intent);
-
-            }
-        });
-
-
-        bnv_Main.show(1,true);
-
-        bnv_Main.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
-            @Override
-            public Unit invoke(MeowBottomNavigation.Model model) {
-                switch (model.getId()){
-                    case 1:
-                        Intent intent = new Intent(MainActivity.this, ObatActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case 2:
-//                        replace(new SearchFragment());
-                        break;
-
-                    case 3:
-//                        replace(new BookmarkFragment());
-                        break;
-
-                    case 4:
-//                        replace(new ProfileFragment());
-                        break;
-
-                }
-                return null;
-            }
-        });
 
     }
 
     public void renewItems() {
         List<SliderItem> sliderItemList = new ArrayList<>();
         //dummy data
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             SliderItem sliderItem = new SliderItem();
-            sliderItem.setDescription("Apoteker " + i);
+//            sliderItem.setDescription("Apoteker " + i); // for slider description
             if (i % 2 == 0) {
-                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider1.jpg");
-            } else {
-                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider2.jpg");
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider4.png");
+            }
+            else {
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider5.png");
             }
             sliderItemList.add(sliderItem);
         }
