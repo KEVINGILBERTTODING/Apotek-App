@@ -51,9 +51,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/popmed"
-                                android:text="Selamat datang,"
+                                android:text="Selamat malam,"
                                 android:textColor="@color/gray"
-                                android:textSize="13sp" />
+                                android:textSize="14sp" />
 
 
                             <LinearLayout
@@ -67,13 +67,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/popsem"
-                                    android:text="Eve Antoinette!"
+                                    android:text="Hai, Diana Thamara!"
                                     android:textColor="@color/black"
                                     android:textSize="18sp" />
 
                                 <ImageView
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
                                     android:layout_marginLeft="10dp"
                                     android:src="@drawable/handbye" />
 
@@ -257,6 +257,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnSirup"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_sirup" />
@@ -280,6 +281,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnTablet"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_tablet" />
@@ -303,6 +305,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnObatOles"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_obat_oles" />
@@ -326,6 +329,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnLainnya"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_lainnya" />
@@ -405,7 +409,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/popsem"
-                                android:text="Peta"
+                                android:text="Lokasi"
                                 android:textColor="@color/black"
                                 android:textSize="10sp" />
 
@@ -420,7 +424,7 @@
                             <ImageButton
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:background="@drawable/menu2" />
+                                android:background="@drawable/icon_call" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -428,14 +432,34 @@
                                 android:layout_gravity="center"
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/popsem"
-                                android:text="Obat Sirup"
+                                android:text="Call Center"
                                 android:textColor="@color/black"
                                 android:textSize="10sp" />
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
 
+                            <ImageButton
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_sms" />
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="SMS Center"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -453,36 +477,52 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="20dp"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="20dp">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/wave_menu"
-                        android:orientation="horizontal"
+                        android:background="@drawable/cardcontainer"
                         android:padding="10dp">
 
                         <ImageView
-                            android:layout_width="70dp"
+                            android:id="@+id/img_apoteker"
+                            android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_marginRight="20dp"
-                            android:src="@drawable/menu" />
+                            android:src="@drawable/icon_apoteker2" />
+
+                        <TextView
+                            android:id="@+id/tv_title_apoteker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/popsem"
+                            android:text="Data Apoteker"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@id/img_apoteker"
+                            android:textColor="@color/dark"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_title_apoteker"
                             android:layout_gravity="center_vertical"
+                            android:layout_toRightOf="@id/img_apoteker"
                             android:fontFamily="@font/popmed"
-                            android:text="Data Obat"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
+                            android:text="Lihat atau input data apoteker"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp" />
 
 
 
-                    </LinearLayout>
+
+                    </RelativeLayout>
+
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -493,39 +533,46 @@
                     android:layout_marginBottom="20dp"
                     app:cardCornerRadius="20dp">
 
-                    <LinearLayout
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/wave"
+                        android:background="@drawable/cardcontainer"
                         android:orientation="horizontal"
                         android:padding="10dp">
 
                         <ImageView
-                            android:layout_width="70dp"
+                            android:id="@+id/img_obat"
+                            android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_marginRight="20dp"
-                            android:src="@drawable/menu" />
+                            android:src="@drawable/icon_obat" />
+
+                        <TextView
+                            android:id="@+id/tv_title_obat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/popsem"
+                            android:text="Data Obat"
+                            android:layout_toRightOf="@+id/img_obat"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/dark"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_title_obat"
                             android:layout_gravity="center_vertical"
+                            android:layout_toRightOf="@id/img_obat"
                             android:fontFamily="@font/popmed"
-                            android:text="Data Apoteker"
-                            android:textColor="@color/white"
-                            android:textSize="20sp" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="20dp"
-                    android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="20dp">
+                            android:text="Lihat atau input data obat"
+                            android:textColor="@color/gray"
+                            android:textSize="15sp" />
 
 
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
 
@@ -539,6 +586,20 @@
 
 
     </LinearLayout>
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cnb_menuResource="@menu/nav_menu"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_corners"
+        app:cnb_unselectedColor="@color/white"
+        app:cnb_iconSize="30dp"
+        app:cnb_radius="10dp"
+        app:cnb_orientationMode="horizontal"
+        android:layout_margin="30dp"
+        android:elevation="8dp"/>
 
 
 

@@ -1,20 +1,25 @@
 package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.apotekapp.apotek.Adapter.SliderAdapter;
 import com.apotekapp.apotek.Model.SliderItem;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -34,13 +39,15 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG_KODE_KONS = "nm_kons";
     String username, nm_kons;
     SharedPreferences sharedPreferences;
-    private Button btnSirup, btnTablet, btnOles, btnLainnya;
+    private ImageButton btnSirup, btnTablet, btnOles, btnLainnya;
 
     TextView tv_Username;
 
 
     SliderView sliderView;
     private SliderAdapter adapter;
+
+    ChipNavigationBar chipNavigationBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +65,12 @@ public class MainActivity extends AppCompatActivity {
         tv_Username =   findViewById(R.id.tv_UserName);
 
         //  Set username pada navbar
+//        tv_Username.setText("Hai, " + username);
 
-        tv_Username.setText("Hai, " + username);
-
-//        btnSirup        =   (Button) findViewById(R.id.btnSirup);
-//        btnTablet       =   (Button) findViewById(R.id.btnTablet);
-//        btnOles        =   (Button) findViewById(R.id.btnOles);
-//        btnLainnya      =   (Button) findViewById(R.id.btnLainnya);
+        btnSirup        =   (ImageButton) findViewById(R.id.btnSirup);
+        btnTablet       =   (ImageButton) findViewById(R.id.btnTablet);
+        btnOles        =   (ImageButton) findViewById(R.id.btnObatOles);
+        btnLainnya      =   (ImageButton) findViewById(R.id.btnLainnya);
 
         sliderView = findViewById(R.id.imageSlider);
 
@@ -88,45 +94,49 @@ public class MainActivity extends AppCompatActivity {
 
         renewItems();
 
+        chipNavigationBar = findViewById(R.id.nav_menu);
 
-//        // Fungsi saat button di klik
-//
-//        btnSirup.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(MainActivity.this, ObatSirup.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-//        btnTablet.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(MainActivity.this, ObatTablet.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-//        btnOles.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(MainActivity.this, ObatOles.class);
-//                startActivity(intent);
-//
-//            }
-//        });
-//        btnLainnya.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(MainActivity.this, ObatLain.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+        bottommenu();
+
+
+        // Fungsi saat button di klik
+
+        btnSirup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatSirup.class);
+                startActivity(intent);
+
+            }
+        });
+        btnTablet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatTablet.class);
+                startActivity(intent);
+
+            }
+        });
+        btnOles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatOles.class);
+                startActivity(intent);
+
+            }
+        });
+        btnLainnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ObatLain.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 
@@ -135,17 +145,55 @@ public class MainActivity extends AppCompatActivity {
     public void renewItems() {
         List<SliderItem> sliderItemList = new ArrayList<>();
         //dummy data
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             SliderItem sliderItem = new SliderItem();
 //            sliderItem.setDescription("Apoteker " + i); // for slider description
             if (i % 2 == 0) {
                 sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider4.png");
             }
             else {
-                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider5.png");
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider6.png");
             }
             sliderItemList.add(sliderItem);
         }
         adapter.renewItems(sliderItemList);
+    }
+
+    private void bottommenu() {
+
+        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int i) {
+                Activity activity =null;
+                switch (i){
+                    case R.id.nav_home:
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                Intent i=new Intent(MainActivity.this,ApotekerActivity.class);
+                                startActivity(i);
+                            }
+                        }, 700);
+                        break;
+                    case R.id.nav_notification:
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                Intent i=new Intent(MainActivity.this,ObatActivity.class);
+                                startActivity(i);
+                            }
+                        }, 700);
+                        break;
+//                    case R.id.nav_cart:
+//                        fragment = new CartScreenFragment();
+//                        break;
+                }
+//
+            }
+        });
+
     }
 }
