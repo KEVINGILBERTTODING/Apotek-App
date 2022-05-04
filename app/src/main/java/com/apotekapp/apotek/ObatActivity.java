@@ -3,10 +3,13 @@ package com.apotekapp.apotek;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -48,6 +52,13 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
     FloatingActionButton fab;
     SearchView searchView;
     private ImageButton btnBack;
+    private ImageButton btnSirup, btnTablet, btnOles, btnLainnya;
+
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
+
     
 
 
@@ -62,12 +73,30 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.activity_obat);
 
+
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
+
+
+
         // Inisialisasi searchview, swipe, listview, and floating action button
 
         searchView  =   (SearchView) findViewById(R.id.search_barObat);
         swipe       =   (SwipeRefreshLayout) findViewById(R.id.swipe);
         list        =   (ListView) findViewById(R.id.list);
         fab         =   (FloatingActionButton) findViewById(R.id.fabAdd);
+
+
+        // Inisialisasi ImageButton menu kategori obat
+
+        btnSirup        =   (ImageButton) findViewById(R.id.btnSirup);
+        btnTablet       =   (ImageButton) findViewById(R.id.btnTablet);
+        btnOles         =   (ImageButton) findViewById(R.id.btnObatOles);
+        btnLainnya      =   (ImageButton) findViewById(R.id.btnLainnya);
 
         // Mengatur warna tint fab
 
@@ -83,12 +112,16 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(ObatActivity.this, MainActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });
 
 
-        // Fungsi ketika button + diklik
+        // Fungsi ketika button add diklik
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +190,6 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
         // Fungsi saat memasukkan kata pencarian pada searchview
 
 
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -177,6 +209,46 @@ public class ObatActivity extends AppCompatActivity implements SwipeRefreshLayou
 
             }
         });
+
+        // Fungsi saat menu kategori obat di klik
+
+        btnSirup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatActivity.this, ObatSirup.class);
+                startActivity(intent);
+
+            }
+        });
+        btnTablet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatActivity.this, ObatTablet.class);
+                startActivity(intent);
+
+            }
+        });
+        btnOles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatActivity.this, ObatOles.class);
+                startActivity(intent);
+
+            }
+        });
+        btnLainnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatActivity.this, ObatLain.class);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
 

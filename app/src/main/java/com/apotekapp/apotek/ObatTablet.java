@@ -47,6 +47,7 @@ public class ObatTablet extends AppCompatActivity implements SwipeRefreshLayout.
     SearchView searchView;
     private ImageButton btnBack;
 
+    private ImageButton btnSirup, btnTablet, btnOles, btnLainnya;
 
 
     @Override
@@ -66,6 +67,15 @@ public class ObatTablet extends AppCompatActivity implements SwipeRefreshLayout.
         swipe       =   (SwipeRefreshLayout) findViewById(R.id.swipe);
         list        =   (ListView) findViewById(R.id.list);
         fab         =   (FloatingActionButton) findViewById(R.id.fabAdd);
+
+
+        // Inisialisasi ImageButton menu kategori obat
+
+        btnSirup        =   (ImageButton) findViewById(R.id.btnSirup);
+        btnTablet       =   (ImageButton) findViewById(R.id.btnTablet);
+        btnOles         =   (ImageButton) findViewById(R.id.btnObatOles);
+        btnLainnya      =   (ImageButton) findViewById(R.id.btnLainnya);
+
 
         // Mengatur warna tint fab
 
@@ -175,6 +185,48 @@ public class ObatTablet extends AppCompatActivity implements SwipeRefreshLayout.
 
             }
         });
+
+
+        // Fungsi saat button menu kategori obat di klik
+
+
+        btnSirup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatTablet.this, ObatSirup.class);
+                startActivity(intent);
+
+            }
+        });
+        btnTablet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatTablet.this, ObatTablet.class);
+                startActivity(intent);
+
+            }
+        });
+        btnOles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatTablet.this, ObatOles.class);
+                startActivity(intent);
+
+            }
+        });
+        btnLainnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatTablet.this, ObatLain.class);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
 

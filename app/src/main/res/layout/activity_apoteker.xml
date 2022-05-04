@@ -15,9 +15,8 @@
         >
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="240dp"
             android:id="@+id/frmHeader1"
-            android:layout_marginBottom="20dp"
             android:background="@drawable/wave"
             >
 
@@ -28,8 +27,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
                     >
 
                     <ImageButton
@@ -40,22 +39,11 @@
                         android:background="@drawable/ic_btnback" />
 
                     <TextView
-                        android:id="@+id/tvTitle1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnBack"
-                        android:layout_marginTop="30dp"
-                        android:fontFamily="@font/popmed"
-                        android:text="Halo, Diana Thamara!"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <TextView
                         android:id="@+id/tvTitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvTitle1"
-                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/btnBack"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/popsem"
                         android:text="Apakah ada apoteker baru?"
                         android:textColor="@color/white"
@@ -71,7 +59,7 @@
                         android:background="@drawable/content3"
                         app:iconifiedByDefault="false"
                         app:queryBackground="@drawable/content3"
-                        app:queryHint="Cari nama obat..." />
+                        app:queryHint="Cari apoteker..." />
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -80,23 +68,49 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/frmHeader1">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frmHeader1"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/container"
+            >
 
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/swipe"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="30dp"
+                >
+                <TextView
+                    android:id="@+id/tv_daftar_apoteker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Daftar Apoteker"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
 
-                <ListView
-                    android:id="@+id/list_apoteker"
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe"
+                    android:layout_below="@id/tv_daftar_apoteker"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:divider="@null"
-                    android:dividerHeight="2dp" />
+                    android:layout_marginTop="10dp"
+                   >
+
+                    <ListView
+                        android:id="@+id/list_apoteker"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@null"
+                        android:dividerHeight="2dp" />
 
 
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            </LinearLayout>
+
+
 
 
         </RelativeLayout>
@@ -117,7 +131,6 @@
         app:fabCradleRoundedCornerRadius="120dp"
         app:fabAlignmentMode="center"
         app:fabCradleVerticalOffset="20dp"
-        app:navigationIcon="@drawable/person"
 
         />
 

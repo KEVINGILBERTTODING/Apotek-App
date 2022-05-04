@@ -60,25 +60,17 @@ public class ApotekerAdapter extends BaseAdapter {
 
         // Deklarasi TextView
 
-        TextView id                 = (TextView) convertView.findViewById(R.id.txt_id);
-        TextView id_apoteker        = (TextView) convertView.findViewById(R.id.txt_id_apoteker);
         TextView nama_apoteker      = (TextView) convertView.findViewById(R.id.txt_nama_apoteker);
-        TextView kota_apoteker      = (TextView) convertView.findViewById(R.id.txt_kota_apoteker);
         TextView nohp_apoteker      = (TextView) convertView.findViewById(R.id.txt_noHp_apoteker);
         TextView shift_apoteker     = (TextView) convertView.findViewById(R.id.txt_shift_apoteker);
-        TextView alamat_apoteker    = (TextView) convertView.findViewById(R.id.txt_alamat_apoteker);
 
         DataApoteker dataApoteker = items.get(position);
 
         // Mengatur text dari value get and setter
 
-        id.setText(dataApoteker.getId());
-        id_apoteker.setText(dataApoteker.getId_apoteker());
         nama_apoteker.setText(dataApoteker.getNm_apoteker());
-        kota_apoteker.setText(dataApoteker.getKota_apoteker());
         nohp_apoteker.setText(dataApoteker.getNoHp_apoteker());
         shift_apoteker.setText(dataApoteker.getShift());
-        alamat_apoteker.setText(dataApoteker.getAlamat_apoteker());
 
 
         return convertView;

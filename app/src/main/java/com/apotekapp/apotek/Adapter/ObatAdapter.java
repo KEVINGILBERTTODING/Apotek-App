@@ -57,11 +57,7 @@ public class ObatAdapter extends BaseAdapter {
 
         // Deklarasi TextView
 
-        TextView idobat     = (TextView) convertView.findViewById(R.id.id_obat);
-        TextView kdobat     = (TextView) convertView.findViewById(R.id.kd_obat);
         TextView nmobat     = (TextView) convertView.findViewById(R.id.nm_obat);
-        TextView satuan     = (TextView) convertView.findViewById(R.id.satuan);
-        TextView jumlah     = (TextView) convertView.findViewById(R.id.jumlah);
         TextView jenis      = (TextView) convertView.findViewById(R.id.jenis);
         TextView expired    = (TextView) convertView.findViewById(R.id.expired);
 
@@ -69,11 +65,7 @@ public class ObatAdapter extends BaseAdapter {
 
         // Mengatur text dari value get and setter
 
-        idobat.setText(dataObat.getId());
-        kdobat.setText(dataObat.getKdobat());
         nmobat.setText(dataObat.getNmobat());
-        satuan.setText(dataObat.getSatuan());
-        jumlah.setText(dataObat.getJumlah());
         jenis.setText(dataObat.getJenis());
         expired.setText(dataObat.getExpired());
 

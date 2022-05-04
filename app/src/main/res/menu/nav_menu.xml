@@ -17,7 +17,7 @@
 
     <item
         android:id="@+id/nav_cart"
-        android:title="Cart"
+        android:title="Account"
         android:icon="@drawable/person"
         app:cnb_backgroundColor="@color/main"/>
 

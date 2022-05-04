@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     String username, nm_kons;
     SharedPreferences sharedPreferences;
     private ImageButton btnSirup, btnTablet, btnOles, btnLainnya;
+    private ImageButton btnLocation, btnCallCenter, btnSmsCenter;
 
     TextView tv_Username;
 
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         // Fungsi untuk menyembunyikan navbar
 
         getWindow().getDecorView().setSystemUiVisibility(
@@ -62,15 +68,29 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
         username = getIntent().getStringExtra(TAG_USERNAME);
+
+        // Inisialisasi text username
+
         tv_Username =   findViewById(R.id.tv_UserName);
 
-        //  Set username pada navbar
-//        tv_Username.setText("Hai, " + username);
+        // Set username pada navbar
+
+        tv_Username.setText("Hai, " + username);
+
+        // Inisialisasi ImageButton menu kategori obat
 
         btnSirup        =   (ImageButton) findViewById(R.id.btnSirup);
         btnTablet       =   (ImageButton) findViewById(R.id.btnTablet);
-        btnOles        =   (ImageButton) findViewById(R.id.btnObatOles);
+        btnOles         =   (ImageButton) findViewById(R.id.btnObatOles);
         btnLainnya      =   (ImageButton) findViewById(R.id.btnLainnya);
+
+        // Inisialisasi ImageButton menu Utilitas
+
+        btnLocation     =   (ImageButton) findViewById(R.id.btnLocation);
+        btnCallCenter   =   (ImageButton) findViewById(R.id.btnCallCenter);
+        btnSmsCenter    =   (ImageButton) findViewById(R.id.btnSmsCenter);
+
+        // Inisialisasi ImageButton kategori obat
 
         sliderView = findViewById(R.id.imageSlider);
 
@@ -99,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         bottommenu();
 
 
-        // Fungsi saat button di klik
+        // Fungsi saat button menu kategori obat di klik
 
         btnSirup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,8 +159,46 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        // Fungsi saat button menu utilitas di klik
+
+        btnLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri gmmIntentUri = Uri.parse("geo: -6.269427,106.9119?q=-6.269427,106.9119");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                }
+            }
+        });
+
+        btnCallCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Uri number = Uri.parse("tel:0811111111");
+                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+                startActivity(callIntent);
+
+            }
+        });
+
+        btnSmsCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String no = "08111111111";
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", no, null)));
+
+            }
+        });
+
+
 
     }
+
+    // Method untuk menambahkan image pada sliderImage
 
     public void renewItems() {
         List<SliderItem> sliderItemList = new ArrayList<>();
@@ -158,6 +216,8 @@ public class MainActivity extends AppCompatActivity {
         }
         adapter.renewItems(sliderItemList);
     }
+
+    // Method untuk untuk menu bottom bar
 
     private void bottommenu() {
 
@@ -178,14 +238,7 @@ public class MainActivity extends AppCompatActivity {
                         }, 700);
                         break;
                     case R.id.nav_notification:
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-
-                                Intent i=new Intent(MainActivity.this,ObatActivity.class);
-                                startActivity(i);
-                            }
-                        }, 700);
+//
                         break;
 //                    case R.id.nav_cart:
 //                        fragment = new CartScreenFragment();
@@ -196,4 +249,53 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    // Method pada saat menu utama data apoteker di klik
+
+    public void data_Apoteker(View view) {
+
+        Intent dataApoteker =   new Intent(MainActivity.this, ApotekerActivity.class);
+        startActivity(dataApoteker);
+
+    }
+
+    // Method pada saat menu utama data obat di klik
+
+    public void data_Obat(View view) {
+
+        Intent dataObat =   new Intent(MainActivity.this, ObatActivity.class);
+        startActivity(dataObat);
+
+    }
+
+//    //        Method jika tombol back ditekan
+//
+//    @Override
+//    public void onBackPressed(){
+//        Context context;
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setCancelable(false);
+//        builder.setMessage("Apakah Kamu Ingin Keluar? ");
+//        builder.setPositiveButton("Iya ", new DialogInterface.OnClickListener() {
+//
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                Intent intent = new Intent(Intent.ACTION_MAIN);
+//                startActivity(intent);
+//                int pid = android.os.Process.myPid();
+//                android.os.Process.killProcess(pid);
+//            }
+//        });
+//
+//        builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.cancel();
+//            }
+//        });
+//        AlertDialog alert = builder.create();
+//        alert.show();
+//
+//    }
 }
