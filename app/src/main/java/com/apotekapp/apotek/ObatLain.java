@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -50,6 +52,13 @@ public class ObatLain extends AppCompatActivity implements SwipeRefreshLayout.On
     private ImageButton btnSirup, btnTablet, btnOles, btnLainnya;
 
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +70,14 @@ public class ObatLain extends AppCompatActivity implements SwipeRefreshLayout.On
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.activity_obat);
+
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
+
 
         // Inisialisasi searchview, swipe, listview, and floating action button
 
@@ -91,6 +108,10 @@ public class ObatLain extends AppCompatActivity implements SwipeRefreshLayout.On
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(ObatLain.this, MainActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });

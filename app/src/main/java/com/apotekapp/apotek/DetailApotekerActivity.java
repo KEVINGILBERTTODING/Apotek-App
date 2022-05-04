@@ -2,7 +2,9 @@ package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,10 +17,22 @@ public class DetailApotekerActivity extends AppCompatActivity {
     TextView tv_idApoteker, tv_nmApoteker, tv_kotaApoteker, tv_nohpApoteker, tv_shiftApoteker, tv_alamatApoteker;
     private ImageButton btnBack;
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_apoteker);
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
 
 
         // Deklarasikan TextView
@@ -59,6 +73,10 @@ public class DetailApotekerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(DetailApotekerActivity.this, ApotekerActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });

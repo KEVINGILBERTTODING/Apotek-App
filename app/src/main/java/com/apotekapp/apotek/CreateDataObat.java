@@ -1,6 +1,8 @@
 package com.apotekapp.apotek;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -45,12 +47,21 @@ public class CreateDataObat extends ObatActivity {
 
     List<DataObat> itemList = new ArrayList<DataObat>();
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_data_obat);
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
 
         // Inisialisasi EditText
 
@@ -86,6 +97,9 @@ public class CreateDataObat extends ObatActivity {
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(CreateDataObat.this, ObatActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
                 startActivity(kembali);
             }
         });

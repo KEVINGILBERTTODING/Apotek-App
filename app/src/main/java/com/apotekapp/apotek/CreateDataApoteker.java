@@ -1,6 +1,8 @@
 package com.apotekapp.apotek;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,6 +33,10 @@ public class CreateDataApoteker extends ApotekerActivity {
     private ImageButton btnBack;
     private RadioGroup rgShift;
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
 
     List<DataApoteker> itemList =   new ArrayList<DataApoteker>();
 
@@ -38,6 +44,14 @@ public class CreateDataApoteker extends ApotekerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_data_apoteker);
+
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
+
 
         // Definisikan EditText
 
@@ -64,6 +78,9 @@ public class CreateDataApoteker extends ApotekerActivity {
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(CreateDataApoteker.this, ApotekerActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
                 startActivity(kembali);
             }
         });

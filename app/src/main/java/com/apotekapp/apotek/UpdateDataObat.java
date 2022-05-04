@@ -1,6 +1,8 @@
 package com.apotekapp.apotek;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -47,6 +49,12 @@ public class UpdateDataObat extends ObatActivity {
     //String untuk hashmap
      String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xjenisobat,  xdeskripsiobat, xexpiredate;
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +75,12 @@ public class UpdateDataObat extends ObatActivity {
         rbTablet            =   (RadioButton) findViewById(R.id.rbTablet);
         rbObatOles          =   (RadioButton) findViewById(R.id.rbObatOles);
         rbLainnya           =   (RadioButton) findViewById(R.id.rbLainnya);
+
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
 
 
 
@@ -103,6 +117,10 @@ public class UpdateDataObat extends ObatActivity {
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(UpdateDataObat.this, ObatActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });
