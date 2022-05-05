@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".RegisterActivity">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:layout_alignParentTop="true"
-
-        android:layout_marginLeft="-100dp"
-        android:layout_marginRight="-100dp" >
-    </RelativeLayout>
-
-<!--    <ImageView-->
-<!--        android:id="@+id/header_register"-->
-<!--        android:layout_width="450dp"-->
-<!--        android:layout_height="450dp"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="30dp" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
-        >
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign up"
-            android:textSize="35sp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@drawable/icon_login2"
+                android:layout_gravity="center_vertical"
+                />
+
+
+        </FrameLayout>
+
+        <TextView
             android:fontFamily="@font/popsem"
-            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello, welcome\n to Apotek App"
+            android:textColor="@color/dark"
+            android:layout_marginTop="20dp"
+            android:textSize="25sp" />
+
+
+        <TextView
+            android:fontFamily="@font/popmed"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            />
+            android:text="Create an accout and join with us?"
+            android:textColor="@color/gray"
+            android:textSize="15sp" />
+
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtfild_username"
@@ -58,7 +70,7 @@
                 android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:fontFamily="@font/popmed"
                 android:textColor="@color/black"
                 android:hint="Username">
@@ -83,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
                 android:inputType="textPassword">
@@ -110,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
                 android:inputType="textPassword">
@@ -131,7 +143,7 @@
                 android:text="By signing up, you’re agree to our"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
-                android:textSize="15dp"/>
+                android:textSize="13dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -139,7 +151,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/popsem"
                 android:textColor="@color/main"
-                android:textSize="15dp"/>
+                android:textSize="13dp"/>
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -154,10 +166,10 @@
             android:id="@+id/button_register"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            app:cornerRadius="20dp"
-            android:text="Register"
+            app:cornerRadius="10dp"
+            android:text="Sign Up"
             android:textAllCaps="false"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/popsem"
             />
@@ -174,23 +186,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sudah Punya Akun?"
+                android:text="Already have an account?"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
-                android:textSize="15dp"/>
+                android:textSize="13dp"/>
             <TextView
                 android:id="@+id/tv_ToLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Masuk"
+                android:text=" Sign In"
                 android:textStyle="bold"
                 android:fontFamily="@font/popsem"
                 android:textColor="@color/main"
-                android:textSize="15dp"/>
+                android:textSize="13dp"/>
         </LinearLayout>
 
     </LinearLayout>
 
+    </LinearLayout>
 
-
-</RelativeLayout>

@@ -3,6 +3,7 @@ package com.apotekapp.apotek;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +22,11 @@ public class SplashScreen extends AppCompatActivity {
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         setContentView(R.layout.activity_splash_screen);
+
+
+        // Fungsi untuk menyembunyikan status bar
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
 

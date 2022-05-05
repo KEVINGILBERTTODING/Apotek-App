@@ -7,19 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".UpdateDataObat">
 
-    <FrameLayout
-        android:id="@+id/frmBanneObat"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/main"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:id="@+id/frmHeader1"
+        android:background="@drawable/wave"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
 
-            >
 
             <ImageButton
                 android:id="@+id/btnBack"
@@ -28,82 +36,201 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/ic_btnback" />
 
+
+            <TextView
+                android:id="@+id/tvTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnBack"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/popsem"
+                android:text="Update data obat"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
         </RelativeLayout>
+
 
 
     </FrameLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frmHeader1"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/container"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="40dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/tv_daftar_apoteker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:padding="5dp"
+                    android:text="Data Obat"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+
+
     <ScrollView
         android:layout_width="match_parent"
+        android:scrollbars="none"
         android:layout_height="wrap_content"
-        android:layout_below="@id/frmBanneObat">
+        android:layout_marginTop="20dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_below="@+id/frmBanneObat"
-            android:layout_margin="20dp">
+            android:layout_below="@+id/frmBanneObat">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_id_obat"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Kode Obat"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
+                android:layout_marginBottom="5dp"
+                app:startIconDrawable="@drawable/ic_key"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxStrokeWidth="3dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                android:textColor="@color/dark"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updt_KodeObat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/popmed"
+                    android:textColor="@color/dark"
+                    android:hint="ID Obat">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/updt_KodeObat"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_NmObat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Kode Obat"
-                />
+                android:layout_marginBottom="5dp"
+                app:startIconDrawable="@drawable/ic_obat"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                app:boxStrokeWidth="3dp"
+                android:layout_marginTop="20dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                android:textColor="@color/dark"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updt_NamaObat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/popmed"
+                    android:textColor="@color/dark"
+                    android:hint="Nama Obat">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama Obat"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
 
-            <EditText
-                android:id="@+id/updt_NamaObat"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nama Obat"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Satuan"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/updt_SatuanObat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Satuan"
-                />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Stok"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_SObat"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    app:startIconDrawable="@drawable/satuan_icon"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    app:boxStrokeWidth="3dp"
+                    android:layout_marginRight="10dp"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updt_SatuanObat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/popmed"
+                        android:textColor="@color/dark"
+                        android:hint="Satuan">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/updt_JumlahObat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Stok Obat"
-                android:inputType="number"
-                />
+
+                <!--                        <EditText-->
+                <!--                            android:id="@+id/edt_SatuanObat"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:hint="Satuan" />-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_JObat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    app:startIconDrawable="@drawable/stok_icon"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    app:boxStrokeWidth="3dp"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    android:layout_marginTop="20dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    android:textColor="@color/dark"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updt_JumlahObat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/popmed"
+                        android:textColor="@color/dark"
+                        android:hint="Stok">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/updt_SatuanObat"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Satuan"-->
+<!--                />-->
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/updt_JumlahObat"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Stok Obat"-->
+<!--                android:inputType="number"-->
+<!--                />-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,84 +320,155 @@
 
 
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Expired Date"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <EditText
-                    android:id="@+id/updt_ExpiredDate"
-                    android:layout_width="200dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_ExObat"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Expired Date"
-                    android:inputType="date"
-                    android:paddingRight="20dp" />
+                    android:layout_marginBottom="5dp"
+                    app:startIconDrawable="@drawable/expdate_icon"
+                    app:boxCornerRadiusTopStart="15dp"
+                    app:boxCornerRadiusBottomEnd="15dp"
+                    android:layout_marginTop="20dp"
+                    app:boxStrokeWidth="3dp"
+                    app:boxCornerRadiusBottomStart="15dp"
+                    app:boxCornerRadiusTopEnd="15dp"
+                    android:textColor="@color/dark"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updt_ExpiredDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/popmed"
+                        android:textColor="@color/dark"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:hint="Expired Date">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:id="@+id/imgCalendar"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_calendar"
-                    android:focusable="true"
-                    android:layout_marginLeft="10dp"
-                    />
-            </LinearLayout>
+                <!--                            <EditText-->
+                <!--                                android:id="@+id/edt_ExpiredDate"-->
+                <!--                                android:layout_width="200dp"-->
+                <!--                                android:layout_height="wrap_content"-->
+                <!--                                android:editable="false"-->
+                <!--                                android:focusable="false"-->
+                <!--                                android:hint="Expired Date"-->
+                <!--                                android:inputType="date"-->
+                <!--                                android:paddingRight="20dp" />-->
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deskripsi"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
 
-            <EditText
-                android:id="@+id/updt_Desc"
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                >-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/updt_ExpiredDate"-->
+<!--                    android:layout_width="200dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Expired Date"-->
+<!--                    android:inputType="date"-->
+<!--                    android:paddingRight="20dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgCalendar"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:src="@drawable/ic_calendar"-->
+<!--                    android:focusable="true"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    />-->
+<!--            </LinearLayout>-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edt_DObat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Deskripsi"
-                android:inputType="textMultiLine"
-                android:scrollbars="vertical"
-                android:layout_gravity="top|start"
-                android:minLines="6"
-                android:maxLength="255"
-                android:lines="8"
-                android:gravity="start"
-                android:maxLines="10"
-                />
+                android:layout_marginBottom="5dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxCornerRadiusBottomEnd="15dp"
+                android:layout_marginTop="20dp"
+                app:boxStrokeWidth="3dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                android:textColor="@color/dark"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
-            <Button
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updt_Desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:fontFamily="@font/popmed"
+                    android:gravity="start"
+                    android:hint="Deskripsi"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:maxLength="255"
+                    android:maxLines="10"
+                    android:minLines="6"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/dark"
+                    android:textSize="15sp"></com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--            <EditText-->
+<!--                android:id="@+id/updt_Desc"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Deskripsi"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:scrollbars="vertical"-->
+<!--                android:layout_gravity="top|start"-->
+<!--                android:minLines="6"-->
+<!--                android:maxLength="255"-->
+<!--                android:lines="8"-->
+<!--                android:gravity="start"-->
+<!--                android:maxLines="10"-->
+<!--                />-->
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnInsert"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
+                app:cornerRadius="10dp"
                 android:text="Update"
-                android:layout_marginTop="20dp"
-                android:background="@color/main"
-                android:textColor="@color/white"
+                android:textAllCaps="false"
                 android:onClick="UpdateObat"
+                android:textSize="18sp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/popsem"
+                app:icon="@drawable/ic_save"
+                app:iconGravity="textStart"
+
                 />
+
+
+<!--            <Button-->
+<!--                android:id="@+id/btnInsert"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Update"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@color/main"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:onClick="UpdateObat"-->
+<!--                android:fontFamily="@font/popsem"-->
+<!--                />-->
 
         </LinearLayout>
 
     </ScrollView>
 
-
-
-
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

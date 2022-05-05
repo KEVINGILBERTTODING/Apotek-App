@@ -2,42 +2,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/search"
-        android:title="Search"
-        android:icon="@drawable/search"
-        />
-    <item
-        android:id="@+id/home4"
-        android:title="Search"
-        android:icon="@drawable/home"
-        app:showAsAction="ifRoom"
-        />
-
-
-    <item
-        android:id="@+id/placeholder"
-        android:title="" />
-
-    <item
-        android:id="@+id/home"
-        android:title="Search"
-        android:icon="@drawable/home"
-        app:showAsAction="ifRoom"
-        />
-    <item
-        android:id="@+id/home2"
-        android:title="Search"
-        android:icon="@drawable/home"
-        app:showAsAction="ifRoom"
-        />
-
-    <item
-        android:id="@+id/home3"
-        android:title="Search"
-        android:icon="@drawable/home"
-        app:showAsAction="ifRoom"
-        />
-
 
 </menu>

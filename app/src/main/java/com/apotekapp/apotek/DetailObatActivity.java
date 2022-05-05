@@ -2,7 +2,9 @@ package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -16,6 +18,13 @@ public class DetailObatActivity extends AppCompatActivity {
     String namaObat, satuanObat, jumlah, jenis, deskripsi, expired;
 
     TextView tv_detNamaObat, tv_detSatuanObat, tv_detJumlah, tv_detJenis, tv_detDeskripsi, tv_detExpired;
+
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,12 @@ public class DetailObatActivity extends AppCompatActivity {
         tv_detDeskripsi     =   (TextView) findViewById(R.id.det_Desc);
         tv_detExpired       =   (TextView) findViewById(R.id.det_Expired);
 
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
         // Inisialisasi button back
 
         btnBack =   (ImageButton) findViewById(R.id.btnBack);
@@ -41,6 +56,10 @@ public class DetailObatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(DetailObatActivity.this, ObatActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });

@@ -11,14 +11,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <FrameLayout
             android:id="@+id/frmHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <xyz.sahildave.arclayout.ArcLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <xyz.sahildave.arclayout.ArcLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/arc_layout"
@@ -51,7 +53,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/popmed"
-                                android:text="Selamat malam,"
+                                android:text="Selamat Datang,"
                                 android:textColor="@color/gray"
                                 android:textSize="14sp" />
 
@@ -87,23 +89,6 @@
                                 android:textColor="@color/dark"
                                 android:textSize="20sp" />
 
-                            <!--                <RelativeLayout-->
-                            <!--                    android:layout_width="match_parent"-->
-                            <!--                    android:layout_height="wrap_content"-->
-                            <!--                    android:clipToPadding="false"-->
-                            <!--                    android:paddingTop="20dp"-->
-                            <!--                    android:paddingBottom="20dp">-->
-
-                            <!--                    <androidx.appcompat.widget.SearchView-->
-                            <!--                        android:id="@+id/search_bar"-->
-                            <!--                        android:layout_width="match_parent"-->
-                            <!--                        android:layout_height="wrap_content"-->
-                            <!--                        android:background="@drawable/content3"-->
-                            <!--                        app:iconifiedByDefault="false"-->
-                            <!--                        app:queryBackground="@color/white"-->
-                            <!--                        app:queryHint="Cari obat..." />-->
-
-                            <!--                    </RelativeLayout>-->
 
                         </LinearLayout>
                     </RelativeLayout>
@@ -111,58 +96,6 @@
             </xyz.sahildave.arclayout.ArcLayout>
 
         </FrameLayout>
-
-
-        <!--    <HorizontalScrollView-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_below="@id/frmHeader"-->
-        <!--        android:layout_marginTop="20dp"-->
-        <!--        android:id="@+id/scrollView"-->
-        <!--        android:scrollbars="none"-->
-        <!--        >-->
-
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:orientation="horizontal"-->
-        <!--            android:layout_below="@id/frmHeader"-->
-        <!--            >-->
-
-        <!--            <Button-->
-        <!--                android:id="@+id/btnSirup"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Sirup"-->
-        <!--                android:layout_margin="16dp"-->
-        <!--                />-->
-        <!--            <Button-->
-        <!--                android:id="@+id/btnTablet"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Tablet"-->
-        <!--                android:layout_margin="16dp"-->
-        <!--                />-->
-        <!--            <Button-->
-        <!--                android:id="@+id/btnOles"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Obat Oles"-->
-        <!--                android:layout_margin="16dp"-->
-        <!--                />-->
-        <!--            <Button-->
-        <!--                android:id="@+id/btnLainnya"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="Lainnya"-->
-        <!--                android:layout_margin="16dp"-->
-        <!--                />-->
-
-
-        <!--        </LinearLayout>-->
-
-
-        <!--    </HorizontalScrollView>-->
 
         <RelativeLayout
             android:id="@+id/layoutImageSlider"
@@ -399,6 +332,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnLocation"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_location" />
@@ -422,6 +356,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnCallCenter"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_call" />
@@ -445,6 +380,7 @@
                             android:orientation="vertical">
 
                             <ImageButton
+                                android:id="@+id/btnSmsCenter"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:background="@drawable/icon_sms" />
@@ -479,7 +415,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp">
+                    app:cardCornerRadius="20dp"
+                    android:onClick="data_Apoteker"
+                    >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -531,7 +469,9 @@
                     android:layout_height="wrap_content"
                     android:elevation="20dp"
                     android:layout_marginBottom="20dp"
-                    app:cardCornerRadius="20dp">
+                    app:cardCornerRadius="20dp"
+                    android:onClick="data_Obat"
+                    >
 
 
                     <RelativeLayout
@@ -553,10 +493,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@+id/img_obat"
                             android:fontFamily="@font/popsem"
                             android:text="Data Obat"
-                            android:layout_toRightOf="@+id/img_obat"
-                            android:layout_marginTop="20dp"
                             android:textColor="@color/dark"
                             android:textSize="20sp" />
 
@@ -574,10 +514,6 @@
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
-
-
-
-
 
             </LinearLayout>
 
@@ -600,9 +536,6 @@
         app:cnb_orientationMode="horizontal"
         android:layout_margin="30dp"
         android:elevation="8dp"/>
-
-
-
 
 </RelativeLayout>
 

@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -50,6 +52,12 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
     FloatingActionButton fab;
     private ImageButton btnBack;
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +82,12 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
         fab         =   (FloatingActionButton) findViewById(R.id.add_apoteker);
 
 
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
+
 
         // Inisialisasi button back
 
@@ -85,6 +99,10 @@ public class ApotekerActivity extends AppCompatActivity implements  SwipeRefresh
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(ApotekerActivity.this, MainActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });

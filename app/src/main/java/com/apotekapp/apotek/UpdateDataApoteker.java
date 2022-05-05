@@ -2,7 +2,9 @@ package com.apotekapp.apotek;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -42,6 +44,10 @@ public class UpdateDataApoteker extends AppCompatActivity {
 
     private RadioGroup rgShift;
 
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
 
 
     @Override
@@ -56,6 +62,12 @@ public class UpdateDataApoteker extends AppCompatActivity {
         updt_kota = findViewById(R.id.updt_kotaApoteker);
         updt_nohp = findViewById(R.id.updt_nohpApoteker);
         updt_alamat = findViewById(R.id.updt_alamatApoteker);
+
+
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
 
         // Inisialisasi Radio Group Shift
 

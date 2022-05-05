@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -47,6 +49,13 @@ public class ObatOles extends AppCompatActivity implements SwipeRefreshLayout.On
     SearchView searchView;
     private ImageButton btnBack;
 
+    private ImageButton btnSirup, btnTablet, btnOles, btnLainnya;
+
+
+    public static final String TAG_USERNAME = "username";
+    String username;
+    SharedPreferences sharedPreferences;
+
 
 
     @Override
@@ -60,12 +69,26 @@ public class ObatOles extends AppCompatActivity implements SwipeRefreshLayout.On
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         setContentView(R.layout.activity_obat);
 
+        // Menyimpan username ke dalam sharedpreferance
+
+        sharedPreferences = getSharedPreferences(LoginActivity.my_shared_preferences, Context.MODE_PRIVATE);
+        username = sharedPreferences.getString("username", null);
+
+
         // Inisialisasi searchview, swipe, listview, and floating action button
 
         searchView  =   (SearchView) findViewById(R.id.search_barObat);
         swipe       =   (SwipeRefreshLayout) findViewById(R.id.swipe);
         list        =   (ListView) findViewById(R.id.list);
         fab         =   (FloatingActionButton) findViewById(R.id.fabAdd);
+
+
+        // Inisialisasi ImageButton menu kategori obat
+
+        btnSirup        =   (ImageButton) findViewById(R.id.btnSirup);
+        btnTablet       =   (ImageButton) findViewById(R.id.btnTablet);
+        btnOles         =   (ImageButton) findViewById(R.id.btnObatOles);
+        btnLainnya      =   (ImageButton) findViewById(R.id.btnLainnya);
 
         // Mengatur warna tint fab
 
@@ -81,6 +104,10 @@ public class ObatOles extends AppCompatActivity implements SwipeRefreshLayout.On
             @Override
             public void onClick(View view) {
                 Intent kembali = new Intent(ObatOles.this, MainActivity.class);
+
+                //   Mengirim username menggunakan intent
+                kembali.putExtra(TAG_USERNAME, username);
+
                 startActivity(kembali);
             }
         });
@@ -175,6 +202,50 @@ public class ObatOles extends AppCompatActivity implements SwipeRefreshLayout.On
 
             }
         });
+
+
+
+        // Fungsi saat button menu kategori obat di klik
+
+
+        btnSirup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatOles.this, ObatSirup.class);
+                startActivity(intent);
+
+            }
+        });
+        btnTablet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatOles.this, ObatTablet.class);
+                startActivity(intent);
+
+            }
+        });
+        btnOles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatOles.this, ObatOles.class);
+                startActivity(intent);
+
+            }
+        });
+        btnLainnya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ObatOles.this, ObatLain.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
     }
 

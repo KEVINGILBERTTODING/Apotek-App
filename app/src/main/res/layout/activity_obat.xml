@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +10,11 @@
     android:background="@color/container"
     tools:context=".ObatActivity">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,9 +22,8 @@
         >
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="240dp"
             android:id="@+id/frmHeaderObat"
-            android:layout_marginBottom="20dp"
             android:background="@drawable/wave"
             >
             <RelativeLayout
@@ -27,9 +33,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    >
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp">
 
                     <ImageButton
                         android:id="@+id/btnBack"
@@ -38,22 +43,12 @@
                         android:layout_marginTop="20dp"
                         android:background="@drawable/ic_btnback" />
 
-                    <TextView
-                        android:id="@+id/tvTitle1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnBack"
-                        android:layout_marginTop="30dp"
-                        android:fontFamily="@font/popmed"
-                        android:text="Halo, Diana Thamara!"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/tvTitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvTitle1"
+                        android:layout_below="@+id/btnBack"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/popsem"
                         android:text="Apakah ada obat baru?"
@@ -70,7 +65,7 @@
                         android:background="@drawable/content3"
                         app:iconifiedByDefault="false"
                         app:queryBackground="@drawable/content3"
-                        app:queryHint="Cari nama obat..." />
+                        app:queryHint="Cari obat..." />
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -81,22 +76,173 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/frmHeaderObat"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/container"
             >
-
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/swipe"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="30dp"
+                >
 
-                <ListView
-                    android:id="@+id/list"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/popsem"
+                        android:text="Kategori Obat"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/popsem"
+                        android:text="Lihat Semua"
+                        android:textColor="@color/main"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+                <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:divider="@null"
-                    android:dividerHeight="2dp" />
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnSirup"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_sirup" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Sirup"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnTablet"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_tablet" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Tablet"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnObatOles"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_obat_oles" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Obat Oles"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btnLainnya"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/icon_lainnya" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/popsem"
+                                android:text="Lainnya"
+                                android:textColor="@color/black"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
 
 
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent">
+
+                    <ListView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:divider="@null"
+                        android:dividerHeight="2dp" />
+
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+
         </RelativeLayout>
 
 
@@ -113,7 +259,6 @@
         app:fabCradleRoundedCornerRadius="120dp"
         app:fabAlignmentMode="center"
         app:fabCradleVerticalOffset="20dp"
-        app:navigationIcon="@drawable/person"
 
         />
 
@@ -127,5 +272,6 @@
         app:backgroundTint="@color/main"
         />
 
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
