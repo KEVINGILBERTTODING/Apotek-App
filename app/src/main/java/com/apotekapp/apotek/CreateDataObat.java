@@ -38,7 +38,6 @@ public class CreateDataObat extends ObatActivity {
     ProgressDialog progressDialog;
     Calendar myCalendar;
     DatePickerDialog.OnDateSetListener expDate;
-    ImageView imgCalendar;
     private ImageButton btnBack;
     private RadioGroup rgJenisObat;
 
@@ -72,13 +71,10 @@ public class CreateDataObat extends ObatActivity {
         edtDescObat     = (EditText) findViewById(R.id.edt_DescObat);
         edtExpiredObat  = (EditText) findViewById(R.id.edt_ExpiredDate);
 
-        // Inisialisasi imgCalendar
-
-        imgCalendar =   (ImageView) findViewById(R.id.imgCalendar);
 
         // Funcition saat imgCalendar di klik
 
-        imgCalendar.setOnClickListener(new View.OnClickListener() {
+        edtExpiredObat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(CreateDataObat.this, expDate, myCalendar

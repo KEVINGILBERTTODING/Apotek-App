@@ -207,10 +207,10 @@ public class MainActivity extends AppCompatActivity {
             SliderItem sliderItem = new SliderItem();
 //            sliderItem.setDescription("Apoteker " + i); // for slider description
             if (i % 2 == 0) {
-                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider4.png");
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider6.png");
             }
             else {
-                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider6.png");
+                sliderItem.setImageUrl("http://192.168.11.19/apotek/slider/slider4.png");
             }
             sliderItemList.add(sliderItem);
         }
@@ -240,9 +240,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_notification:
 //
                         break;
-//                    case R.id.nav_cart:
-//                        fragment = new CartScreenFragment();
-//                        break;
+                    case R.id.nav_cart:
+                        break;
                 }
 //
             }

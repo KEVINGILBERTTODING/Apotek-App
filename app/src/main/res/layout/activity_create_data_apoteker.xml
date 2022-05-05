@@ -7,169 +7,313 @@
     android:layout_height="match_parent"
     tools:context=".CreateDataApoteker">
 
-    <FrameLayout
-        android:id="@+id/frmBanneApoteker"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/main"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:id="@+id/frmHeader1"
+            android:background="@drawable/wave"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/ic_btnback" />
+
+                    <TextView
+                        android:id="@+id/tvTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnBack"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/popsem"
+                        android:text="Masukkan data apoteker"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </FrameLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-
+            android:layout_below="@+id/frmHeader1"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/container"
             >
 
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/ic_btnback" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="40dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_daftar_apoteker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Biodata Apoteker"
+                    android:textColor="@color/dark"
+                    android:padding="5dp"
+                    android:textSize="25sp" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/frmBanneApoteker"
+                    android:scrollbars="none"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        >
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_id_apoteker"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            app:startIconDrawable="@drawable/id_apoteker"
+                            app:boxCornerRadiusTopStart="15dp"
+                            app:boxCornerRadiusBottomEnd="15dp"
+                            app:boxStrokeWidth="3dp"
+                            app:boxCornerRadiusBottomStart="15dp"
+                            app:boxCornerRadiusTopEnd="15dp"
+                            android:textColor="@color/dark"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_idApoteker"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/popmed"
+                                android:textColor="@color/dark"
+                                android:hint="ID apoteker">
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_namaApoteker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="20dp"
+                            app:startIconDrawable="@drawable/ic_person2"
+                            app:boxCornerRadiusTopStart="15dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeWidth="3dp"
+                            app:boxCornerRadiusBottomStart="15dp"
+                            app:boxCornerRadiusTopEnd="15dp"
+                            android:textColor="@color/dark"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_namaApoteker"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/popmed"
+                                android:textColor="@color/dark"
+                                android:hint="Nama">
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp"
+                            >
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_kotaApoteker"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                app:startIconDrawable="@drawable/ic_city"
+                                app:boxCornerRadiusTopStart="15dp"
+                                app:boxStrokeWidth="3dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                app:boxCornerRadiusBottomStart="15dp"
+                                app:boxCornerRadiusTopEnd="15dp"
+                                android:textColor="@color/dark"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_kotaApoteker"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="15sp"
+                                    android:fontFamily="@font/popmed"
+                                    android:textColor="@color/dark"
+                                    android:hint="Kota">
+                                </com.google.android.material.textfield.TextInputEditText>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_nohpApoteker"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                app:startIconDrawable="@drawable/ic_phone"
+                                app:boxCornerRadiusTopStart="15dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxStrokeWidth="3dp"
+                                app:boxCornerRadiusBottomStart="15dp"
+                                app:boxCornerRadiusTopEnd="15dp"
+                                android:textColor="@color/dark"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_nohpApoteker"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="15sp"
+                                    android:fontFamily="@font/popmed"
+                                    android:textColor="@color/dark"
+                                    android:hint="Handphone">
+                                </com.google.android.material.textfield.TextInputEditText>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shift"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/popsem"
+                            android:textSize="15sp"
+                            />
+
+                        <RadioGroup
+                            android:id="@+id/rg_shift"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <RadioButton
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Pagi"
+                                android:textSize="15sp"
+                                android:textAlignment="center"
+                                android:button="@android:color/transparent"
+                                android:background="@drawable/radio_selector"
+                                android:textColor="@drawable/text_color"
+                                android:fontFamily="@font/popsem"
+                                android:padding="2dp"
+                                android:layout_margin="16dp"
+                                />
+                            <RadioButton
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Malam"
+                                android:textSize="15sp"
+                                android:textAlignment="center"
+                                android:button="@android:color/transparent"
+                                android:background="@drawable/radio_selector"
+                                android:textColor="@drawable/text_color"
+                                android:fontFamily="@font/popsem"
+                                android:padding="2dp"
+                                android:layout_margin="16dp"
+                                />
+
+                        </RadioGroup>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_alamatApoteker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            app:startIconDrawable="@drawable/ic_location"
+                            app:boxCornerRadiusTopStart="15dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeWidth="3dp"
+                            android:layout_marginTop="20dp"
+                            app:boxCornerRadiusBottomStart="15dp"
+                            app:boxCornerRadiusTopEnd="15dp"
+                            android:textColor="@color/dark"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_alamatApoteker"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:layout_gravity="top|start"
+                                android:gravity="start"
+                                android:inputType="textMultiLine"
+                                android:lines="4"
+                                android:maxLength="255"
+                                android:maxLines="10"
+                                android:minLines="2"
+                                android:scrollbars="vertical"
+                                android:textColor="@color/dark"
+                                android:hint="Alamat">
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                        <com.google.android.material.button.MaterialButton
+
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            app:cornerRadius="10dp"
+                            android:text="Simpan"
+                            android:textAllCaps="false"
+                            android:onClick="CreateApoteker"
+                            android:textSize="18sp"
+                            android:layout_marginTop="40dp"
+                            android:fontFamily="@font/popsem"
+                            app:icon="@drawable/ic_save"
+                            app:iconGravity="textStart"
+
+                            />
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
-
-    </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
-        android:layout_below="@+id/frmBanneApoteker"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ID Apoteker"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_idApoteker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Id Apoteker"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_namaApoteker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nama"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kota"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_kotaApoteker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kota"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Telephone"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_nohpApoteker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Telephone"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Shift"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <RadioGroup
-            android:id="@+id/rg_shift"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <RadioButton
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="Pagi"
-                android:textSize="15sp"
-                android:textAlignment="center"
-                android:button="@android:color/transparent"
-                android:background="@drawable/radio_selector"
-                android:textColor="@drawable/text_color"
-                android:fontFamily="@font/popsem"
-                android:padding="5dp"
-                android:layout_margin="16dp"
-                />
-            <RadioButton
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="Malam"
-                android:textSize="15sp"
-                android:textAlignment="center"
-                android:button="@android:color/transparent"
-                android:background="@drawable/radio_selector"
-                android:textColor="@drawable/text_color"
-                android:fontFamily="@font/popsem"
-                android:padding="5dp"
-                android:layout_margin="16dp"
-                />
-
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alamat"
-            android:fontFamily="@font/popsem"
-            android:textSize="15sp"
-            />
-
-        <EditText
-            android:id="@+id/edt_alamatApoteker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Alamat"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Simpan"
-            android:background="@color/main"
-            android:textColor="@color/white"
-            android:onClick="CreateApoteker"
-            android:fontFamily="@font/popsem"
-            />
-
-
     </LinearLayout>
+
+
+
+
 
 </RelativeLayout>

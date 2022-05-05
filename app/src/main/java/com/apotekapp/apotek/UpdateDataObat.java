@@ -35,7 +35,6 @@ public class UpdateDataObat extends ObatActivity {
     ProgressDialog progressDialog;
     Calendar myCalendar;
     DatePickerDialog.OnDateSetListener expDate;
-    ImageView imgCalendar;
     private ImageButton btnBack;
 
     private RadioButton rbSirup, rbTablet, rbObatOles, rbLainnya;
@@ -44,7 +43,7 @@ public class UpdateDataObat extends ObatActivity {
 
     EditText updtKodeObat, updtNamaObat, updtSatuanObat, updtJumlahObat, updtDeksripsiObat, updtExpiredDate;
 
-    String idObat, kodeObat, namaObat, satuanObat, jumlahObat, jenisObat, deskripsiObat, expiredDate;
+    String idObat, kodeObat, namaObat, satuanObat, jumlahObat, deskripsiObat, expiredDate;
 
     //String untuk hashmap
      String xid, xkodeobat, xnamaobat, xsatuanobat, xjumlahobat, xjenisobat,  xdeskripsiobat, xexpiredate;
@@ -131,11 +130,6 @@ public class UpdateDataObat extends ObatActivity {
 
         myCalendar = Calendar.getInstance();
 
-        // Inisialisasi imgCalendar
-
-        imgCalendar =   (ImageView) findViewById(R.id.imgCalendar);
-
-
         // Inisialisasi Radio Group Shift
 
         rgJenisObat = (RadioGroup) findViewById(R.id.rg_JenisObat);
@@ -149,7 +143,7 @@ public class UpdateDataObat extends ObatActivity {
 
         // Funcition saat imgCalendar di klik
 
-        imgCalendar.setOnClickListener(new View.OnClickListener() {
+        updtExpiredDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(UpdateDataObat.this, expDate, myCalendar
