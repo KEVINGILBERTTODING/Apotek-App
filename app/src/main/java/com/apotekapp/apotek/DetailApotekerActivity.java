@@ -42,9 +42,9 @@ public class DetailApotekerActivity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        // Fungsi untuk menyembunyikan status bar
-
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        // Fungsi untuk menyembunyikan status bar
+//
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
 

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_260sdp"
+            android:background="@color/main_blue">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_account">
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/popsem"
+                android:text="Pengaturan Akun"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="10dp"
+                android:onClick="update"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cardcontainer"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_apoteker"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/icon_update_pw" />
+
+                    <TextView
+                        android:id="@+id/tv_title_apoteker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toRightOf="@id/img_apoteker"
+                        android:fontFamily="@font/popsem"
+                        android:text="Update password"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_title_apoteker"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toRightOf="@id/img_apoteker"
+                        android:fontFamily="@font/popmed"
+                        android:text="Update password atau username"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_9sdp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="20dp"
+                android:onClick="logOut"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cardcontainer"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_logout"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/icon_log_out" />
+
+                    <TextView
+                        android:id="@+id/tv_title_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_toRightOf="@id/img_logout"
+                        android:fontFamily="@font/popsem"
+                        android:text="Keluar akun"
+
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/nav_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/rounded_corners"
+        android:elevation="@dimen/_8sdp"
+        app:cnb_iconSize="@dimen/_15sdp"
+        app:cnb_menuResource="@menu/nav_menu"
+        app:cnb_orientationMode="horizontal"
+        app:cnb_radius="10dp"
+        app:cnb_unselectedColor="@color/white" />
+
+</RelativeLayout>

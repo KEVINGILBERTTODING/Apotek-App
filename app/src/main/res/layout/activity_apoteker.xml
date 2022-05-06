@@ -15,7 +15,7 @@
         >
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="260dp"
             android:id="@+id/frmHeader1"
             android:background="@drawable/wave"
             >
@@ -28,14 +28,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    >
+                    android:layout_marginRight="30dp">
 
                     <ImageButton
                         android:id="@+id/btnBack"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="40dp"
                         android:background="@drawable/ic_btnback" />
 
                     <TextView
@@ -70,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/frmHeader1"
-            android:layout_marginTop="-40dp"
+            android:layout_marginTop="-20dp"
             android:background="@drawable/container"
             >
 
