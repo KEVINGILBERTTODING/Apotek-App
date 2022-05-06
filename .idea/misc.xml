@@ -13,6 +13,7 @@
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/cardcontainer.xml" value="0.27870370370370373" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/container.xml" value="0.3075523202911738" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/container2.xml" value="0.3189814814814815" />
+        <entry key="..\:/ApotekApp/app/src/main/res/drawable/container_detail_obat.xml" value="0.3189814814814815" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/content1.xml" value="0.3075523202911738" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/content2.xml" value="0.35208333333333336" />
         <entry key="..\:/ApotekApp/app/src/main/res/drawable/content3.xml" value="0.35208333333333336" />
@@ -32,8 +33,8 @@
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_big.xml" value="0.13518518518518519" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_create_data_apoteker.xml" value="0.25" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_create_data_obat.xml" value="0.3265625" />
-        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_detail_apoteker.xml" value="0.15" />
-        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_detail_obat.xml" value="0.3265625" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_detail_apoteker.xml" value="0.25" />
+        <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_detail_obat.xml" value="0.2" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_edit_data_obat.xml" value="0.3265625" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_login.xml" value="0.2722222222222222" />
         <entry key="..\:/ApotekApp/app/src/main/res/layout/activity_main.xml" value="0.25" />

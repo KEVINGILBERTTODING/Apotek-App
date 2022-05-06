@@ -10,22 +10,20 @@
     <FrameLayout
         android:id="@+id/frmBanneObat"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/main"
+        android:layout_height="520dp"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-
-            >
+            android:background="@drawable/obat">
 
             <ImageButton
                 android:id="@+id/btnBack"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/ic_btnback" />
 
         </RelativeLayout>
@@ -34,69 +32,129 @@
     </FrameLayout>
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="20dp"
-    android:layout_below="@+id/frmBanneObat"
-    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/det_NmObat"
-        android:text="Paracetamol"
-        android:textSize="25sp"
-        android:fontFamily="@font/popsem"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/det_Satuan"
-        android:text="Papan"
-        android:textSize="15sp"
-        android:fontFamily="@font/popsem"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/det_Jumlah"
-        android:text="20"
-        android:textSize="15sp"
-        android:fontFamily="@font/popsem"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frmBanneObat"
+        android:layout_marginTop="-40dp"
+        android:background="@drawable/container_detail_obat">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/det_Jenis"
-        android:text="Tablet"
-        android:textSize="15sp"
-        android:fontFamily="@font/popsem"
-        />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:scrollbars="none"
+            >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/det_Desc"
-        android:text="Obat ini kaya akan manfaat"
-        android:textSize="15sp"
-        android:fontFamily="@font/popsem"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/det_Expired"
-        android:text="2022-12-05"
-        android:textSize="15sp"
-        android:fontFamily="@font/popsem"
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
 
+                <TextView
+                    android:id="@+id/det_NmObat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Paracetamol"
+                    android:textColor="@color/dark"
+                    android:layout_marginTop="10dp"
+                    android:textSize="30sp" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/det_Expired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="2022-12-05"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Jenis"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/det_Jenis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Tablet"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Satuan"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/det_Satuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Papan"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Jumlah"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+
+                <TextView
+                    android:id="@+id/det_Jumlah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="20"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Deskripsi"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/det_Desc"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Obat ini kaya akan manfaat"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
 
 </RelativeLayout>
