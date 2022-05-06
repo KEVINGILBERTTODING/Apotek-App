@@ -19,6 +19,12 @@
         android:theme="@style/Theme.MainApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AccountActivity2"
+            android:exported="true" />
+        <activity
             android:name=".ObatLain"
             android:exported="true"
             android:theme="@style/Theme.ObatActivity" />
