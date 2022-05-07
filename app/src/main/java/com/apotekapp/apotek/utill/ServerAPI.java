@@ -24,5 +24,6 @@ public class ServerAPI {
     // Server API untuk data users
     public static final String URL_Login = "http://192.168.11.19/apotek/users/login.php";
     public static final String URL_Register = "http://192.168.11.19/apotek/users/register.php";
+    public static final String URL_Update_Login = "http://192.168.11.19/apotek/users/update_login_user.php";
 
 }

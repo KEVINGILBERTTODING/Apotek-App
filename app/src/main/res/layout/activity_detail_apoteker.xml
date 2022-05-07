@@ -10,22 +10,19 @@
     <FrameLayout
         android:id="@+id/frmBanneApoteker"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/main"
-        >
+        android:layout_height="520dp" >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-
-            >
+            android:layout_height="520dp"
+            android:background="@drawable/bg_apoteker">
 
             <ImageButton
                 android:id="@+id/btnBack"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/ic_btnback" />
 
         </RelativeLayout>
@@ -33,65 +30,125 @@
 
     </FrameLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/frmBanneApoteker"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
+        android:layout_marginTop="-40dp"
+        android:background="@drawable/container_detail_obat">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/det_idApoteker"
-            android:text="A0002"
-            android:textSize="25sp"
-            android:fontFamily="@font/popsem"
-            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:scrollbars="none">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/det_nmApoteker"
-            android:text="Tasya Theressa"
-            android:textSize="25sp"
-            android:fontFamily="@font/popsem"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/det_kotaApoteker"
-            android:text="Ratepao"
-            android:textSize="25sp"
-            android:fontFamily="@font/popsem"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/det_nohpApoteker"
-            android:text="0812345678"
-            android:textSize="25sp"
-            android:fontFamily="@font/popsem"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/det_shiftApoteker"
-            android:text="Pagi/Malam"
-            android:textSize="25sp"
-            android:fontFamily="@font/popsem"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/det_alamatApoteker"
-            android:text="Jl. Pembangunan no 32"
-            android:textSize="25sp"
-            android:fontFamily="@font/popsem"
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frmBanneApoteker"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
 
-    </LinearLayout>
+
+                <TextView
+                    android:id="@+id/det_nmApoteker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/popsem"
+                    android:text="Tasya Theressa"
+                    android:textColor="@color/dark"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/det_idApoteker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="A0002"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Telephone"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+
+                <TextView
+                    android:id="@+id/det_nohpApoteker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="0812345678"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Shift"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/det_shiftApoteker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Pagi/Malam"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Kota"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/det_kotaApoteker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Ratepao"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Alamat"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/dark"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/det_alamatApoteker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:layout_marginTop="5dp"
+                    android:text="Jl. Pembangunan no 32"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>

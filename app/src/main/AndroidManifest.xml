@@ -19,6 +19,14 @@
         android:theme="@style/Theme.MainApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".UpdateAccountActivity"
+            android:theme="@style/Theme.LoginScreen"
+            android:exported="true" />
+        <activity
+            android:name=".AccountActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MainActivity" />
+        <activity
             android:name=".ObatLain"
             android:exported="true"
             android:theme="@style/Theme.ObatActivity" />

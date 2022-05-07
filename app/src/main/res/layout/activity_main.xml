@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".MainActivity">
@@ -456,8 +458,6 @@
                             android:textSize="15sp" />
 
 
-
-
                     </RelativeLayout>
 
 
@@ -527,15 +527,18 @@
         android:id="@+id/nav_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cnb_menuResource="@menu/nav_menu"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
         android:background="@drawable/rounded_corners"
-        app:cnb_unselectedColor="@color/white"
-        app:cnb_iconSize="30dp"
-        app:cnb_radius="10dp"
+        android:elevation="@dimen/_8sdp"
+        app:cnb_iconSize="@dimen/_15sdp"
+        app:cnb_menuResource="@menu/nav_menu"
         app:cnb_orientationMode="horizontal"
-        android:layout_margin="30dp"
-        android:elevation="8dp"/>
+        app:cnb_radius="10dp"
+        app:cnb_unselectedColor="@color/white" />
 
 </RelativeLayout>
 

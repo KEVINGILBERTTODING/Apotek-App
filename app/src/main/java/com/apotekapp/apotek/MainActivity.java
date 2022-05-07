@@ -114,7 +114,12 @@ public class MainActivity extends AppCompatActivity {
 
         renewItems();
 
+        // Inisialisasi bottom menu
+
         chipNavigationBar = findViewById(R.id.nav_menu);
+
+
+        // Memanggil method bottommenu
 
         bottommenu();
 
@@ -228,19 +233,21 @@ public class MainActivity extends AppCompatActivity {
                 switch (i){
                     case R.id.nav_home:
 
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-
-                                Intent i=new Intent(MainActivity.this,ApotekerActivity.class);
-                                startActivity(i);
-                            }
-                        }, 700);
                         break;
                     case R.id.nav_notification:
 //
                         break;
                     case R.id.nav_cart:
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                Intent i=new Intent(MainActivity.this, AccountActivity.class);
+                                startActivity(i);
+                            }
+                        }, 500);
+
                         break;
                 }
 //
