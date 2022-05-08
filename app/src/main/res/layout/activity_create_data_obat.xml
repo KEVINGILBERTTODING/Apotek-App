@@ -10,44 +10,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-
+        android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="@dimen/_105sdp"
         android:id="@+id/frmHeader1"
-        android:background="@drawable/wave"
-        >
-
+        android:background="@drawable/wave">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
-
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp">
 
                 <ImageButton
                     android:id="@+id/btnBack"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:background="@drawable/ic_btnback" />
-
 
                 <TextView
                     android:id="@+id/tvTitle2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/btnBack"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Masukkan data obat"
                     android:textColor="@color/white"
-                    android:textSize="25sp" />
+                    android:textSize="@dimen/_11sdp" />
 
         </RelativeLayout>
 
@@ -57,15 +50,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/frmHeader1"
-            android:layout_marginTop="-40dp"
-            android:background="@drawable/container"
-            >
+            android:layout_marginTop="@dimen/_minus30sdp"
+            android:background="@drawable/container">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="40dp"
+                android:layout_margin="@dimen/_16sdp"
                 >
 
 
@@ -74,16 +66,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
-                    android:padding="5dp"
                     android:text="Data Obat"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_10sdp" />
 
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="none"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="@dimen/_10sdp" >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -94,22 +85,20 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/til_id_obat"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
+                            android:layout_width="@dimen/_150sdp"
+                            android:layout_height="@dimen/_40sdp"
                             app:startIconDrawable="@drawable/ic_key"
-                            app:boxCornerRadiusTopStart="15dp"
-                            app:boxCornerRadiusBottomEnd="15dp"
-                            app:boxStrokeWidth="3dp"
-                            app:boxCornerRadiusBottomStart="15dp"
-                            app:boxCornerRadiusTopEnd="15dp"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                             android:textColor="@color/dark"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/edt_KodeObat"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/_9sdp"
                                 android:fontFamily="@font/popmed"
                                 android:textColor="@color/dark"
                                 android:hint="ID Obat">
@@ -119,23 +108,21 @@
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/edt_NmObat"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                             app:startIconDrawable="@drawable/ic_obat"
-                            app:boxCornerRadiusTopStart="15dp"
-                            app:boxCornerRadiusBottomEnd="15dp"
-                            app:boxStrokeWidth="3dp"
-                            android:layout_marginTop="20dp"
-                            app:boxCornerRadiusBottomStart="15dp"
-                            app:boxCornerRadiusTopEnd="15dp"
                             android:textColor="@color/dark"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/edt_NamaObat"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/_9sdp"
                                 android:fontFamily="@font/popmed"
                                 android:textColor="@color/dark"
                                 android:hint="Nama Obat">
@@ -152,24 +139,21 @@
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/edt_SObat"
-                                android:layout_width="220dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
+                                android:layout_width="@dimen/_170sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                                 app:startIconDrawable="@drawable/satuan_icon"
-                                app:boxCornerRadiusTopStart="15dp"
-                                app:boxCornerRadiusBottomEnd="15dp"
-                                app:boxStrokeWidth="3dp"
-                                android:layout_marginRight="10dp"
-                                app:boxCornerRadiusBottomStart="15dp"
-                                app:boxCornerRadiusTopEnd="15dp"
-                                android:layout_marginTop="20dp"
-                                android:textColor="@color/dark"
+                                android:layout_marginRight="@dimen/_5sdp"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/edt_SatuanObat"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/_9sdp"
                                     android:fontFamily="@font/popmed"
                                     android:textColor="@color/dark"
                                     android:hint="Satuan">
@@ -180,22 +164,21 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/edt_JObat"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
+                                android:layout_height="@dimen/_40sdp"
+                                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                                 app:startIconDrawable="@drawable/stok_icon"
-                                app:boxCornerRadiusTopStart="15dp"
-                                app:boxCornerRadiusBottomEnd="15dp"
-                                app:boxStrokeWidth="3dp"
-                                app:boxCornerRadiusBottomStart="15dp"
-                                android:layout_marginTop="20dp"
-                                app:boxCornerRadiusTopEnd="15dp"
+                                android:layout_marginBottom="@dimen/_5sdp"
                                 android:textColor="@color/dark"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/edt_JumlahObat"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/_9sdp"
                                     android:fontFamily="@font/popmed"
                                     android:textColor="@color/dark"
                                     android:hint="Stok">
@@ -211,14 +194,15 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/popsem"
                             android:text="Jenis Obat"
-                            android:layout_marginTop="20dp"
-                            android:textSize="15sp" />
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textSize="@dimen/_9sdp" />
 
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:scrollbars="none"
+                            android:layout_marginTop="@dimen/_5sdp"
 
                             >
 
@@ -229,58 +213,55 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:layout_width="120dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
                                     android:background="@drawable/radio_selector"
                                     android:button="@android:color/transparent"
-                                    android:fontFamily="@font/popsem"
-                                    android:padding="5dp"
+                                    android:fontFamily="@font/popmed"
                                     android:text="Tablet"
+                                    android:padding="5dp"
+                                    android:layout_marginRight="@dimen/_10sdp"
                                     android:textAlignment="center"
                                     android:textColor="@drawable/text_color"
-                                    android:textSize="15sp" />
+                                    android:textSize="@dimen/_9sdp" />
 
                                 <RadioButton
-                                    android:layout_width="120dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
                                     android:background="@drawable/radio_selector"
                                     android:button="@android:color/transparent"
-                                    android:fontFamily="@font/popsem"
+                                    android:fontFamily="@font/popmed"
                                     android:padding="5dp"
                                     android:text="Sirup"
+                                    android:layout_marginRight="@dimen/_10sdp"
                                     android:textAlignment="center"
                                     android:textColor="@drawable/text_color"
-                                    android:textSize="15sp" />
+                                    android:textSize="@dimen/_9sdp" />
 
                                 <RadioButton
-                                    android:layout_width="120dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
                                     android:background="@drawable/radio_selector"
                                     android:button="@android:color/transparent"
-                                    android:fontFamily="@font/popsem"
-                                    android:padding="5dp"
+                                    android:fontFamily="@font/popmed"
                                     android:text="Obat Oles"
+                                    android:padding="5dp"
+                                    android:layout_marginRight="@dimen/_10sdp"
                                     android:textAlignment="center"
                                     android:textColor="@drawable/text_color"
-                                    android:textSize="15sp" />
+                                    android:textSize="@dimen/_9sdp" />
 
                                 <RadioButton
-                                    android:layout_width="120dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
                                     android:background="@drawable/radio_selector"
                                     android:button="@android:color/transparent"
-                                    android:fontFamily="@font/popsem"
+                                    android:fontFamily="@font/popmed"
                                     android:padding="5dp"
                                     android:text="Lainnya"
                                     android:textAlignment="center"
                                     android:textColor="@drawable/text_color"
-                                    android:textSize="15sp" />
-
-
+                                    android:textSize="@dimen/_9sdp" />
                             </RadioGroup>
 
 
@@ -294,24 +275,22 @@
                             android:orientation="horizontal">
 
                             <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/edt_ExObat"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
+                                android:layout_height="@dimen/_40sdp"
+                                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
                                 app:startIconDrawable="@drawable/expdate_icon"
-                                app:boxCornerRadiusTopStart="15dp"
-                                app:boxCornerRadiusBottomEnd="15dp"
-                                android:layout_marginTop="20dp"
-                                app:boxStrokeWidth="3dp"
-                                app:boxCornerRadiusBottomStart="15dp"
-                                app:boxCornerRadiusTopEnd="15dp"
                                 android:textColor="@color/dark"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/edt_ExpiredDate"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/_9sdp"
                                     android:fontFamily="@font/popmed"
                                     android:textColor="@color/dark"
                                     android:editable="false"
@@ -328,16 +307,14 @@
                             android:id="@+id/edt_DObat"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            app:boxCornerRadiusTopStart="15dp"
-                            app:boxCornerRadiusBottomEnd="15dp"
-                            android:layout_marginTop="20dp"
-                            app:boxStrokeWidth="3dp"
-                            app:boxCornerRadiusBottomStart="15dp"
-                            app:boxCornerRadiusTopEnd="15dp"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:textColor="@color/dark"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/edt_DescObat"
                                 android:layout_width="match_parent"
@@ -353,25 +330,25 @@
                                 android:minLines="6"
                                 android:scrollbars="vertical"
                                 android:textColor="@color/dark"
-                                android:textSize="15sp"></com.google.android.material.textfield.TextInputEditText>
+                                android:textSize="@dimen/_9sdp">
+
+                            </com.google.android.material.textfield.TextInputEditText>
                         </com.google.android.material.textfield.TextInputLayout>
 
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnInsert"
                             android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            app:cornerRadius="10dp"
+                            android:layout_height="@dimen/_40sdp"
+                            app:cornerRadius="@dimen/_5sdp"
                             android:text="Simpan"
                             android:textAllCaps="false"
                             android:onClick="insertObat"
-                            android:textSize="18sp"
-                            android:layout_marginTop="40dp"
+                            android:textSize="@dimen/_11sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
                             android:fontFamily="@font/popsem"
                             app:icon="@drawable/ic_save"
-                            app:iconGravity="textStart"
-
-                            />
+                            app:iconGravity="textStart" />
 
 
                     </LinearLayout>

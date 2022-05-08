@@ -10,8 +10,7 @@
     <FrameLayout
         android:id="@+id/frmBanneObat"
         android:layout_width="match_parent"
-        android:layout_height="520dp"
-        >
+        android:layout_height="@dimen/_280sdp" >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,10 +19,11 @@
 
             <ImageButton
                 android:id="@+id/btnBack"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="60dp"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
                 android:background="@drawable/ic_btnback" />
 
         </RelativeLayout>
@@ -32,29 +32,25 @@
     </FrameLayout>
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/frmBanneObat"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="@dimen/_minus25sdp"
         android:background="@drawable/container_detail_obat">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="20dp"
-            android:scrollbars="none"
-            >
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="vertical">
-
 
 
                 <TextView
@@ -64,8 +60,7 @@
                     android:fontFamily="@font/popsem"
                     android:text="Paracetamol"
                     android:textColor="@color/dark"
-                    android:layout_marginTop="10dp"
-                    android:textSize="30sp" />
+                    android:textSize="@dimen/_15sdp" />
 
                 <TextView
                     android:id="@+id/det_Expired"
@@ -73,16 +68,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="2022-12-05"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Jenis"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
 
                 <TextView
@@ -91,17 +86,17 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="Tablet"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Satuan"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
                 <TextView
                     android:id="@+id/det_Satuan"
@@ -109,19 +104,17 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="Papan"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/_9sdp" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Jumlah"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
-
-
+                    android:textSize="@dimen/_11sdp" />
 
                 <TextView
                     android:id="@+id/det_Jumlah"
@@ -129,27 +122,27 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="20"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/_9sdp" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Deskripsi"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
 
                 <TextView
                     android:id="@+id/det_Desc"
-                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/popsem"
                     android:text="Obat ini kaya akan manfaat"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
             </LinearLayout>
 

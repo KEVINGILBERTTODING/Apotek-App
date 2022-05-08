@@ -16,7 +16,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="@dimen/_105sdp"
         android:id="@+id/frmHeader1"
         android:background="@drawable/wave">
 
@@ -27,14 +27,14 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp" >
 
                 <ImageButton
                     android:id="@+id/btnBack"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:background="@drawable/ic_btnback" />
 
                 <TextView
@@ -42,11 +42,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/btnBack"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="@dimen/_15sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Masukkan data apoteker"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
 
             </RelativeLayout>
@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/frmHeader1"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="@dimen/_minus30sdp"
         android:background="@drawable/container" >
 
 
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="40dp">
+            android:layout_margin="@dimen/_16sdp" >
 
             <TextView
                 android:id="@+id/tv_daftar_apoteker"
@@ -74,8 +74,7 @@
                 android:fontFamily="@font/popsem"
                 android:text="Biodata Apoteker"
                 android:textColor="@color/dark"
-                android:padding="5dp"
-                android:textSize="25sp" />
+                android:layout_marginTop="@dimen/_10sdp" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -91,81 +90,73 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/til_id_apoteker"
-                        android:layout_width="250dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_40sdp"
                         app:startIconDrawable="@drawable/id_apoteker"
-                        app:boxCornerRadiusTopStart="15dp"
-                        app:boxCornerRadiusBottomEnd="15dp"
-                        app:boxStrokeWidth="3dp"
-                        app:boxCornerRadiusBottomStart="15dp"
-                        app:boxCornerRadiusTopEnd="15dp"
+                        app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                        app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                         android:textColor="@color/dark"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/updt_idApoteker"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/_9sdp"
                             android:fontFamily="@font/popmed"
                             android:textColor="@color/dark"
-                            android:hint="ID apoteker">
+                            android:hint="ID apoteker" >
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/til_namaApoteker"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                        app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                         app:startIconDrawable="@drawable/ic_person2"
-                        app:boxCornerRadiusTopStart="15dp"
-                        app:boxCornerRadiusBottomEnd="10dp"
-                        app:boxStrokeWidth="3dp"
-                        app:boxCornerRadiusBottomStart="15dp"
-                        app:boxCornerRadiusTopEnd="15dp"
                         android:textColor="@color/dark"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/updt_namaApoteker"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/_9sdp"
                             android:fontFamily="@font/popmed"
                             android:textColor="@color/dark"
-                            android:hint="Nama">
+                            android:hint="Nama Lengkap" >
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="20dp">
+                        android:orientation="horizontal" >
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/til_kotaApoteker"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
+                            android:layout_width="@dimen/_130sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
                             app:startIconDrawable="@drawable/ic_city"
-                            app:boxCornerRadiusTopStart="15dp"
-                            app:boxStrokeWidth="3dp"
-                            app:boxCornerRadiusBottomEnd="10dp"
-                            android:layout_marginRight="10dp"
-                            app:boxCornerRadiusBottomStart="15dp"
-                            app:boxCornerRadiusTopEnd="15dp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                             android:textColor="@color/dark"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/updt_kotaApoteker"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/_9sdp"
                                 android:fontFamily="@font/popmed"
                                 android:textColor="@color/dark"
                                 android:hint="Kota">
@@ -175,24 +166,24 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/til_nohpApoteker"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
                             android:layout_marginBottom="5dp"
                             app:startIconDrawable="@drawable/ic_phone"
-                            app:boxCornerRadiusTopStart="15dp"
-                            app:boxCornerRadiusBottomEnd="10dp"
-                            app:boxStrokeWidth="3dp"
-                            app:boxCornerRadiusBottomStart="15dp"
-                            app:boxCornerRadiusTopEnd="15dp"
                             android:textColor="@color/dark"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/updt_nohpApoteker"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/_9sdp"
                                 android:fontFamily="@font/popmed"
                                 android:textColor="@color/dark"
-                                android:hint="Handphone">
+                                android:hint="Handphone" >
                             </com.google.android.material.textfield.TextInputEditText>
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -203,9 +194,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shift"
-                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/popsem"
-                        android:textSize="15sp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textSize="@dimen/_9sdp"
                         />
 
                     <RadioGroup
@@ -213,35 +204,36 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
                         >
 
                         <RadioButton
                             android:id="@+id/rbShift"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_25sdp"
                             android:text="Pagi"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/_9sdp"
                             android:textAlignment="center"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_selector"
                             android:textColor="@drawable/text_color"
                             android:fontFamily="@font/popsem"
-                            android:padding="2dp"
-                            android:layout_margin="16dp"
+                            android:padding="5dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             />
                         <RadioButton
                             android:id="@+id/rbShift2"
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_25sdp"
                             android:text="Malam"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/_9sdp"
                             android:textAlignment="center"
                             android:button="@android:color/transparent"
                             android:background="@drawable/radio_selector"
                             android:textColor="@drawable/text_color"
                             android:fontFamily="@font/popsem"
-                            android:padding="2dp"
-                            android:layout_margin="16dp"
+                            android:padding="5dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             />
 
                     </RadioGroup>
@@ -251,60 +243,56 @@
                         android:id="@+id/til_alamatApoteker"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                        app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
                         app:startIconDrawable="@drawable/ic_location"
-                        app:boxCornerRadiusTopStart="15dp"
-                        app:boxCornerRadiusBottomEnd="10dp"
-                        app:boxStrokeWidth="3dp"
-                        android:layout_marginTop="20dp"
-                        app:boxCornerRadiusBottomStart="15dp"
-                        app:boxCornerRadiusTopEnd="15dp"
                         android:textColor="@color/dark"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/updt_alamatApoteker"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textSize="@dimen/_9sdp"
                             android:layout_gravity="top|start"
                             android:gravity="start"
                             android:inputType="textMultiLine"
-                            android:lines="5"
+                            android:lines="4"
                             android:maxLength="255"
                             android:maxLines="10"
                             android:minLines="2"
                             android:scrollbars="vertical"
                             android:textColor="@color/dark"
-                            android:textSize="15sp"
-                            android:hint="Alamat">
+                            android:hint="Alamat" >
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-
                     <com.google.android.material.button.MaterialButton
-
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        app:cornerRadius="10dp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:cornerRadius="@dimen/_5sdp"
                         android:text="Simpan"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
                         android:textAllCaps="false"
                         android:onClick="UpdateApoteker"
-                        android:textSize="18sp"
-                        android:layout_marginTop="40dp"
                         android:fontFamily="@font/popsem"
                         app:icon="@drawable/ic_save"
-                        app:iconGravity="textStart"/>
+                        app:iconGravity="textStart" />
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
 
-                </LinearLayout>
-
-            </ScrollView>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-
-</LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
