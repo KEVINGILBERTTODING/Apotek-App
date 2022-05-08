@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,26 +9,25 @@
     android:gravity="center"
     tools:context=".RegisterActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginLeft="@dimen/_25sdp"
+        android:layout_marginRight="@dimen/_25sdp"
         android:layout_gravity="center"
         android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="@dimen/_200sdp"
                 android:background="@drawable/icon_login2"
                 android:layout_gravity="center_vertical"
                 />
-
 
         </FrameLayout>
 
@@ -38,39 +37,43 @@
             android:layout_height="wrap_content"
             android:text="Hello, welcome\n to Apotek App"
             android:textColor="@color/dark"
-            android:layout_marginTop="20dp"
-            android:textSize="25sp" />
-
+            android:textSize="@dimen/_15sdp" />
 
         <TextView
             android:fontFamily="@font/popmed"
-            android:layout_width="400dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:text="Create an accout and join with us?"
             android:textColor="@color/gray"
-            android:textSize="15sp" />
+            android:textSize="@dimen/_8sdp"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
 
+        </androidx.core.widget.NestedScrollView>
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtfild_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:startIconDrawable="@drawable/usericon"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
             android:textColor="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="@dimen/_9sdp"
                 android:fontFamily="@font/popmed"
                 android:textColor="@color/black"
                 android:hint="Username">
@@ -81,12 +84,13 @@
             android:id="@+id/txtfild_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:passwordToggleEnabled="true"
-            android:layout_marginTop="10dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
             android:textColor="@color/black"
             app:startIconDrawable="@drawable/lock"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -95,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:textSize="18sp"
+                android:textSize="@dimen/_9sdp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
                 android:inputType="textPassword">
@@ -107,13 +111,13 @@
             android:id="@+id/txtfild_password_conf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:passwordToggleEnabled="true"
-            android:layout_marginTop="10dp"
-            app:boxCornerRadiusTopStart="15dp"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
             android:textColor="@color/black"
             app:startIconDrawable="@drawable/lock"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -122,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:textSize="18sp"
+                android:textSize="@dimen/_9sdp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
                 android:inputType="textPassword">
@@ -136,14 +140,14 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="@dimen/_10sdp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="By signing up, you’re agree to our"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
-                android:textSize="13dp"/>
+                android:textSize="@dimen/_7sdp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -151,7 +155,7 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/popsem"
                 android:textColor="@color/main"
-                android:textSize="13dp"/>
+                android:textSize="@dimen/_7sdp"/>
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -160,17 +164,17 @@
             android:textStyle="bold"
             android:fontFamily="@font/popsem"
             android:textColor="@color/main"
-            android:textSize="15dp"/>
+            android:textSize="@dimen/_7sdp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_register"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            app:cornerRadius="10dp"
+            android:layout_height="@dimen/_40sdp"
+            app:cornerRadius="@dimen/_10sdp"
             android:text="Sign Up"
             android:textAllCaps="false"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/popsem"
             />
 
@@ -182,14 +186,14 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="@dimen/_10sdp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?"
                 android:textColor="@color/black"
                 android:fontFamily="@font/popmed"
-                android:textSize="13dp"/>
+                android:textSize="@dimen/_8sdp"/>
             <TextView
                 android:id="@+id/tv_ToLogin"
                 android:layout_width="wrap_content"
@@ -198,10 +202,10 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/popsem"
                 android:textColor="@color/main"
-                android:textSize="13dp"/>
+                android:textSize="@dimen/_8sdp"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 

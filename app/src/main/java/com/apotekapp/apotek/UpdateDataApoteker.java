@@ -55,6 +55,12 @@ public class UpdateDataApoteker extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_data_apoteker);
 
+        // Fungsi untuk menyembunyikan navbar
+
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         // Inisialisasi EditText
 
         updt_id = findViewById(R.id.updt_idApoteker);

@@ -10,14 +10,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
 
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="@dimen/_105sdp"
         android:id="@+id/frmHeader1"
         android:background="@drawable/wave"
         >
@@ -25,15 +24,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp">
 
 
             <ImageButton
                 android:id="@+id/btnBack"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:background="@drawable/ic_btnback" />
 
 
@@ -42,15 +41,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btnBack"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:fontFamily="@font/popsem"
                 android:text="Update data obat"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="@dimen/_11sdp" />
 
         </RelativeLayout>
-
-
 
     </FrameLayout>
 
@@ -58,16 +55,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/frmHeader1"
-            android:layout_marginTop="-40dp"
-            android:background="@drawable/container"
-            >
+            android:layout_marginTop="@dimen/_minus30sdp"
+            android:background="@drawable/container">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="40dp"
-                >
+                android:layout_margin="@dimen/_16sdp"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -75,270 +70,224 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
-                    android:padding="5dp"
                     android:text="Data Obat"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_10sdp" />
 
-
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:scrollbars="none"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@+id/frmBanneObat">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_id_obat"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                app:startIconDrawable="@drawable/ic_key"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxStrokeWidth="3dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusTopEnd="15dp"
-                android:textColor="@color/dark"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/updt_KodeObat"
+                <ScrollView
                     android:layout_width="match_parent"
+                    android:scrollbars="none"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/popmed"
-                    android:textColor="@color/dark"
-                    android:hint="ID Obat">
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="@dimen/_10sdp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edt_NmObat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                app:startIconDrawable="@drawable/ic_obat"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                app:boxStrokeWidth="3dp"
-                android:layout_marginTop="20dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusTopEnd="15dp"
-                android:textColor="@color/dark"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/updt_NamaObat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/popmed"
-                    android:textColor="@color/dark"
-                    android:hint="Nama Obat">
-                </com.google.android.material.textfield.TextInputEditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/edt_SObat"
-                    android:layout_width="220dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    app:startIconDrawable="@drawable/satuan_icon"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeWidth="3dp"
-                    android:layout_marginRight="10dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/dark"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/updt_SatuanObat"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:fontFamily="@font/popmed"
-                        android:textColor="@color/dark"
-                        android:hint="Satuan">
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:orientation="vertical"
+                        android:layout_below="@+id/frmBanneObat">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_id_obat"
+                            android:layout_width="@dimen/_150sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            app:startIconDrawable="@drawable/ic_key"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                            android:textColor="@color/dark"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/updt_KodeObat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/_9sdp"
+                                android:fontFamily="@font/popmed"
+                                android:textColor="@color/dark"
+                                android:hint="ID Obat">
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/edt_NmObat"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                            app:startIconDrawable="@drawable/ic_obat"
+                            android:textColor="@color/dark"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/updt_NamaObat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/_9sdp"
+                                android:fontFamily="@font/popmed"
+                                android:textColor="@color/dark"
+                                android:hint="Nama Obat">
+                            </com.google.android.material.textfield.TextInputEditText>
+                        </com.google.android.material.textfield.TextInputLayout>
 
 
-                <!--                        <EditText-->
-                <!--                            android:id="@+id/edt_SatuanObat"-->
-                <!--                            android:layout_width="match_parent"-->
-                <!--                            android:layout_height="wrap_content"-->
-                <!--                            android:hint="Satuan" />-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/edt_JObat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    app:startIconDrawable="@drawable/stok_icon"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    app:boxStrokeWidth="3dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    android:layout_marginTop="20dp"
-                    app:boxCornerRadiusTopEnd="15dp"
-                    android:textColor="@color/dark"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/updt_JumlahObat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:fontFamily="@font/popmed"
-                        android:textColor="@color/dark"
-                        android:hint="Stok">
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/edt_SObat"
+                               android:layout_width="@dimen/_170sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                                app:startIconDrawable="@drawable/satuan_icon"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/updt_SatuanObat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/_9sdp"
+                                    android:fontFamily="@font/popmed"
+                                    android:textColor="@color/dark"
+                                    android:hint="Satuan">
+                                </com.google.android.material.textfield.TextInputEditText>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/edt_JObat"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_40sdp"
+                                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                                app:startIconDrawable="@drawable/stok_icon"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:textColor="@color/dark"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/updt_JumlahObat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/_9sdp"
+                                    android:fontFamily="@font/popmed"
+                                    android:textColor="@color/dark"
+                                    android:hint="Stok">
+                                </com.google.android.material.textfield.TextInputEditText>
+                            </com.google.android.material.textfield.TextInputLayout>
 
 
-            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jenis Obat"
+                            android:fontFamily="@font/popsem"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textSize="@dimen/_9sdp"
+                            />
 
 
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"
 
-<!--            <EditText-->
-<!--                android:id="@+id/updt_SatuanObat"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Satuan"-->
-<!--                />-->
+                            >
+                            <RadioGroup
+                                android:id="@+id/rg_JenisObat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
 
+                                <RadioButton
+                                    android:id="@+id/rbTablet"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:text="Tablet"
+                                    android:textSize="@dimen/_9sdp"
+                                    android:textAlignment="center"
+                                    android:button="@android:color/transparent"
+                                    android:background="@drawable/radio_selector"
+                                    android:textColor="@drawable/text_color"
+                                    android:fontFamily="@font/popmed"
+                                    android:padding="5dp"
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/rbSirup"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:background="@drawable/radio_selector"
+                                    android:button="@android:color/transparent"
+                                    android:fontFamily="@font/popmed"
+                                    android:padding="5dp"
+                                    android:text="Sirup"
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    android:textAlignment="center"
+                                    android:textColor="@drawable/text_color"
+                                    android:textSize="@dimen/_9sdp"/>
+                                <RadioButton
+                                    android:id="@+id/rbObatOles"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:background="@drawable/radio_selector"
+                                    android:button="@android:color/transparent"
+                                    android:fontFamily="@font/popmed"
+                                    android:text="Obat Oles"
+                                    android:padding="5dp"
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    android:textAlignment="center"
+                                    android:textColor="@drawable/text_color"
+                                    android:textSize="@dimen/_9sdp"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/rbLainnya"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:background="@drawable/radio_selector"
+                                    android:button="@android:color/transparent"
+                                    android:fontFamily="@font/popmed"
+                                    android:padding="5dp"
+                                    android:text="Lainnya"
+                                    android:textAlignment="center"
+                                    android:textColor="@drawable/text_color"
+                                    android:textSize="@dimen/_9sdp"/>
 
-<!--            <EditText-->
-<!--                android:id="@+id/updt_JumlahObat"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Stok Obat"-->
-<!--                android:inputType="number"-->
-<!--                />-->
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jenis Obat"
-                android:fontFamily="@font/popsem"
-                android:textSize="15sp"
-                />
-
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none"
-
-                >
-                <RadioGroup
-                    android:id="@+id/rg_JenisObat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-
-                    <RadioButton
-                        android:id="@+id/rbTablet"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="Tablet"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        android:button="@android:color/transparent"
-                        android:background="@drawable/radio_selector"
-                        android:textColor="@drawable/text_color"
-                        android:fontFamily="@font/popsem"
-                        android:padding="5dp"
-                        android:layout_margin="16dp"
-                        />
-                    <RadioButton
-                        android:id="@+id/rbSirup"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="Sirup"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        android:button="@android:color/transparent"
-                        android:background="@drawable/radio_selector"
-                        android:textColor="@drawable/text_color"
-                        android:fontFamily="@font/popsem"
-                        android:padding="5dp"
-                        android:layout_margin="16dp"
-                        />
-                    <RadioButton
-                        android:id="@+id/rbObatOles"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="Obat Oles"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        android:button="@android:color/transparent"
-                        android:background="@drawable/radio_selector"
-                        android:textColor="@drawable/text_color"
-                        android:fontFamily="@font/popsem"
-                        android:padding="5dp"
-                        android:layout_margin="16dp"
-                        />
-                    <RadioButton
-                        android:id="@+id/rbLainnya"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="Lainnya"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        android:button="@android:color/transparent"
-                        android:background="@drawable/radio_selector"
-                        android:textColor="@drawable/text_color"
-                        android:fontFamily="@font/popsem"
-                        android:padding="5dp"
-                        android:layout_margin="16dp"
-                        />
+                            </RadioGroup>
 
 
-
-                </RadioGroup>
-
-
-            </HorizontalScrollView>
-
-
+                        </HorizontalScrollView>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/edt_ExObat"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                    app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
                     app:startIconDrawable="@drawable/expdate_icon"
-                    app:boxCornerRadiusTopStart="15dp"
-                    app:boxCornerRadiusBottomEnd="15dp"
-                    android:layout_marginTop="20dp"
-                    app:boxStrokeWidth="3dp"
-                    app:boxCornerRadiusBottomStart="15dp"
-                    app:boxCornerRadiusTopEnd="15dp"
                     android:textColor="@color/dark"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/updt_ExpiredDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/_9sdp"
                         android:fontFamily="@font/popmed"
                         android:textColor="@color/dark"
                         android:editable="false"
@@ -348,59 +297,19 @@
                     </com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!--                            <EditText-->
-                <!--                                android:id="@+id/edt_ExpiredDate"-->
-                <!--                                android:layout_width="200dp"-->
-                <!--                                android:layout_height="wrap_content"-->
-                <!--                                android:editable="false"-->
-                <!--                                android:focusable="false"-->
-                <!--                                android:hint="Expired Date"-->
-                <!--                                android:inputType="date"-->
-                <!--                                android:paddingRight="20dp" />-->
-
-
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"-->
-<!--                >-->
-
-<!--                <EditText-->
-<!--                    android:id="@+id/updt_ExpiredDate"-->
-<!--                    android:layout_width="200dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:editable="false"-->
-<!--                    android:focusable="false"-->
-<!--                    android:hint="Expired Date"-->
-<!--                    android:inputType="date"-->
-<!--                    android:paddingRight="20dp" />-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/imgCalendar"-->
-<!--                    android:layout_width="40dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:src="@drawable/ic_calendar"-->
-<!--                    android:focusable="true"-->
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    />-->
-<!--            </LinearLayout>-->
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edt_DObat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                app:boxCornerRadiusTopStart="15dp"
-                app:boxCornerRadiusBottomEnd="15dp"
-                android:layout_marginTop="20dp"
-                app:boxStrokeWidth="3dp"
-                app:boxCornerRadiusBottomStart="15dp"
-                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:textColor="@color/dark"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/updt_Desc"
                     android:layout_width="match_parent"
@@ -416,59 +325,32 @@
                     android:minLines="6"
                     android:scrollbars="vertical"
                     android:textColor="@color/dark"
-                    android:textSize="15sp"></com.google.android.material.textfield.TextInputEditText>
+                    android:textSize="@dimen/_9sdp">
+                </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
-
-
-<!--            <EditText-->
-<!--                android:id="@+id/updt_Desc"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Deskripsi"-->
-<!--                android:inputType="textMultiLine"-->
-<!--                android:scrollbars="vertical"-->
-<!--                android:layout_gravity="top|start"-->
-<!--                android:minLines="6"-->
-<!--                android:maxLength="255"-->
-<!--                android:lines="8"-->
-<!--                android:gravity="start"-->
-<!--                android:maxLines="10"-->
-<!--                />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnInsert"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                app:cornerRadius="10dp"
+                android:layout_height="@dimen/_40sdp"
+                app:cornerRadius="@dimen/_5sdp"
                 android:text="Update"
                 android:textAllCaps="false"
                 android:onClick="UpdateObat"
-                android:textSize="18sp"
-                android:layout_marginTop="40dp"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:fontFamily="@font/popsem"
                 app:icon="@drawable/ic_save"
-                app:iconGravity="textStart"
+                app:iconGravity="textStart"/>
 
-                />
+                    </LinearLayout>
 
-
-<!--            <Button-->
-<!--                android:id="@+id/btnInsert"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Update"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:background="@color/main"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:onClick="UpdateObat"-->
-<!--                android:fontFamily="@font/popsem"-->
-<!--                />-->
-
-        </LinearLayout>
-
-    </ScrollView>
+                </ScrollView>
 
             </LinearLayout>
+
         </RelativeLayout>
+
     </LinearLayout>
+
 </RelativeLayout>

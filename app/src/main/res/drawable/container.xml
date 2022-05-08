@@ -3,7 +3,7 @@
 
     <corners
 
-        android:topRightRadius="40dp"
+        android:topRightRadius="30dp"
 
 
         />

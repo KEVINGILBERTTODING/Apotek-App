@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/popmed</item>
+    </style>
+
     <!-- Theme untuk MainActivity -->
 
     <style name="Theme.MainActivity" parent="Theme.MaterialComponents.DayNight.NoActionBar">

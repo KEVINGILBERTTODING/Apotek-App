@@ -10,23 +10,23 @@
     <FrameLayout
         android:id="@+id/frmBanneApoteker"
         android:layout_width="match_parent"
-        android:layout_height="520dp" >
+        android:layout_height="@dimen/_280sdp" >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="520dp"
+            android:layout_height="@dimen/_280sdp"
             android:background="@drawable/bg_apoteker">
 
             <ImageButton
                 android:id="@+id/btnBack"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="60dp"
-                android:background="@drawable/ic_btnback" />
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:background="@drawable/ic_btnback"  />
 
         </RelativeLayout>
-
 
     </FrameLayout>
 
@@ -34,36 +34,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/frmBanneApoteker"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="@dimen/_minus20sdp"
         android:background="@drawable/container_detail_obat">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
             android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/frmBanneApoteker"
-                android:layout_margin="20dp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="vertical">
-
 
 
                 <TextView
                     android:id="@+id/det_nmApoteker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/popsem"
                     android:text="Tasya Theressa"
                     android:textColor="@color/dark"
-                    android:textSize="30sp" />
+                    android:textSize="@dimen/_15sdp" />
 
                 <TextView
                     android:id="@+id/det_idApoteker"
@@ -71,17 +67,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="A0002"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/_10sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Telephone"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
-
+                    android:textSize="@dimen/_11sdp" />
 
 
                 <TextView
@@ -90,16 +85,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="0812345678"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Shift"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
 
                 <TextView
@@ -108,16 +103,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="Pagi/Malam"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Kota"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
                 <TextView
                     android:id="@+id/det_kotaApoteker"
@@ -125,16 +120,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
                     android:text="Ratepao"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Alamat"
-                    android:layout_marginTop="20dp"
                     android:textColor="@color/dark"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_11sdp" />
 
 
                 <TextView
@@ -142,9 +137,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/popsem"
-                    android:layout_marginTop="5dp"
                     android:text="Jl. Pembangunan no 32"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/_9sdp" />
 
 
             </LinearLayout>

@@ -13,107 +13,96 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/frmHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <xyz.sahildave.arclayout.ArcLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/arc_layout"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:arc_cropCurve="cropConvex"
-                app:arc_height="48dp"
-                app:arc_position="bottom">
+                android:layout_marginTop="@dimen/_5sdp">
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_marginTop="10dp"
-                    >
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp">
 
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="30dp">
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_welcome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/popmed"
+                            android:text="Selamat Datang,"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/_7sdp" />
 
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
+
 
                             <TextView
-                                android:id="@+id/tv_welcome"
+                                android:id="@+id/tv_UserName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/popmed"
-                                android:text="Selamat Datang,"
-                                android:textColor="@color/gray"
-                                android:textSize="14sp" />
+                                android:fontFamily="@font/popsem"
+                                android:text="Hai, Diana Thamara!"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9sdp" />
 
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-
-                                <TextView
-                                    android:id="@+id/tv_UserName"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/popsem"
-                                    android:text="Hai, Diana Thamara!"
-                                    android:textColor="@color/black"
-                                    android:textSize="18sp" />
-
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/handbye" />
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/popbold"
-                                android:text="Temukan atau input obat baru"
-                                android:textColor="@color/dark"
-                                android:textSize="20sp" />
-
+                            <ImageView
+                                android:layout_width="@dimen/_13sdp"
+                                android:layout_height="@dimen/_13sdp"
+                                android:layout_marginLeft="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_1sdp"
+                                android:src="@drawable/handbye" />
 
                         </LinearLayout>
-                    </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/popsem"
+                            android:text="Temukan atau input obat baru"
+                            android:textColor="@color/dark"
+                            android:textSize="@dimen/_11sdp" />
+
+
+                    </LinearLayout>
                 </RelativeLayout>
-            </xyz.sahildave.arclayout.ArcLayout>
+            </RelativeLayout>
 
         </FrameLayout>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutImageSlider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/frmHeader"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="-110dp"
-            android:layout_marginRight="30dp">
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_minus5sdp"
+            android:layout_marginRight="@dimen/_16sdp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_slider_mainActivity"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="@dimen/_105sdp"
                 android:layout_alignParentTop="true"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.smarteist.autoimageslider.SliderView
                     android:id="@+id/imageSlider"
@@ -133,19 +122,19 @@
                     app:sliderScrollTimeInSec="1" />
 
             </androidx.cardview.widget.CardView>
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:scrollbars="none"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -159,17 +148,16 @@
                         android:fontFamily="@font/popsem"
                         android:text="Kategori Obat"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="@dimen/_10sdp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/popsem"
                         android:text="Lihat Semua"
                         android:textColor="@color/main"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/_8sdp" />
 
                 </RelativeLayout>
 
@@ -182,106 +170,104 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnSirup"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_sirup" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/popsem"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/popmed"
                                 android:text="Obat Sirup"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnTablet"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_tablet" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/popsem"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/popmed"
                                 android:text="Obat Tablet"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnObatOles"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_obat_oles" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/popsem"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/popmed"
                                 android:text="Obat Oles"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnLainnya"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_lainnya" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="@dimen/_5sdp"
                                 android:fontFamily="@font/popsem"
                                 android:text="Lainnya"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
-
-
 
 
                     </LinearLayout>
@@ -291,8 +277,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    >
+                    android:layout_marginTop="@dimen/_5sdp">
 
                     <TextView
                         android:id="@+id/tv_utilitas"
@@ -301,17 +286,16 @@
                         android:fontFamily="@font/popsem"
                         android:text="Utilitas"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="@dimen/_10sdp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/popsem"
                         android:text="Lihat Semua"
                         android:textColor="@color/main"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/_8sdp" />
 
                 </RelativeLayout>
 
@@ -324,78 +308,78 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnLocation"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_location" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/popsem"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/popmed"
                                 android:text="Lokasi"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnCallCenter"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_call" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/popsem"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/popmed"
                                 android:text="Call Center"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="70dp"
+                            android:layout_width="@dimen/_35sdp"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:orientation="vertical">
 
                             <ImageButton
                                 android:id="@+id/btnSmsCenter"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
                                 android:background="@drawable/icon_sms" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/popsem"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/popmed"
                                 android:text="SMS Center"
                                 android:textColor="@color/black"
-                                android:textSize="10sp" />
+                                android:textSize="@dimen/_6sdp" />
 
                         </LinearLayout>
 
@@ -406,48 +390,47 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/popsem"
                     android:text="Menu Utama"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/_10sdp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:onClick="data_Apoteker"
-                    >
+                    app:cardCornerRadius="@dimen/_15sdp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@drawable/cardcontainer"
-                        android:padding="10dp">
+                        android:padding="@dimen/_5sdp">
 
                         <ImageView
                             android:id="@+id/img_apoteker"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:src="@drawable/icon_apoteker2" />
 
                         <TextView
                             android:id="@+id/tv_title_apoteker"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toRightOf="@id/img_apoteker"
                             android:fontFamily="@font/popsem"
                             android:text="Data Apoteker"
-                            android:layout_marginTop="20dp"
-                            android:layout_toRightOf="@id/img_apoteker"
                             android:textColor="@color/dark"
-                            android:textSize="20sp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/tv_title_apoteker"
                             android:layout_gravity="center_vertical"
@@ -455,23 +438,19 @@
                             android:fontFamily="@font/popmed"
                             android:text="Lihat atau input data apoteker"
                             android:textColor="@color/gray"
-                            android:textSize="15sp" />
+                            android:textSize="@dimen/_8sdp" />
 
 
                     </RelativeLayout>
 
-
                 </androidx.cardview.widget.CardView>
-
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="20dp"
-                    android:layout_marginBottom="20dp"
-                    app:cardCornerRadius="20dp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:onClick="data_Obat"
-                    >
+                    app:cardCornerRadius="@dimen/_15sdp">
 
 
                     <RelativeLayout
@@ -479,13 +458,13 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/cardcontainer"
                         android:orientation="horizontal"
-                        android:padding="10dp">
+                        android:padding="@dimen/_5sdp">
 
                         <ImageView
                             android:id="@+id/img_obat"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:src="@drawable/icon_obat" />
 
                         <TextView
@@ -493,12 +472,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:layout_toRightOf="@+id/img_obat"
                             android:fontFamily="@font/popsem"
                             android:text="Data Obat"
                             android:textColor="@color/dark"
-                            android:textSize="20sp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -509,7 +488,7 @@
                             android:fontFamily="@font/popmed"
                             android:text="Lihat atau input data obat"
                             android:textColor="@color/gray"
-                            android:textSize="15sp" />
+                            android:textSize="@dimen/_8sdp" />
 
 
                     </RelativeLayout>
@@ -529,7 +508,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:layout_marginEnd="@dimen/_30sdp"
         android:layout_marginBottom="@dimen/_30sdp"
         android:background="@drawable/rounded_corners"
