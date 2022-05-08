@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 
-$query = mysqli_query($con, "SELECT * FROM barang");
+$query = mysqli_query($con, "SELECT * FROM obat where jenis='Obat Oles'");
 
 $json = array();
 
